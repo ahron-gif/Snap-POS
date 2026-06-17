@@ -597,14 +597,25 @@ const PhoneOrderListPage = memo(function PhoneOrderListPage() {
     [searchText]
   )
 
-  // Handle row updates (double-click to edit)
+  // Handle row updates (inline cell edit - do NOT open tabs here)
   const handleRowUpdate = useCallback(
     async (updatedRow: PhoneOrderRecord) => {
+      // This is called when inline cell editing finishes.
+      // Do not open a new tab here - that causes infinite tab opening.
+      // Inline editing is disabled for phone orders, so this is a no-op.
+      return
+    },
+    []
+  )
+
+  // Handle row double-click to open edit form
+  const handleRowDoubleClick = useCallback(
+    (row: PhoneOrderRecord) => {
       openTab({
         component: "PhoneOrderFormPage",
-        title: "Edit Phone Order",
+        title: `Edit: ${row.phoneOrderNo || "Phone Order"}`,
         closable: true,
-        props: { id: updatedRow.phoneOrderID },
+        props: { id: row.phoneOrderID },
       })
     },
     [openTab]
@@ -1393,10 +1404,11 @@ const PhoneOrderListPage = memo(function PhoneOrderListPage() {
           error={null}
           totalRecords={totalRecords}
           onRowUpdate={handleRowUpdate}
+          onRowDoubleClick={handleRowDoubleClick}
           onRefresh={() => {}}
           pagination={true}
           pageSize={20}
-          editable={true}
+          editable={false}
           columnChooser={true}
           title="Phone Orders List"
           emptyMessage="No phone orders found"
