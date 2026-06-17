@@ -1,0 +1,41 @@
+src/components/common/ServerGrid/components/Grid.tsx:724:15 - error TS2322: Type 'Dispatch<SetStateAction<(Column & { width: number; })[]>>' is not assignable to type 'Dispatch<SetStateAction<Column[]>>'.
+  Type 'SetStateAction<Column[]>' is not assignable to type 'SetStateAction<(Column & { width: number; })[]>'.
+    Type 'Column[]' is not assignable to type 'SetStateAction<(Column & { width: number; })[]>'.
+      Type 'Column[]' is not assignable to type '(Column & { width: number; })[]'.
+        Type 'Column' is not assignable to type 'Column & { width: number; }'.
+          Type 'Column' is not assignable to type '{ width: number; }'.
+            Types of property 'width' are incompatible.
+              Type 'number | undefined' is not assignable to type 'number'.
+                Type 'undefined' is not assignable to type 'number'.
+
+724               setColumns={setColumns}
+                  ~~~~~~~~~~
+
+  src/components/common/ServerGrid/components/GridHeader.tsx:43:3
+    43   setColumns?: React.Dispatch<React.SetStateAction<Column[]>>
+         ~~~~~~~~~~
+    The expected type comes from property 'setColumns' which is declared here on type 'IntrinsicAttributes & GridHeaderProps'
+
+src/components/common/ServerGrid/components/GridHeader.tsx:234:3 - error TS6133: 'onColumnChooserOpen' is declared but its value is never read.
+
+234   onColumnChooserOpen,
+      ~~~~~~~~~~~~~~~~~~~
+
+src/components/ecommerce/MonthlySalesChart.tsx:12:43 - error TS6133: 'salesData' is declared but its value is never read.
+
+12 export default function MonthlySalesChart({ salesData }: MonthlySalesChartProps) {
+                                             ~~~~~~~~~~~~~
+
+src/components/ecommerce/RecentOrders.tsx:81:38 - error TS6133: 'orders' is declared but its value is never read.
+
+81 export default function RecentOrders({ orders }: RecentOrdersProps) {
+                                        ~~~~~~~~~~
+
+src/components/header/NotificationDropdown.tsx:90:9 - error TS6133: 'topPosition' is declared but its value is never read.
+
+90     let topPosition = buttonRect.bottom + window.scrollY + 8 // 8px offset from bottom of button
+           ~~~~~~~~~~~
+
+src/components/header/NotificationDropdown.tsx:92:9 - error TS6133: 'rightPosition' is declared but its value is never read.
+
+92     let rightPosition = window.innerWidth - buttonRect.right

@@ -1,0 +1,68 @@
+src/pages/users/UsersListPage.tsx:494:7 - error TS6133: 'handleSendInviteStatic' is declared but its value is never read.
+
+494 const handleSendInviteStatic = (row: any, showToastCallback: Function) => {
+          ~~~~~~~~~~~~~~~~~~~~~~
+
+src/pages/users/UsersListPage.tsx:662:26 - error TS2339: Property 'style' does not exist on type 'EventTarget'.       
+
+662                 e.target.style.backgroundColor = "#1565c0";
+                             ~~~~~
+
+src/pages/users/UsersListPage.tsx:663:26 - error TS2339: Property 'style' does not exist on type 'EventTarget'.       
+
+663                 e.target.style.transform = "translateY(-1px)";
+                             ~~~~~
+
+src/pages/users/UsersListPage.tsx:664:26 - error TS2339: Property 'style' does not exist on type 'EventTarget'.       
+
+664                 e.target.style.boxShadow = "0 4px 12px rgba(25, 118, 210, 0.3)";
+                             ~~~~~
+
+src/pages/users/UsersListPage.tsx:667:26 - error TS2339: Property 'style' does not exist on type 'EventTarget'.       
+
+667                 e.target.style.backgroundColor = "#1976d2";
+                             ~~~~~
+
+src/pages/users/UsersListPage.tsx:668:26 - error TS2339: Property 'style' does not exist on type 'EventTarget'.       
+
+668                 e.target.style.transform = "translateY(0px)";
+                             ~~~~~
+
+src/pages/users/UsersListPage.tsx:669:26 - error TS2339: Property 'style' does not exist on type 'EventTarget'.       
+
+669                 e.target.style.boxShadow = "none";
+                             ~~~~~
+
+src/pages/users/UsersListPage.tsx:697:9 - error TS2322: Type '() => HeadersInit' is not assignable to type '() => { [key: string]: string; }'.
+  Type 'HeadersInit' is not assignable to type '{ [key: string]: string; }'.
+    Type '[string, string][]' is not assignable to type '{ [key: string]: string; }'.
+      Index signature for type 'string' is missing in type '[string, string][]'.
+
+697         getAuthHeaders={getAuthHeaders}
+            ~~~~~~~~~~~~~~
+
+  src/components/common/ServerGrid/ServerGrid.tsx:333:3
+    333   getAuthHeaders?: () => { [key: string]: string }
+          ~~~~~~~~~~~~~~
+    The expected type comes from property 'getAuthHeaders' which is declared here on type 'IntrinsicAttributes & ServerGridProps'
+
+src/utils/auth.ts:8:49 - error TS2339: Property '__REDUX_STORE__' does not exist on type 'Window & typeof globalThis'.
+
+8     if (typeof window !== 'undefined' && window.__REDUX_STORE__) {
+                                                  ~~~~~~~~~~~~~~~
+
+src/utils/auth.ts:9:28 - error TS2339: Property '__REDUX_STORE__' does not exist on type 'Window & typeof globalThis'.
+
+9       const state = window.__REDUX_STORE__.getState();
+                             ~~~~~~~~~~~~~~~
+
+vite.config.ts:6:9 - error TS6133: 'env' is declared but its value is never read.
+
+6   const env = loadEnv(mode, process.cwd())
+          ~~~
+
+vite.config.ts:40:35 - error TS6133: 'proxyReq' is declared but its value is never read.
+
+40             proxy.on('proxyReq', (proxyReq, req, _res) => {
+                                     ~~~~~~~~
+

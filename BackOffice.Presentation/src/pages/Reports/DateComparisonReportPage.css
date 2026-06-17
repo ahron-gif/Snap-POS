@@ -1,0 +1,21 @@
+/* Total / grand-total row — cells use inline 12px in GridBody, so td rules need specificity */
+tr.dc-report-total-row {
+  height: auto !important;
+  min-height: 32px;
+}
+
+tr.dc-report-total-row td {
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+  background-color: #f1f5f9 !important;
+  border-top: 2px solid #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+.dark tr.dc-report-total-row td {
+  background-color: #1e293b !important;
+  border-top-color: #475569 !important;
+  color: #f8fafc !important;
+}

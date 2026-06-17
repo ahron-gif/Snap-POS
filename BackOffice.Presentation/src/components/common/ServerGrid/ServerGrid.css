@@ -1,0 +1,738 @@
+/* ServerGrid.css */
+
+/* ─── Custom checkbox styling to match reference design ─── */
+.grid-wrapper input[type="checkbox"],
+.grid-table input[type="checkbox"],
+.main-grid-app input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  border-radius: 4px;
+  border: 1.5px solid #cbd5e1;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  background: #ffffff;
+  transition: border-color 0.1s, background 0.1s;
+  flex-shrink: 0;
+  margin: 0;
+  vertical-align: middle;
+}
+
+.grid-wrapper input[type="checkbox"]:hover,
+.grid-table input[type="checkbox"]:hover,
+.main-grid-app input[type="checkbox"]:hover {
+  border-color: #93c5fd;
+}
+
+.grid-wrapper input[type="checkbox"]:checked,
+.grid-table input[type="checkbox"]:checked,
+.main-grid-app input[type="checkbox"]:checked {
+  background: #1e40af;
+  border-color: #1e40af;
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.main-grid-app {
+  width: 100%;
+  height: 100%; /* Fill parent height instead of fixed 100vh */
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  min-height: 0; /* Allow flex shrinking */
+  overflow: hidden;
+}
+
+.main-grid-app .grid-wrapper {
+  flex: 1; /* Take remaining space */
+  min-height: 0; /* Allow flex shrinking */
+  /* Removed fixed height to allow dynamic sizing */
+}
+
+.main-grid-app h1 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+/* Global styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #f5f5f5;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Grid container styles for scrolling */
+.grid-container {
+  width: 100%;
+  min-width: fit-content;
+  /* Ensure the container can expand horizontally */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Grid table styles */
+.grid-table {
+  width: 100%;
+  min-width: max-content;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 0;
+  overflow: visible;
+  /* Remove extra spacing */
+  margin: 0;
+  padding: 0;
+  /* Ensure proper sizing */
+  table-layout: auto;
+}
+
+/* Grid wrapper - main scrollable container */
+.grid-wrapper {
+  /* Enable both horizontal and vertical scrolling */
+  overflow: auto;
+  /* Use flex to fill available space */
+  flex: 1;
+  max-width: 100%;
+  min-height: 0;
+  /* Styling */
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  box-shadow: none;
+  /* Smooth scrolling */
+  scroll-behavior: smooth;
+  /* Custom scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(155, 155, 155, 0.5) transparent;
+  /* Remove unnecessary padding/margins */
+  margin: 0;
+  padding: 0;
+  /* Ensure flex display */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Webkit scrollbar styles */
+.grid-wrapper::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.grid-wrapper::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 4px;
+}
+
+.grid-wrapper::-webkit-scrollbar-thumb {
+  background-color: rgba(155, 155, 155, 0.5);
+  border-radius: 4px;
+  border: 1px solid transparent;
+}
+
+.grid-wrapper::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(155, 155, 155, 0.7);
+}
+
+.grid-wrapper::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Grid header styles */
+.grid-header {
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 10;
+}
+
+/* Grid body styles */
+.grid-body {
+  overflow: visible;
+}
+
+/* Table header cells */
+.grid-header th {
+  background: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 0 10px;
+  height: 34px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 11px;
+  color: #94a3b8;
+  white-space: nowrap;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+/* Table data cells */
+.grid-body td {
+  padding: 0 10px;
+  height: 36px;
+  border-bottom: 1px solid #e2e8f0;
+  font-size: 12.5px;
+  color: #0f172a;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px; /* Prevent cells from becoming too wide */
+  vertical-align: middle;
+}
+
+/* Row hover effects */
+.grid-body tr:hover {
+  background-color: #f8fafc;
+  transition: background 0.07s;
+}
+
+.grid-body tr:last-child td {
+  border-bottom: none;
+}
+
+/* Pagination container */
+.grid-pagination {
+  padding: 7px 14px;
+  border-top: 1px solid #e2e8f0;
+  background: #f8fafc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  border-radius: 0 0 10px 10px;
+  flex-shrink: 0;
+  margin-top: auto;
+  font-size: 11.5px;
+}
+
+/* Stats container */
+.grid-stats {
+  margin-bottom: 16px;
+  padding: 16px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* Loading states */
+.loading-container,
+.error-container,
+.empty-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  max-height: 400px;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #1976d2;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 16px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .main-grid-app {
+    max-width: 100%;
+  }
+
+  .grid-wrapper {
+    flex: 1;
+    min-height: 0;
+    border-radius: 8px;
+  }
+
+  .grid-stats {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .grid-pagination {
+    flex-direction: column;
+    text-align: center;
+    padding: 16px;
+  }
+
+  .grid-header th,
+  .grid-body td {
+    padding: 8px 6px;
+    font-size: 12px;
+  }
+
+  .loading-container,
+  .error-container,
+  .empty-container {
+    min-height: 150px;
+    padding: 20px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-wrapper {
+    flex: 1;
+    min-height: 0;
+  }
+
+  .main-grid-app h1 {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+  }
+
+  .grid-header th,
+  .grid-body td {
+    padding: 6px 4px;
+    font-size: 11px;
+  }
+
+  .loading-container,
+  .error-container,
+  .empty-container {
+    min-height: 120px;
+    padding: 16px 12px;
+  }
+
+  .action-button {
+    min-width: 28px;
+    min-height: 28px;
+    padding: 6px;
+  }
+}
+
+/* ─── Dark mode support (class-based: .dark on <html>) ─── */
+
+.dark .main-grid-app h1 {
+  color: #e5e7eb;
+}
+
+.dark .grid-table {
+  background: #111827 !important;
+}
+
+.dark .grid-wrapper {
+  background-color: #111827 !important;
+  border-color: #374151 !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  scrollbar-color: rgba(155, 155, 155, 0.3) transparent;
+}
+
+.dark .grid-wrapper::-webkit-scrollbar-thumb {
+  background-color: rgba(155, 155, 155, 0.3);
+}
+
+.dark .grid-wrapper::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(155, 155, 155, 0.5);
+}
+
+.dark .grid-header {
+  background: #1f2937;
+  border-bottom-color: #374151;
+}
+
+.dark .grid-header th {
+  background: linear-gradient(135deg, #1f2937 0%, #1e293b 100%);
+  border-bottom-color: #374151;
+  color: #d1d5db;
+}
+
+.dark .grid-body td {
+  color: #e5e7eb;
+  border-bottom-color: #1f2937;
+}
+
+.dark .grid-body tr:hover {
+  background-color: #1f2937;
+}
+
+.dark .grid-body tr:nth-child(even) {
+  background-color: #0f172a;
+}
+
+.dark .grid-body tr:nth-child(even):hover {
+  background-color: #1f2937;
+}
+
+.dark .grid-pagination {
+  border-top-color: #374151;
+  background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+  color: #d1d5db;
+}
+
+.dark .grid-stats {
+  background-color: #1f2937;
+  border-color: #374151;
+  color: #d1d5db;
+}
+
+.dark .loading-container,
+.dark .error-container,
+.dark .empty-container {
+  color: #d1d5db;
+}
+
+.dark .loading-spinner {
+  border-color: #374151;
+  border-top-color: #1e40af;
+}
+
+.dark .skeleton-pulse {
+  background: linear-gradient(90deg, #1f2937 0%, #374151 20%, #1f2937 40%, #1f2937 100%);
+  background-size: 200% 100%;
+}
+
+.dark .skeleton-pulse-dark {
+  background: linear-gradient(90deg, #1f2937 0%, #374151 20%, #1f2937 40%, #1f2937 100%);
+  background-size: 200% 100%;
+}
+
+.dark .skeleton-wave {
+  background-color: #1f2937;
+}
+
+.dark .skeleton-wave::after {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+}
+
+.dark .skeleton-checkbox {
+  background: linear-gradient(90deg, #374151 0%, #4b5563 50%, #374151 100%);
+  background-size: 200% 100%;
+}
+
+/* Override inline styles on grid-wrapper (skeleton/loading states use inline backgroundColor) */
+.dark .grid-wrapper {
+  background-color: #111827 !important;
+  border-color: #374151 !important;
+}
+
+/* ─── Modal dark mode ─── */
+.dark .modal-content {
+  background-color: #1f2937 !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* ─── Input field dark mode ─── */
+.dark .input-field {
+  background-color: #111827 !important;
+  border-color: #4b5563 !important;
+  color: #e5e7eb !important;
+}
+
+.dark .input-field:focus {
+  border-color: #1e40af !important;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2) !important;
+}
+
+.dark .input-field:disabled {
+  background-color: #1f2937 !important;
+}
+
+/* ─── Skeleton loading dark mode (override inline backgrounds) ─── */
+.dark .skeleton-row {
+  background-color: #111827 !important;
+}
+
+.dark .skeleton-row:nth-child(even) {
+  background-color: #0f172a !important;
+}
+
+.dark .skeleton-row td {
+  border-bottom-color: #1f2937 !important;
+  border-right-color: #1f2937 !important;
+  background-color: inherit !important;
+}
+
+/* Skeleton header cells (override inline linear-gradient) */
+.dark .grid-wrapper thead th {
+  background: linear-gradient(135deg, #1f2937 0%, #1e293b 100%) !important;
+  border-bottom-color: #374151 !important;
+  border-right-color: #374151 !important;
+  color: #d1d5db !important;
+}
+
+/* Skeleton table container (override inline background: "white") */
+.dark .grid-wrapper > div {
+  background: #111827 !important;
+}
+
+/* Skeleton pagination footer */
+.dark .grid-wrapper > div:last-child {
+  border-top-color: #374151 !important;
+  background: linear-gradient(135deg, #1f2937 0%, #111827 100%) !important;
+}
+
+/* ─── Export dropdown menu dark mode ─── */
+.dark .export-dropdown-menu {
+  background-color: #1f2937 !important;
+  border-color: #374151 !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2) !important;
+}
+
+.dark .export-dropdown-menu button {
+  color: #e5e7eb !important;
+}
+
+.dark .export-dropdown-menu .export-section-divider {
+  border-bottom-color: #374151 !important;
+}
+
+.dark .export-dropdown-menu .export-section-label {
+  color: #6b7280 !important;
+}
+
+/* ─── Context menu dark mode ─── */
+.dark .context-menu-container {
+  background-color: #1f2937 !important;
+  border-color: #374151 !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3) !important;
+}
+
+.dark .context-menu-container button {
+  color: #e5e7eb !important;
+}
+
+.dark .context-menu-submenu {
+  background-color: #1f2937 !important;
+  border-color: #374151 !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3) !important;
+}
+
+.dark .context-menu-submenu button {
+  color: #e5e7eb !important;
+}
+
+/* ─── Sticky checkbox column dark mode ─── */
+.dark .grid-body td[style*="sticky"] {
+  background-color: #111827 !important;
+}
+
+/* ─── Checkbox dark mode (native browser checkboxes) ─── */
+.dark .grid-wrapper input[type="checkbox"],
+.dark .grid-table input[type="checkbox"],
+.dark .main-grid-app input[type="checkbox"] {
+  color-scheme: dark;
+}
+
+/* Print styles */
+@media print {
+  .grid-wrapper {
+    overflow: visible !important;
+    max-height: none !important;
+    box-shadow: none;
+    border: 1px solid #000;
+  }
+
+  .grid-stats,
+  .grid-pagination {
+    display: none;
+  }
+}
+
+/* Skeleton Loading Styles */
+.skeleton-pulse {
+  background: linear-gradient(
+    90deg,
+    #f0f0f0 0%,
+    #e0e0e0 20%,
+    #f0f0f0 40%,
+    #f0f0f0 100%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.5s ease-in-out infinite;
+  border-radius: 4px;
+}
+
+.skeleton-pulse-dark {
+  background: linear-gradient(
+    90deg,
+    #e5e7eb 0%,
+    #d1d5db 20%,
+    #e5e7eb 40%,
+    #e5e7eb 100%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.5s ease-in-out infinite;
+  border-radius: 4px;
+}
+
+@keyframes skeleton-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes skeleton-fade {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Skeleton wave animation */
+.skeleton-wave {
+  position: relative;
+  overflow: hidden;
+  background-color: #f3f4f6;
+}
+
+.skeleton-wave::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  animation: skeleton-wave-move 1.5s ease-in-out infinite;
+}
+
+@keyframes skeleton-wave-move {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Grid Loading Spinner */
+.grid-loading-spinner-wrapper {
+  width: 50px;
+  height: 50px;
+  position: relative;
+}
+
+.grid-loading-spinner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.spinner-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  animation: spinner-rotate 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+
+.spinner-ring:nth-child(1) {
+  border-top-color: #1e40af;
+  animation-delay: -0.45s;
+}
+
+.spinner-ring:nth-child(2) {
+  border-right-color: #60a5fa;
+  animation-delay: -0.3s;
+}
+
+.spinner-ring:nth-child(3) {
+  border-bottom-color: #93c5fd;
+  animation-delay: -0.15s;
+}
+
+@keyframes spinner-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Skeleton row animation */
+.skeleton-row {
+  animation: skeleton-row-fade 0.3s ease-out;
+}
+
+@keyframes skeleton-row-fade {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Skeleton checkbox */
+.skeleton-checkbox {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  background: linear-gradient(
+    90deg,
+    #e5e7eb 0%,
+    #d1d5db 50%,
+    #e5e7eb 100%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.5s ease-in-out infinite;
+}
+
+/* Skeleton cell variations */
+.skeleton-cell-short {
+  width: 40%;
+}
+
+.skeleton-cell-medium {
+  width: 60%;
+}
+
+.skeleton-cell-long {
+  width: 80%;
+}
+
+.skeleton-cell-full {
+  width: 95%;
+}

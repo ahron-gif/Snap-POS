@@ -1,0 +1,175 @@
+
+src/components/common/ServerGrid/components/Grid.tsx:6:3 - error TS6133: 'FilterOperator' is declared but its value is never read.
+
+6   FilterOperator,
+    ~~~~~~~~~~~~~~
+
+src/components/common/ServerGrid/components/Grid.tsx:24:29 - error TS6133: 'field' is declared but its value is never read.
+
+24 const getResponsiveWidth = (field: string, headerName: string) => {
+                               ~~~~~
+
+src/components/common/ServerGrid/components/Grid.tsx:335:21 - error TS2345: Argument of type '(prev: FilterConfig) => { [x: string]: { conditions: FilterCondition[]; logic: FilterLogic; } | { conditions: any[]; logic: any; } | undefined; }' is not assignable to parameter of type 'SetStateAction<FilterConfig>'.
+  Type '(prev: FilterConfig) => { [x: string]: { conditions: FilterCondition[]; logic: FilterLogic; } | { conditions: any[]; logic: any; } | undefined; }' is not assignable to type '(prevState: FilterConfig) => FilterConfig'.
+    Type '{ [x: string]: { conditions: FilterCondition[]; logic: FilterLogic; } | { conditions: any[]; logic: any; } | undefined; }' is not assignable to type 'FilterConfig'.
+      'string' index signatures are incompatible.
+        Type '{ conditions: FilterCondition[]; logic: FilterLogic; } | { conditions: any[]; logic: any; } | undefined' is not assignable to type '{ conditions: FilterCondition[]; logic: FilterLogic; }'.
+          Type 'undefined' is not assignable to type '{ conditions: FilterCondition[]; logic: FilterLogic; }'.        
+
+335     setFilterConfig((prev) => ({
+                        ~~~~~~~~~~~~
+336       ...prev,
+    ~~~~~~~~~~~~~~
+337       [field]: conditions.length > 0 ? { conditions, logic } : undefined,
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+338     }))
+    ~~~~~~
+
+src/components/common/ServerGrid/components/Grid.tsx:720:15 - error TS2322: Type 'Dispatch<SetStateAction<{ visible: boolean; width: number; field: string; headerName: string; sortable?: boolean | undefined; filterable?: boolean | undefined; editable?: boolean | undefined; cellRenderer?: ((value: any) => ReactNode) | undefined; dataType?: "string" | ... 5 more ... | undefined; }[]>>' is not assignable to type '(columns: Column[] | ((prev: Column[]) => Column[])) => void'.
+  Types of parameters 'value' and 'columns' are incompatible.
+    Type 'Column[] | ((prev: Column[]) => Column[])' is not assignable to type 'SetStateAction<{ visible: boolean; width: number; field: string; headerName: string; sortable?: boolean | undefined; filterable?: boolean | undefined; editable?: boolean | undefined; cellRenderer?: ((value: any) => ReactNode) | undefined; dataType?: "string" | ... 5 more ... | undefined; }[]>'.
+      Type 'Column[]' is not assignable to type 'SetStateAction<{ visible: boolean; width: number; field: string; headerName: string; sortable?: boolean | undefined; filterable?: boolean | undefined; editable?: boolean | undefined; cellRenderer?: ((value: any) => ReactNode) | undefined; dataType?: "string" | ... 5 more ... | undefined; }[]>'.
+        Type 'Column[]' is not assignable to type '{ visible: boolean; width: number; field: string; headerName: string; sortable?: boolean | undefined; filterable?: boolean | undefined; editable?: boolean | undefined; cellRenderer?: ((value: any) => ReactNode) | undefined; dataType?: "string" | ... 5 more ... | undefined; }[]'.
+          Type 'Column' is not assignable to type '{ visible: boolean; width: number; field: string; headerName: string; sortable?: boolean; filterable?: boolean; editable?: boolean; cellRenderer?: (value: any) => string | React.ReactNode; dataType?: "string" | "number" | "date" | "time" | "datetime" | "boolean"; }'.
+            Types of property 'visible' are incompatible.
+              Type 'boolean | undefined' is not assignable to type 'boolean'.
+                Type 'undefined' is not assignable to type 'boolean'.
+
+720               setColumns={setColumns}
+                  ~~~~~~~~~~
+
+  src/components/common/ServerGrid/components/GridHeader.tsx:44:3
+    44   setColumns?: (columns: Column[] | ((prev: Column[]) => Column[])) => void
+         ~~~~~~~~~~
+    The expected type comes from property 'setColumns' which is declared here on type 'IntrinsicAttributes & GridHeaderProps'
+
+src/components/common/ServerGrid/components/GridBody.tsx:89:9 - error TS2367: This comparison appears to be unintentional because the types '"string" | "number" | "boolean" | "date" | "time" | "datetime" | undefined' and '"actions"' have no overlap.
+
+89     if (column?.dataType === "actions") return
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/common/ServerGrid/components/GridBody.tsx:140:9 - error TS2367: This comparison appears to be unintentional because the types '"string" | "number" | "boolean" | "date" | "time" | "datetime" | undefined' and '"actions"' have no overlap.
+
+140     if (column.dataType === "actions" && ActionButtons) {
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/common/ServerGrid/components/GridBody.tsx:187:18 - error TS2367: This comparison appears to be unintentional because the types '"string" | "number" | "date" | "time" | "datetime" | undefined' and '"email"' have no overlap.
+
+187       } else if (column.dataType === "email" && value) {
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/common/ServerGrid/components/GridBody.tsx:200:18 - error TS2367: This comparison appears to be unintentional because the types '"string" | "number" | "date" | "time" | "datetime" | undefined' and '"url"' have no overlap. 
+
+200       } else if (column.dataType === "url" && value) {
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/common/ServerGrid/components/GridBody.tsx:230:52 - error TS2367: This comparison appears to be unintentional because the types '"string" | "number" | "boolean" | "date" | "time" | "datetime" | undefined' and '"actions"' have no overlap.
+
+230           editable && column.editable !== false && column.dataType !== "actions"
+                                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/common/ServerGrid/components/GridBody.tsx:330:25 - error TS2367: This comparison appears to be unintentional because the types '"string" | "date" | "time" | "datetime" | undefined' and '"actions"' have no overlap.        
+
+330                       : column.dataType === "actions"
+                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/common/ServerGrid/components/GridHeader.tsx:2:44 - error TS6133: 'FilterOperator' is declared but its value is never read.
+
+2 import { Column, SortConfig, FilterConfig, FilterOperator } from "../types/grid"
+                                             ~~~~~~~~~~~~~~
+
+src/components/common/ServerGrid/components/GridHeader.tsx:26:7 - error TS6133: 'getSortIcon' is declared but its value is never read.
+
+26 const getSortIcon = (field: string, sortConfig: SortConfig | null) => {
+         ~~~~~~~~~~~
+
+src/components/common/ServerGrid/components/GridHeader.tsx:79:10 - error TS6133: 'isResizing' is declared but its value is never read.
+
+79   const [isResizing, setIsResizing] = useState(false)
+            ~~~~~~~~~~
+
+src/components/common/ServerGrid/components/GridHeader.tsx:194:23 - error TS2339: Property 'closest' does not exist on type 'EventTarget'.
+
+194         if (!e.target.closest(".filter-controls") && column.sortable) {
+                          ~~~~~~~
+
+src/components/common/ServerGrid/components/GridHeader.tsx:269:3 - error TS6133: 'onColumnChooserOpen' is declared but its value is never read.
+
+269   onColumnChooserOpen,
+      ~~~~~~~~~~~~~~~~~~~
+
+src/components/common/ServerGrid/components/GridHeader.tsx:273:3 - error TS6133: 'showColumnChooser' is declared but its value is never read.
+
+273   showColumnChooser = false,
+      ~~~~~~~~~~~~~~~~~
+
+src/components/common/ServerGrid/components/GridHeader.tsx:297:10 - error TS6133: 'openFilterDropdown' is declared but its value is never read.
+
+297   const [openFilterDropdown, setOpenFilterDropdown] = useState<string | null>(null)
+             ~~~~~~~~~~~~~~~~~~
+
+src/components/common/ServerGrid/components/GridHeader.tsx:400:9 - error TS6133: 'handleThreeDotsClick' is declared but its value is never read.
+
+400   const handleThreeDotsClick = (e: React.MouseEvent, field: string) => {
+            ~~~~~~~~~~~~~~~~~~~~
+
+src/components/common/ServerGrid/components/GridHeader.tsx:668:25 - error TS6133: 'e' is declared but its value is never read.
+
+668               onClick={(e) => {
+                            ~
+
+src/components/common/ServerGrid/components/GridHeader.tsx:1034:11 - error TS2322: Type '{ x: number; y: number; } | null' is not assignable to type '{ x: number; y: number; }'.
+  Type 'null' is not assignable to type '{ x: number; y: number; }'.
+
+1034           position={filterDropdownPosition}
+               ~~~~~~~~
+
+  src/components/common/ServerGrid/components/FilterDropdown.tsx:20:3
+    20   position: { x: number; y: number }
+         ~~~~~~~~
+    The expected type comes from property 'position' which is declared here on type 'IntrinsicAttributes & FilterDropdownProps'
+
+src/components/common/ServerGrid/components/GridPagination.tsx:21:3 - error TS6133: 'containerWidth' is declared but its value is never read.
+
+21   containerWidth = "74%"
+     ~~~~~~~~~~~~~~
+
+src/components/common/ServerGrid/ServerGrid.tsx:361:3 - error TS6133: 'emptyMessage' is declared but its value is never read.
+
+361   emptyMessage = "No data available",
+      ~~~~~~~~~~~~
+
+src/components/common/ServerGrid/ServerGrid.tsx:362:3 - error TS6133: 'emptyIcon' is declared but its value is never read.
+
+362   emptyIcon = "📋",
+      ~~~~~~~~~
+
+src/components/common/ServerGrid/ServerGrid.tsx:363:3 - error TS6133: 'showStats' is declared but its value is never read.
+
+363   showStats = true,
+      ~~~~~~~~~
+
+src/components/common/ServerGrid/ServerGrid.tsx:364:3 - error TS6133: 'actions' is declared but its value is never read.
+
+364   actions,
+      ~~~~~~~
+
+src/components/common/ServerGrid/ServerGrid.tsx:370:3 - error TS6133: 'ViewComponent' is declared but its value is never read.
+
+370   ViewComponent,
+      ~~~~~~~~~~~~~
+
+src/components/common/ServerGrid/ServerGrid.tsx:378:3 - error TS6133: 'orFilters' is declared but its value is never read.
+
+378   orFilters = [],
+      ~~~~~~~~~
+
+src/components/common/ServerGrid/ServerGrid.tsx:803:22 - error TS7006: Parameter 'prev' implicitly has an 'any' type. 
+
+803     setEditFormData((prev) => ({
+                         ~~~~
+
+src/components/common/ServerGrid/ServerGrid.tsx:838:7 - error TS2322: Type '"actions"' is not assignable to type '"string" | "number" | "boolean" | "date" | "time" | "datetime" | undefined'.
+
+838       dataType: "actions",
+          ~~~~~~~~

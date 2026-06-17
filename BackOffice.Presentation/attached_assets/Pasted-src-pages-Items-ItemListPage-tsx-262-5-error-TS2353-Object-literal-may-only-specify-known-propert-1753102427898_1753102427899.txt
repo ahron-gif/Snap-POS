@@ -1,0 +1,222 @@
+src/pages/Items/ItemListPage.tsx:262:5 - error TS2353: Object literal may only specify known properties, and 'headerRenderer' does not exist in type 'GridColDef'.
+
+262     headerRenderer: () => renderHeaderWithIcons("Name"),
+        ~~~~~~~~~~~~~~
+
+src/pages/Items/ItemListPage.tsx:271:5 - error TS2353: Object literal may only specify known properties, and 'headerRenderer' does not exist in type 'GridColDef'.
+
+271     headerRenderer: () => renderHeaderWithIcons("Barcode Number"),
+        ~~~~~~~~~~~~~~
+
+src/pages/Items/ItemListPage.tsx:282:5 - error TS2353: Object literal may only specify known properties, and 'headerRenderer' does not exist in type 'GridColDef'.
+
+282     headerRenderer: () => renderHeaderWithIcons("Price"),
+        ~~~~~~~~~~~~~~
+
+src/pages/Items/ItemListPage.tsx:293:5 - error TS2353: Object literal may only specify known properties, and 'headerRenderer' does not exist in type 'GridColDef'.
+
+293     headerRenderer: () => renderHeaderWithIcons("Cost"),
+        ~~~~~~~~~~~~~~
+
+src/pages/Items/ItemListPage.tsx:302:5 - error TS2353: Object literal may only specify known properties, and 'headerRenderer' does not exist in type 'GridColDef'.
+
+302     headerRenderer: () => renderHeaderWithIcons("On Hand"),
+        ~~~~~~~~~~~~~~
+
+src/pages/Items/ItemListPage.tsx:311:5 - error TS2353: Object literal may only specify known properties, and 'headerRenderer' does not exist in type 'GridColDef'.
+
+311     headerRenderer: () => renderHeaderWithIcons("Item Type"),
+        ~~~~~~~~~~~~~~
+
+src/pages/Items/ItemListPage.tsx:320:5 - error TS2353: Object literal may only specify known properties, and 'headerRenderer' does not exist in type 'GridColDef'.
+
+320     headerRenderer: () => renderHeaderWithIcons("Supplier"),
+        ~~~~~~~~~~~~~~
+
+src/pages/Items/ItemListPage.tsx:329:5 - error TS2353: Object literal may only specify known properties, and 'headerRenderer' does not exist in type 'GridColDef'.
+
+329     headerRenderer: () => renderHeaderWithIcons("Brand"),
+        ~~~~~~~~~~~~~~
+
+src/pages/Items/ItemListPage.tsx:338:5 - error TS2353: Object literal may only specify known properties, and 'headerRenderer' does not exist in type 'GridColDef'.
+
+338     headerRenderer: () => renderHeaderWithIcons("Department"),
+        ~~~~~~~~~~~~~~
+
+src/pages/Items/ItemListPage.tsx:347:5 - error TS2353: Object literal may only specify known properties, and 'headerRenderer' does not exist in type 'GridColDef'.
+
+347     headerRenderer: () => renderHeaderWithIcons("Size"),
+        ~~~~~~~~~~~~~~
+
+src/pages/Items/ItemListPage.tsx:356:5 - error TS2353: Object literal may only specify known properties, and 'headerRenderer' does not exist in type 'GridColDef'.
+
+356     headerRenderer: () => renderHeaderWithIcons("Case Qty"),
+        ~~~~~~~~~~~~~~
+
+src/pages/Items/ItemListPage.tsx:367:5 - error TS2353: Object literal may only specify known properties, and 'headerRenderer' does not exist in type 'GridColDef'.
+
+367     headerRenderer: () => renderHeaderWithIcons("Markup"),
+        ~~~~~~~~~~~~~~
+
+src/pages/Items/ItemListPage.tsx:378:5 - error TS2353: Object literal may only specify known properties, and 'headerRenderer' does not exist in type 'GridColDef'.
+
+378     headerRenderer: () => renderHeaderWithIcons("Margin"),
+        ~~~~~~~~~~~~~~
+
+src/pages/Items/ItemListPage.tsx:388:5 - error TS2353: Object literal may only specify known properties, and 'headerRenderer' does not exist in type 'GridColDef'.
+
+388     headerRenderer: () => renderHeaderWithIcons("Date Created"),
+        ~~~~~~~~~~~~~~
+
+src/pages/Items/ItemListPage.tsx:399:10 - error TS6133: 'orFilters' is declared but its value is never read.
+
+399   const [orFilters] = useState<Array<{
+             ~~~~~~~~~
+
+src/pages/Items/ItemListPage.tsx:405:10 - error TS6133: 'gridKey' is declared but its value is never read.
+
+405   const [gridKey, setGridKey] = useState(0);
+             ~~~~~~~
+
+src/pages/Items/ItemListPage.tsx:405:19 - error TS6133: 'setGridKey' is declared but its value is never read.
+
+405   const [gridKey, setGridKey] = useState(0);
+                      ~~~~~~~~~~
+
+src/pages/Items/ItemListPage.tsx:752:26 - error TS2339: Property 'style' does not exist on type 'EventTarget'.        
+
+752                 e.target.style.backgroundColor = "#1565c0";
+                             ~~~~~
+
+src/pages/Items/ItemListPage.tsx:753:26 - error TS2339: Property 'style' does not exist on type 'EventTarget'.        
+
+753                 e.target.style.transform = "translateY(-1px)";
+                             ~~~~~
+
+src/pages/Items/ItemListPage.tsx:754:26 - error TS2339: Property 'style' does not exist on type 'EventTarget'.        
+
+754                 e.target.style.boxShadow = "0 4px 12px rgba(25, 118, 210, 0.3)";
+                             ~~~~~
+
+src/pages/Items/ItemListPage.tsx:757:26 - error TS2339: Property 'style' does not exist on type 'EventTarget'.        
+
+757                 e.target.style.backgroundColor = "#1976d2";
+                             ~~~~~
+
+src/pages/Items/ItemListPage.tsx:758:26 - error TS2339: Property 'style' does not exist on type 'EventTarget'.        
+
+758                 e.target.style.transform = "translateY(0px)";
+                             ~~~~~
+
+src/pages/Items/ItemListPage.tsx:759:26 - error TS2339: Property 'style' does not exist on type 'EventTarget'.        
+
+759                 e.target.style.boxShadow = "none";
+                             ~~~~~
+
+src/pages/Items/ItemListPage.tsx:787:9 - error TS2322: Type '() => HeadersInit' is not assignable to type '() => { [key: string]: string; }'.
+  Type 'HeadersInit' is not assignable to type '{ [key: string]: string; }'.
+    Type '[string, string][]' is not assignable to type '{ [key: string]: string; }'.
+      Index signature for type 'string' is missing in type '[string, string][]'.
+
+787         getAuthHeaders={getAuthHeaders}
+            ~~~~~~~~~~~~~~
+
+  src/components/common/ServerGrid/ServerGrid.tsx:333:3
+    333   getAuthHeaders?: () => { [key: string]: string }
+          ~~~~~~~~~~~~~~
+    The expected type comes from property 'getAuthHeaders' which is declared here on type 'IntrinsicAttributes & ServerGridProps'
+
+src/pages/UserProfiles.tsx:1:1 - error TS6133: 'React' is declared but its value is never read.
+
+1 import React from "react"
+  ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/pages/users/UsersListPage.tsx:6:3 - error TS6133: 'useGridData' is declared but its value is never read.
+
+6   useGridData,
+    ~~~~~~~~~~~
+
+src/pages/users/UsersListPage.tsx:176:5 - error TS2353: Object literal may only specify known properties, and 'headerRenderer' does not exist in type 'GridColDef'.
+
+176     headerRenderer: () => renderHeaderWithIcons("User ID"),
+        ~~~~~~~~~~~~~~
+
+src/pages/users/UsersListPage.tsx:185:5 - error TS2353: Object literal may only specify known properties, and 'headerRenderer' does not exist in type 'GridColDef'.
+
+185     headerRenderer: () => renderHeaderWithIcons("User Name"),
+        ~~~~~~~~~~~~~~
+
+src/pages/users/UsersListPage.tsx:194:5 - error TS2353: Object literal may only specify known properties, and 'headerRenderer' does not exist in type 'GridColDef'.
+
+194     headerRenderer: () => renderHeaderWithIcons("Email"),
+        ~~~~~~~~~~~~~~
+
+src/pages/users/UsersListPage.tsx:203:5 - error TS2353: Object literal may only specify known properties, and 'headerRenderer' does not exist in type 'GridColDef'.
+
+203     headerRenderer: () => renderHeaderWithIcons("Phone"),
+        ~~~~~~~~~~~~~~
+
+src/pages/users/UsersListPage.tsx:212:5 - error TS2353: Object literal may only specify known properties, and 'headerRenderer' does not exist in type 'GridColDef'.
+
+212     headerRenderer: () => renderHeaderWithIcons("Customer ID"),
+        ~~~~~~~~~~~~~~
+
+src/pages/users/UsersListPage.tsx:222:5 - error TS2353: Object literal may only specify known properties, and 'headerRenderer' does not exist in type 'GridColDef'.
+
+222     headerRenderer: () => renderHeaderWithIcons("Date Created"),
+        ~~~~~~~~~~~~~~
+
+src/pages/users/UsersListPage.tsx:232:5 - error TS2353: Object literal may only specify known properties, and 'headerRenderer' does not exist in type 'GridColDef'.
+
+232     headerRenderer: () => renderHeaderWithIcons("Date Modified"),
+        ~~~~~~~~~~~~~~
+
+src/pages/users/UsersListPage.tsx:242:5 - error TS2353: Object literal may only specify known properties, and 'headerRenderer' does not exist in type 'GridColDef'.
+
+242     headerRenderer: () => renderHeaderWithIcons("Last Login"),
+        ~~~~~~~~~~~~~~
+
+src/pages/users/UsersListPage.tsx:248:5 - error TS2322: Type '"actions"' is not assignable to type '"string" | "number" | "boolean" | "date" | "time" | "datetime" | undefined'.
+
+248     type: "actions",
+        ~~~~
+
+  src/gridUtils.ts:10:3
+    10   type?: "string" | "number" | "date" | "datetime" | "time" | "boolean"
+         ~~~~
+    The expected type comes from property 'type' which is declared here on type 'GridColDef'
+
+src/pages/users/UsersListPage.tsx:252:20 - error TS6133: 'value' is declared but its value is never read.
+
+252     cellRenderer: (value: any, row: any) => {
+                       ~~~~~
+
+src/pages/users/UsersListPage.tsx:258:24 - error TS2339: Property 'showUserToast' does not exist on type 'Window & typeof globalThis'.
+
+258             if (window.showUserToast) {
+                           ~~~~~~~~~~~~~
+
+src/pages/users/UsersListPage.tsx:260:22 - error TS2339: Property 'showUserToast' does not exist on type 'Window & typeof globalThis'.
+
+260               window.showUserToast(`Email sent to ${customerEmail} successfully!`, "success")
+                         ~~~~~~~~~~~~~
+
+src/pages/users/UsersListPage.tsx:310:10 - error TS6133: 'showAddUserModal' is declared but its value is never read.  
+
+310   const [showAddUserModal, setShowAddUserModal] = useState(false)
+             ~~~~~~~~~~~~~~~~
+
+src/pages/users/UsersListPage.tsx:310:28 - error TS6133: 'setShowAddUserModal' is declared but its value is never read.
+
+310   const [showAddUserModal, setShowAddUserModal] = useState(false)
+                               ~~~~~~~~~~~~~~~~~~~
+
+src/pages/users/UsersListPage.tsx:366:9 - error TS6133: 'handleRowDelete' is declared but its value is never read.    
+
+366   const handleRowDelete = async (userId: string) => {
+            ~~~~~~~~~~~~~~~
+
+src/pages/users/UsersListPage.tsx:470:9 - error TS6133: 'throwErrorInToast' is declared but its value is never read.  
+
+470   const throwErrorInToast = () => {
+            ~~~~~~~~~~~~~~~~~

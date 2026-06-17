@@ -1,0 +1,14 @@
+namespace BackOffice.Application.DTOs.SmartKartReg.Permission
+{
+    public class PermissionGridDto
+    {
+        public int Id { get; set; }
+        public string? PermissionKey { get; set; }
+        public string? PermissionName { get; set; }
+        public string? Description { get; set; }
+        public string? Category { get; set; }
+        public bool IsActive { get; set; }
+        public DateTime? DateCreated { get; set; }
+        public DateTime? DateModified { get; set; }
+    }
+}

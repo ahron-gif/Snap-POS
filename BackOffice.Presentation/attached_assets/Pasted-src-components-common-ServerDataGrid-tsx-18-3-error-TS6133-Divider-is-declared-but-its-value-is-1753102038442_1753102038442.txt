@@ -1,0 +1,69 @@
+src/components/common/ServerDataGrid.tsx:18:3 - error TS6133: 'Divider' is declared but its value is never read.      
+
+18   Divider,
+     ~~~~~~~
+
+src/components/common/ServerDataGrid.tsx:48:3 - error TS6133: 'getRowId' is declared but its value is never read.     
+
+48   getRowId = (row) => row.id,
+     ~~~~~~~~
+
+src/components/common/ServerDataGrid.tsx:135:22 - error TS7006: Parameter 'prev' implicitly has an 'any' type.        
+
+135     setEditFormData((prev) => ({
+                         ~~~~
+
+src/components/common/ServerDataGrid.tsx:243:32 - error TS2304: Cannot find name 'config'.
+
+243       console.error("Config:", config)
+                                   ~~~~~~
+
+src/components/common/ServerDataGrid.tsx:290:7 - error TS2322: Type '{ flex: number; minWidth: number; field: string; headerName?: string | undefined; description?: string | undefined; width?: number | undefined; maxWidth?: number | undefined; hideable?: boolean | undefined; ... 30 more ...; colSpan?: number | ... 1 more ... | undefined; } | { ...; } | { ...; } | { ...; }' is not assignable to type 'GridColDef'.
+  Object literal may only specify known properties, and 'pinned' does not exist in type 'GridBaseColDef<any, any, any> | GridActionsColDef<any, any, any>'.
+
+290       pinned: "right", // This makes the actions column sticky on the right
+          ~~~~~~
+
+src/components/common/ServerDataGrid.tsx:290:7 - error TS2353: Object literal may only specify known properties, and 'pinned' does not exist in type 'GridBaseColDef<any, any, any> | GridActionsColDef<any, any, any>'.
+
+290       pinned: "right", // This makes the actions column sticky on the right
+          ~~~~~~
+
+src/components/common/ServerDataGrid.tsx:596:16 - error TS2769: No overload matches this call.
+  Overload 3 of 3, '(props: DefaultComponentProps<ExtendButtonBaseTypeMap<ButtonTypeMap<{}, "button">>>): Element | null', gave the following error.
+    Type '"sm"' is not assignable to type 'OverridableStringUnion<"small" | "medium" | "large", ButtonPropsSizeOverrides> | undefined'.
+  Overload 3 of 3, '(props: DefaultComponentProps<ExtendButtonBaseTypeMap<ButtonTypeMap<{}, "button">>>): Element | null', gave the following error.
+    Type '"outline"' is not assignable to type 'OverridableStringUnion<"text" | "outlined" | "contained", ButtonPropsVariantOverrides> | undefined'. Did you mean '"outlined"'?
+
+596               <Button size="sm" variant="outline" onClick={closeModal}>
+                   ~~~~~~
+
+  node_modules/@mui/material/esm/Button/Button.d.ts:79:3
+    79   size?: OverridableStringUnion<'small' | 'medium' | 'large', ButtonPropsSizeOverrides>;
+         ~~~~
+    The expected type comes from property 'size' which is declared here on type 'IntrinsicAttributes & ButtonOwnProps & Omit<ButtonBaseOwnProps, "classes"> & CommonProps & Omit<...>'
+  node_modules/@mui/material/esm/Button/Button.d.ts:92:3
+    92   variant?: OverridableStringUnion<'text' | 'outlined' | 'contained', ButtonPropsVariantOverrides>;
+         ~~~~~~~
+    The expected type comes from property 'variant' which is declared here on type 'IntrinsicAttributes & ButtonOwnProps & Omit<ButtonBaseOwnProps, "classes"> & CommonProps & Omit<...>'
+
+src/components/common/ServerDataGrid.tsx:599:23 - error TS2769: No overload matches this call.
+  Overload 1 of 3, '(props: { href: string; } & ButtonOwnProps & Omit<ButtonBaseOwnProps, "classes"> & CommonProps & Omit<DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>, "children" | ... 27 more ... | "loadingPosition">): Element', gave the following error.
+    Type '"sm"' is not assignable to type 'OverridableStringUnion<"small" | "medium" | "large", ButtonPropsSizeOverrides> | undefined'.
+  Overload 2 of 3, '(props: { component: ElementType<any, keyof IntrinsicElements>; } & ButtonOwnProps & Omit<ButtonBaseOwnProps, "classes"> & CommonProps & Omit<...>): Element | null', gave the following error.
+    Type '"sm"' is not assignable to type 'OverridableStringUnion<"small" | "medium" | "large", ButtonPropsSizeOverrides> | undefined'.
+  Overload 3 of 3, '(props: DefaultComponentProps<ExtendButtonBaseTypeMap<ButtonTypeMap<{}, "button">>>): Element | null', gave the following error.
+    Type '"sm"' is not assignable to type 'OverridableStringUnion<"small" | "medium" | "large", ButtonPropsSizeOverrides> | undefined'.
+
+599               <Button size="sm" onClick={handleSave}>
+                          ~~~~
+
+  node_modules/@mui/material/esm/Button/Button.d.ts:79:3
+    79   size?: OverridableStringUnion<'small' | 'medium' | 'large', ButtonPropsSizeOverrides>;
+         ~~~~
+    The expected type comes from property 'size' which is declared here on type 'IntrinsicAttributes & { href: string; } & ButtonOwnProps & Omit<ButtonBaseOwnProps, "classes"> & CommonProps & Omit<...>'
+  node_modules/@mui/material/esm/Button/Button.d.ts:79:3
+    79   size?: OverridableStringUnion<'small' | 'medium' | 'large', ButtonPropsSizeOverrides>;
+         ~~~~
+    The expected type comes from property 'size' which is declared here on type 'IntrinsicAttributes & { component: ElementType<any, keyof IntrinsicElements>; } & ButtonOwnProps & Omit<...> & CommonProps & Omit<...>'
+  node_modules/@mui/material/esm/Button/Button.d.ts:79:3

@@ -1,0 +1,224 @@
+Download the React DevTools for a better development experience: https://reactjs.org/link/react-devtools
+2UserDropdown.tsx:69 Uncaught ReferenceError: user is not defined
+    at UserDropdown (UserDropdown.tsx:69:65)
+    at renderWithHooks (chunk-TH7NCS4R.js?v=06adb52e:11596:26)
+    at mountIndeterminateComponent (chunk-TH7NCS4R.js?v=06adb52e:14974:21)
+    at beginWork (chunk-TH7NCS4R.js?v=06adb52e:15962:22)
+    at HTMLUnknownElement.callCallback2 (chunk-TH7NCS4R.js?v=06adb52e:3680:22)
+    at Object.invokeGuardedCallbackDev (chunk-TH7NCS4R.js?v=06adb52e:3705:24)
+    at invokeGuardedCallback (chunk-TH7NCS4R.js?v=06adb52e:3739:39)
+    at beginWork$1 (chunk-TH7NCS4R.js?v=06adb52e:19818:15)
+    at performUnitOfWork (chunk-TH7NCS4R.js?v=06adb52e:19251:20)
+    at workLoopSync (chunk-TH7NCS4R.js?v=06adb52e:19190:13)
+UserDropdown @ UserDropdown.tsx:69
+renderWithHooks @ chunk-TH7NCS4R.js?v=06adb52e:11596
+mountIndeterminateComponent @ chunk-TH7NCS4R.js?v=06adb52e:14974
+beginWork @ chunk-TH7NCS4R.js?v=06adb52e:15962
+callCallback2 @ chunk-TH7NCS4R.js?v=06adb52e:3680
+invokeGuardedCallbackDev @ chunk-TH7NCS4R.js?v=06adb52e:3705
+invokeGuardedCallback @ chunk-TH7NCS4R.js?v=06adb52e:3739
+beginWork$1 @ chunk-TH7NCS4R.js?v=06adb52e:19818
+performUnitOfWork @ chunk-TH7NCS4R.js?v=06adb52e:19251
+workLoopSync @ chunk-TH7NCS4R.js?v=06adb52e:19190
+renderRootSync @ chunk-TH7NCS4R.js?v=06adb52e:19169
+performSyncWorkOnRoot @ chunk-TH7NCS4R.js?v=06adb52e:18927
+flushSyncCallbacks @ chunk-TH7NCS4R.js?v=06adb52e:9166
+flushPassiveEffectsImpl @ chunk-TH7NCS4R.js?v=06adb52e:19559
+flushPassiveEffects @ chunk-TH7NCS4R.js?v=06adb52e:19500
+(anonymous) @ chunk-TH7NCS4R.js?v=06adb52e:19381
+workLoop @ chunk-TH7NCS4R.js?v=06adb52e:197
+flushWork @ chunk-TH7NCS4R.js?v=06adb52e:176
+performWorkUntilDeadline @ chunk-TH7NCS4R.js?v=06adb52e:384Understand this error
+2UserDropdown.tsx:69 Uncaught ReferenceError: user is not defined
+    at UserDropdown (UserDropdown.tsx:69:65)
+    at renderWithHooks (chunk-TH7NCS4R.js?v=06adb52e:11596:26)
+    at mountIndeterminateComponent (chunk-TH7NCS4R.js?v=06adb52e:14974:21)
+    at beginWork (chunk-TH7NCS4R.js?v=06adb52e:15962:22)
+    at beginWork$1 (chunk-TH7NCS4R.js?v=06adb52e:19806:22)
+    at performUnitOfWork (chunk-TH7NCS4R.js?v=06adb52e:19251:20)
+    at workLoopSync (chunk-TH7NCS4R.js?v=06adb52e:19190:13)
+    at renderRootSync (chunk-TH7NCS4R.js?v=06adb52e:19169:15)
+    at performSyncWorkOnRoot (chunk-TH7NCS4R.js?v=06adb52e:18927:28)
+    at flushSyncCallbacks (chunk-TH7NCS4R.js?v=06adb52e:9166:30)
+UserDropdown @ UserDropdown.tsx:69
+renderWithHooks @ chunk-TH7NCS4R.js?v=06adb52e:11596
+mountIndeterminateComponent @ chunk-TH7NCS4R.js?v=06adb52e:14974
+beginWork @ chunk-TH7NCS4R.js?v=06adb52e:15962
+beginWork$1 @ chunk-TH7NCS4R.js?v=06adb52e:19806
+performUnitOfWork @ chunk-TH7NCS4R.js?v=06adb52e:19251
+workLoopSync @ chunk-TH7NCS4R.js?v=06adb52e:19190
+renderRootSync @ chunk-TH7NCS4R.js?v=06adb52e:19169
+performSyncWorkOnRoot @ chunk-TH7NCS4R.js?v=06adb52e:18927
+flushSyncCallbacks @ chunk-TH7NCS4R.js?v=06adb52e:9166
+flushPassiveEffectsImpl @ chunk-TH7NCS4R.js?v=06adb52e:19559
+flushPassiveEffects @ chunk-TH7NCS4R.js?v=06adb52e:19500
+(anonymous) @ chunk-TH7NCS4R.js?v=06adb52e:19381
+workLoop @ chunk-TH7NCS4R.js?v=06adb52e:197
+flushWork @ chunk-TH7NCS4R.js?v=06adb52e:176
+performWorkUntilDeadline @ chunk-TH7NCS4R.js?v=06adb52e:384Understand this error
+2UserDropdown.tsx:69 Uncaught ReferenceError: user is not defined
+    at UserDropdown (UserDropdown.tsx:69:65)
+    at renderWithHooks (chunk-TH7NCS4R.js?v=06adb52e:11596:26)
+    at mountIndeterminateComponent (chunk-TH7NCS4R.js?v=06adb52e:14974:21)
+    at beginWork (chunk-TH7NCS4R.js?v=06adb52e:15962:22)
+    at HTMLUnknownElement.callCallback2 (chunk-TH7NCS4R.js?v=06adb52e:3680:22)
+    at Object.invokeGuardedCallbackDev (chunk-TH7NCS4R.js?v=06adb52e:3705:24)
+    at invokeGuardedCallback (chunk-TH7NCS4R.js?v=06adb52e:3739:39)
+    at beginWork$1 (chunk-TH7NCS4R.js?v=06adb52e:19818:15)
+    at performUnitOfWork (chunk-TH7NCS4R.js?v=06adb52e:19251:20)
+    at workLoopConcurrent (chunk-TH7NCS4R.js?v=06adb52e:19242:13)
+UserDropdown @ UserDropdown.tsx:69
+renderWithHooks @ chunk-TH7NCS4R.js?v=06adb52e:11596
+mountIndeterminateComponent @ chunk-TH7NCS4R.js?v=06adb52e:14974
+beginWork @ chunk-TH7NCS4R.js?v=06adb52e:15962
+callCallback2 @ chunk-TH7NCS4R.js?v=06adb52e:3680
+invokeGuardedCallbackDev @ chunk-TH7NCS4R.js?v=06adb52e:3705
+invokeGuardedCallback @ chunk-TH7NCS4R.js?v=06adb52e:3739
+beginWork$1 @ chunk-TH7NCS4R.js?v=06adb52e:19818
+performUnitOfWork @ chunk-TH7NCS4R.js?v=06adb52e:19251
+workLoopConcurrent @ chunk-TH7NCS4R.js?v=06adb52e:19242
+renderRootConcurrent @ chunk-TH7NCS4R.js?v=06adb52e:19217
+performConcurrentWorkOnRoot @ chunk-TH7NCS4R.js?v=06adb52e:18728
+workLoop @ chunk-TH7NCS4R.js?v=06adb52e:197
+flushWork @ chunk-TH7NCS4R.js?v=06adb52e:176
+performWorkUntilDeadline @ chunk-TH7NCS4R.js?v=06adb52e:384Understand this error
+2UserDropdown.tsx:69 Uncaught ReferenceError: user is not defined
+    at UserDropdown (UserDropdown.tsx:69:65)
+    at renderWithHooks (chunk-TH7NCS4R.js?v=06adb52e:11596:26)
+    at mountIndeterminateComponent (chunk-TH7NCS4R.js?v=06adb52e:14974:21)
+    at beginWork (chunk-TH7NCS4R.js?v=06adb52e:15962:22)
+    at HTMLUnknownElement.callCallback2 (chunk-TH7NCS4R.js?v=06adb52e:3680:22)
+    at Object.invokeGuardedCallbackDev (chunk-TH7NCS4R.js?v=06adb52e:3705:24)
+    at invokeGuardedCallback (chunk-TH7NCS4R.js?v=06adb52e:3739:39)
+    at beginWork$1 (chunk-TH7NCS4R.js?v=06adb52e:19818:15)
+    at performUnitOfWork (chunk-TH7NCS4R.js?v=06adb52e:19251:20)
+    at workLoopSync (chunk-TH7NCS4R.js?v=06adb52e:19190:13)
+UserDropdown @ UserDropdown.tsx:69
+renderWithHooks @ chunk-TH7NCS4R.js?v=06adb52e:11596
+mountIndeterminateComponent @ chunk-TH7NCS4R.js?v=06adb52e:14974
+beginWork @ chunk-TH7NCS4R.js?v=06adb52e:15962
+callCallback2 @ chunk-TH7NCS4R.js?v=06adb52e:3680
+invokeGuardedCallbackDev @ chunk-TH7NCS4R.js?v=06adb52e:3705
+invokeGuardedCallback @ chunk-TH7NCS4R.js?v=06adb52e:3739
+beginWork$1 @ chunk-TH7NCS4R.js?v=06adb52e:19818
+performUnitOfWork @ chunk-TH7NCS4R.js?v=06adb52e:19251
+workLoopSync @ chunk-TH7NCS4R.js?v=06adb52e:19190
+renderRootSync @ chunk-TH7NCS4R.js?v=06adb52e:19169
+recoverFromConcurrentError @ chunk-TH7NCS4R.js?v=06adb52e:18786
+performConcurrentWorkOnRoot @ chunk-TH7NCS4R.js?v=06adb52e:18734
+workLoop @ chunk-TH7NCS4R.js?v=06adb52e:197
+flushWork @ chunk-TH7NCS4R.js?v=06adb52e:176
+performWorkUntilDeadline @ chunk-TH7NCS4R.js?v=06adb52e:384Understand this error
+chunk-TH7NCS4R.js?v=06adb52e:14080 The above error occurred in the <UserDropdown> component:
+
+    at UserDropdown (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/src/components/header/UserDropdown.tsx?t=1752970716563:27:31)
+    at div
+    at div
+    at div
+    at header
+    at AppHeader (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/src/layout/AppHeader.tsx?t=1752970716563:25:64)
+    at div
+    at div
+    at div
+    at LayoutContent (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/src/layout/AppLayout.tsx?t=1752970716563:25:51)
+    at SidebarProvider (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/src/context/SidebarContext.tsx:30:3)
+    at AppLayout
+    at ProtectedRoute (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/src/components/ProtectedRoute.tsx:20:27)
+    at RenderedRoute (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/node_modules/.vite/deps/react-router.js?v=06adb52e:5525:26)
+    at Routes (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/node_modules/.vite/deps/react-router.js?v=06adb52e:6258:3)
+    at Router (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/node_modules/.vite/deps/react-router.js?v=06adb52e:6201:13)
+    at BrowserRouter (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/node_modules/.vite/deps/react-router.js?v=06adb52e:9271:3)
+    at AppRoutes (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/src/App.tsx?t=1752970716563:48:31)
+    at TenantProvider (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/src/context/TenantContext.tsx:143:34)
+    at AuthProvider (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/src/context/AuthContext.tsx:32:32)
+    at Provider (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/node_modules/.vite/deps/react-redux.js?v=06adb52e:923:11)
+    at App
+    at _a (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/node_modules/.vite/deps/react-helmet-async.js?v=06adb52e:624:5)
+    at AppWrapper (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/src/components/common/PageMeta.tsx:38:30)
+    at ThemeProvider (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/src/context/ThemeContext.tsx:22:3)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+logCapturedError @ chunk-TH7NCS4R.js?v=06adb52e:14080
+update.callback @ chunk-TH7NCS4R.js?v=06adb52e:14100
+callCallback @ chunk-TH7NCS4R.js?v=06adb52e:11296
+commitUpdateQueue @ chunk-TH7NCS4R.js?v=06adb52e:11313
+commitLayoutEffectOnFiber @ chunk-TH7NCS4R.js?v=06adb52e:17141
+commitLayoutMountEffects_complete @ chunk-TH7NCS4R.js?v=06adb52e:18030
+commitLayoutEffects_begin @ chunk-TH7NCS4R.js?v=06adb52e:18019
+commitLayoutEffects @ chunk-TH7NCS4R.js?v=06adb52e:17970
+commitRootImpl @ chunk-TH7NCS4R.js?v=06adb52e:19406
+commitRoot @ chunk-TH7NCS4R.js?v=06adb52e:19330
+finishConcurrentRender @ chunk-TH7NCS4R.js?v=06adb52e:18813
+performConcurrentWorkOnRoot @ chunk-TH7NCS4R.js?v=06adb52e:18768
+workLoop @ chunk-TH7NCS4R.js?v=06adb52e:197
+flushWork @ chunk-TH7NCS4R.js?v=06adb52e:176
+performWorkUntilDeadline @ chunk-TH7NCS4R.js?v=06adb52e:384Understand this error
+chunk-TH7NCS4R.js?v=06adb52e:14080 The above error occurred in the <UserDropdown> component:
+
+    at UserDropdown (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/src/components/header/UserDropdown.tsx?t=1752970716563:27:31)
+    at div
+    at div
+    at header
+    at AppHeader (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/src/layout/AppHeader.tsx?t=1752970716563:25:64)
+    at div
+    at div
+    at div
+    at LayoutContent (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/src/layout/AppLayout.tsx?t=1752970716563:25:51)
+    at SidebarProvider (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/src/context/SidebarContext.tsx:30:3)
+    at AppLayout
+    at ProtectedRoute (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/src/components/ProtectedRoute.tsx:20:27)
+    at RenderedRoute (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/node_modules/.vite/deps/react-router.js?v=06adb52e:5525:26)
+    at Routes (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/node_modules/.vite/deps/react-router.js?v=06adb52e:6258:3)
+    at Router (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/node_modules/.vite/deps/react-router.js?v=06adb52e:6201:13)
+    at BrowserRouter (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/node_modules/.vite/deps/react-router.js?v=06adb52e:9271:3)
+    at AppRoutes (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/src/App.tsx?t=1752970716563:48:31)
+    at TenantProvider (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/src/context/TenantContext.tsx:143:34)
+    at AuthProvider (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/src/context/AuthContext.tsx:32:32)
+    at Provider (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/node_modules/.vite/deps/react-redux.js?v=06adb52e:923:11)
+    at App
+    at _a (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/node_modules/.vite/deps/react-helmet-async.js?v=06adb52e:624:5)
+    at AppWrapper (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/src/components/common/PageMeta.tsx:38:30)
+    at ThemeProvider (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/src/context/ThemeContext.tsx:22:3)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+logCapturedError @ chunk-TH7NCS4R.js?v=06adb52e:14080
+update.callback @ chunk-TH7NCS4R.js?v=06adb52e:14100
+callCallback @ chunk-TH7NCS4R.js?v=06adb52e:11296
+commitUpdateQueue @ chunk-TH7NCS4R.js?v=06adb52e:11313
+commitLayoutEffectOnFiber @ chunk-TH7NCS4R.js?v=06adb52e:17141
+commitLayoutMountEffects_complete @ chunk-TH7NCS4R.js?v=06adb52e:18030
+commitLayoutEffects_begin @ chunk-TH7NCS4R.js?v=06adb52e:18019
+commitLayoutEffects @ chunk-TH7NCS4R.js?v=06adb52e:17970
+commitRootImpl @ chunk-TH7NCS4R.js?v=06adb52e:19406
+commitRoot @ chunk-TH7NCS4R.js?v=06adb52e:19330
+finishConcurrentRender @ chunk-TH7NCS4R.js?v=06adb52e:18813
+performConcurrentWorkOnRoot @ chunk-TH7NCS4R.js?v=06adb52e:18768
+workLoop @ chunk-TH7NCS4R.js?v=06adb52e:197
+flushWork @ chunk-TH7NCS4R.js?v=06adb52e:176
+performWorkUntilDeadline @ chunk-TH7NCS4R.js?v=06adb52e:384Understand this error
+chunk-TH7NCS4R.js?v=06adb52e:19466 Uncaught ReferenceError: user is not defined
+    at UserDropdown (UserDropdown.tsx:69:65)
+    at renderWithHooks (chunk-TH7NCS4R.js?v=06adb52e:11596:26)
+    at mountIndeterminateComponent (chunk-TH7NCS4R.js?v=06adb52e:14974:21)
+    at beginWork (chunk-TH7NCS4R.js?v=06adb52e:15962:22)
+    at beginWork$1 (chunk-TH7NCS4R.js?v=06adb52e:19806:22)
+    at performUnitOfWork (chunk-TH7NCS4R.js?v=06adb52e:19251:20)
+    at workLoopSync (chunk-TH7NCS4R.js?v=06adb52e:19190:13)
+    at renderRootSync (chunk-TH7NCS4R.js?v=06adb52e:19169:15)
+    at recoverFromConcurrentError (chunk-TH7NCS4R.js?v=06adb52e:18786:28)
+    at performConcurrentWorkOnRoot (chunk-TH7NCS4R.js?v=06adb52e:18734:30)
+UserDropdown @ UserDropdown.tsx:69
+renderWithHooks @ chunk-TH7NCS4R.js?v=06adb52e:11596
+mountIndeterminateComponent @ chunk-TH7NCS4R.js?v=06adb52e:14974
+beginWork @ chunk-TH7NCS4R.js?v=06adb52e:15962
+beginWork$1 @ chunk-TH7NCS4R.js?v=06adb52e:19806
+performUnitOfWork @ chunk-TH7NCS4R.js?v=06adb52e:19251
+workLoopSync @ chunk-TH7NCS4R.js?v=06adb52e:19190
+renderRootSync @ chunk-TH7NCS4R.js?v=06adb52e:19169
+recoverFromConcurrentError @ chunk-TH7NCS4R.js?v=06adb52e:18786
+performConcurrentWorkOnRoot @ chunk-TH7NCS4R.js?v=06adb52e:18734
+workLoop @ chunk-TH7NCS4R.js?v=06adb52e:197
+flushWork @ chunk-TH7NCS4R.js?v=06adb52e:176
+performWorkUntilDeadline @ chunk-TH7NCS4R.js?v=06adb52e:384Understand this error

@@ -1,0 +1,50 @@
+src/components/common/ServerGrid/components/Grid.tsx:57:18 - error TS2304: Cannot find name 'Column'.
+
+57     })) as Array<Column & { width: number }>
+                    ~~~~~~
+
+src/components/common/ServerGrid/components/GridHeader.tsx:234:3 - error TS6133: 'showColumnChooser' is declared but its value is never read.
+
+234   showColumnChooser = false,
+      ~~~~~~~~~~~~~~~~~
+
+src/components/common/ServerGrid/components/GridHeader.tsx:235:3 - error TS6133: 'onColumnChooserOpen' is declared but its value is never read.
+
+235   onColumnChooserOpen,
+      ~~~~~~~~~~~~~~~~~~~
+
+src/components/common/ServerGrid/components/GridHeader.tsx:237:10 - error TS6133: 'resizingColumn' is declared but its value is never read.
+
+237   const [resizingColumn, setResizingColumn] = useState<string | null>(null)
+             ~~~~~~~~~~~~~~
+
+src/components/common/ServerGrid/components/GridHeader.tsx:237:26 - error TS6133: 'setResizingColumn' is declared but its value is never read.
+
+237   const [resizingColumn, setResizingColumn] = useState<string | null>(null)
+                             ~~~~~~~~~~~~~~~~~
+
+src/components/common/ServerGrid/components/GridHeader.tsx:277:9 - error TS6133: 'handleColumnResize' is declared but its value is never read.
+
+277   const handleColumnResize = (field: string, width: number) => {
+            ~~~~~~~~~~~~~~~~~~
+
+src/components/header/NotificationDropdown.tsx:90:5 - error TS2304: Cannot find name 'topPosition'.
+
+90     topPosition = buttonRect.bottom + window.scrollY + 8 // 8px offset from bottom of button
+       ~~~~~~~~~~~
+
+src/components/header/NotificationDropdown.tsx:92:5 - error TS2304: Cannot find name 'rightPosition'.
+
+92     rightPosition = window.innerWidth - buttonRect.right
+       ~~~~~~~~~~~~~
+
+src/pages/Dashboard/Home.tsx:54:32 - error TS2322: Type '{ salesData: { month: string; sales: number; }[]; }' is not assignable to type 'IntrinsicAttributes'.
+  Property 'salesData' does not exist on type 'IntrinsicAttributes'.
+
+54             <MonthlySalesChart salesData={dashboardData.salesData} />
+                                  ~~~~~~~~~
+
+src/pages/Dashboard/Home.tsx:71:25 - error TS2322: Type '{ orders: { id: string; customer: string; amount: string; status: string; date: string; }[]; }' is not assignable to type 'IntrinsicAttributes'.
+  Property 'orders' does not exist on type 'IntrinsicAttributes'.
+
+71           <RecentOrders orders={dashboardData.recentOrders} />

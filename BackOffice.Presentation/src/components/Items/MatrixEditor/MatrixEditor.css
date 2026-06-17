@@ -1,0 +1,469 @@
+/* MatrixEditor — styled to match the legacy FrmMatrix tab while
+   reading naturally inside the modern Item form card layout. */
+
+.matrix-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 12px;
+}
+
+.matrix-editor--empty {
+  padding: 18px;
+  text-align: center;
+  color: var(--t3, #94a3b8);
+  font-style: italic;
+}
+
+/* Toast — short-lived feedback strip */
+.matrix-toast {
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+.matrix-toast--success { background: #ecfdf5; color: #047857; border: 1px solid #6ee7b7; }
+.matrix-toast--error   { background: #fef2f2; color: #b91c1c; border: 1px solid #fca5a5; }
+.matrix-toast--info    { background: #eff6ff; color: #1d4ed8; border: 1px solid #93c5fd; }
+
+/* Inline confirm bar (replaces window.confirm) */
+.matrix-confirm {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  background: #fffbeb;
+  border: 1px solid #fcd34d;
+  border-radius: 4px;
+}
+.matrix-confirm__msg {
+  flex: 1;
+  color: #92400e;
+}
+.matrix-confirm__actions {
+  display: flex;
+  gap: 6px;
+}
+
+.matrix-error {
+  padding: 8px 10px;
+  background: #fef2f2;
+  border: 1px solid #fca5a5;
+  color: #b91c1c;
+  border-radius: 4px;
+}
+
+/* Toolbar — Default Information row */
+.matrix-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 24px;
+  padding: 10px 12px;
+  background: var(--s2, #f8fafc);
+  border: 1px solid var(--bdr, #e2e8f0);
+  border-radius: 4px;
+  align-items: center;
+}
+.matrix-toolbar__group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.matrix-toolbar__group--right {
+  margin-left: auto;
+}
+.matrix-toolbar__group label {
+  font-size: 11px;
+  color: var(--t2, #475569);
+  margin-right: 2px;
+}
+
+/* Inputs */
+.me-input {
+  height: 28px;
+  padding: 0 8px;
+  border: 1px solid var(--bdr, #cbd5e1);
+  border-radius: 3px;
+  font-size: 12px;
+  background: #fff;
+  color: var(--t1, #0f172a);
+}
+.me-input--num {
+  width: 90px;
+  text-align: right;
+}
+.me-input--select {
+  height: 28px;
+  padding-right: 24px;
+}
+
+/* Buttons */
+.me-btn {
+  height: 28px;
+  padding: 0 12px;
+  border: 1px solid var(--bdr, #cbd5e1);
+  background: #fff;
+  border-radius: 3px;
+  font-size: 12px;
+  cursor: pointer;
+  color: var(--t1, #0f172a);
+  white-space: nowrap;
+}
+.me-btn:hover:not(:disabled) {
+  background: #f1f5f9;
+}
+.me-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.me-btn--primary {
+  background: var(--ac, #2563eb);
+  color: #fff;
+  border-color: var(--ac, #2563eb);
+}
+.me-btn--primary:hover:not(:disabled) {
+  background: var(--ac-hover, #1d4ed8);
+}
+.me-btn--ghost {
+  background: transparent;
+  border-color: var(--t3, #94a3b8);
+}
+
+/* Grid */
+.matrix-grid-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--bdr, #e2e8f0);
+  border-radius: 4px;
+}
+.matrix-grid {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  font-size: 12px;
+}
+.matrix-grid th,
+.matrix-grid td {
+  padding: 4px 6px;
+  border-bottom: 1px solid var(--bdr, #e2e8f0);
+  border-right: 1px solid var(--bdr, #e2e8f0);
+  text-align: left;
+  vertical-align: middle;
+}
+.matrix-grid th {
+  background: var(--s2, #f1f5f9);
+  font-weight: 600;
+  color: var(--t2, #475569);
+  font-size: 11px;
+  text-transform: none;
+  white-space: nowrap;
+}
+.matrix-grid tr:last-child td {
+  border-bottom: none;
+}
+.matrix-grid td:last-child,
+.matrix-grid th:last-child {
+  border-right: none;
+}
+
+/* Cell inputs — borderless so the grid stays compact */
+.me-cell {
+  width: 100%;
+  height: 22px;
+  padding: 0 4px;
+  border: 1px solid transparent;
+  background: transparent;
+  font-size: 12px;
+  font-family: inherit;
+  color: inherit;
+}
+.me-cell:focus {
+  border-color: var(--ac, #2563eb);
+  background: #fff;
+  outline: none;
+}
+.me-cell--num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.me-readonly {
+  text-align: right;
+  color: var(--t2, #475569);
+  font-variant-numeric: tabular-nums;
+}
+.me-mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 11px;
+}
+.me-empty {
+  padding: 18px;
+  text-align: center;
+  color: var(--t3, #94a3b8);
+  font-style: italic;
+}
+.me-row-x {
+  width: 22px;
+  height: 22px;
+  border: none;
+  background: transparent;
+  color: var(--t3, #94a3b8);
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 3px;
+  line-height: 1;
+}
+.me-row-x:hover {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+/* Dirty cell — highlight unsaved on-hand edits so the user can spot
+   the rows that will land in the next Adjust batch. */
+.me-cell--dirty {
+  background: #fef3c7;
+}
+
+/* Secondary toolbar — used by the on-hand adjust bar so it visually
+   reads as a follow-up to the main Default Information toolbar. */
+.matrix-toolbar--secondary {
+  background: #fffbeb;
+  border-color: #fcd34d;
+}
+
+/* Modal shell wrappers — used by MatrixGenerateModal +
+   MatrixTemplateModal. Both render inside the shared <Modal> primitive
+   which gives us the backdrop / centring / Esc handling for free. */
+.matrix-modal-shell {
+  width: min(720px, 92vw);
+}
+.matrix-modal-shell--wide {
+  width: min(960px, 96vw);
+}
+.matrix-modal {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 18px 20px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+.matrix-modal__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--bdr, #e2e8f0);
+}
+/* Inline close button — replaces the built-in absolute-positioned
+   Modal X so it aligns flush with the title row. */
+.matrix-modal__x {
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: transparent;
+  border-radius: 4px;
+  font-size: 20px;
+  line-height: 1;
+  color: var(--t2, #475569);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.matrix-modal__x:hover:not(:disabled) {
+  background: #f1f5f9;
+  color: #b91c1c;
+}
+.matrix-modal__x:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.matrix-modal__head h3 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+}
+.matrix-modal__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.matrix-modal__label {
+  font-size: 11px;
+  color: var(--t2, #475569);
+  min-width: 90px;
+}
+.matrix-modal__inline {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: var(--t2, #475569);
+}
+.matrix-modal__axes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+@media (max-width: 720px) {
+  .matrix-modal__axes { grid-template-columns: 1fr; }
+}
+.matrix-modal__preview {
+  padding: 8px 12px;
+  background: var(--s2, #f8fafc);
+  border: 1px solid var(--bdr, #e2e8f0);
+  border-radius: 4px;
+  font-size: 12px;
+  color: var(--t2, #475569);
+}
+.matrix-modal__foot {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--bdr, #e2e8f0);
+}
+.matrix-modal__split {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 16px;
+}
+@media (max-width: 720px) {
+  .matrix-modal__split { grid-template-columns: 1fr; }
+}
+.matrix-modal__pane {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.matrix-modal__pane--main {
+  border-left: 1px solid var(--bdr, #e2e8f0);
+  padding-left: 16px;
+}
+.matrix-modal__create-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 8px;
+  border-top: 1px solid var(--bdr, #e2e8f0);
+}
+
+/* Axis picker / value list — used by both modals. */
+.matrix-axis {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px;
+  background: var(--s2, #f8fafc);
+  border: 1px solid var(--bdr, #e2e8f0);
+  border-radius: 4px;
+}
+.matrix-axis__head {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--t1, #0f172a);
+}
+.matrix-axis__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  min-height: 32px;
+  align-content: flex-start;
+}
+.matrix-axis__empty {
+  color: var(--t3, #94a3b8);
+  font-size: 11px;
+  font-style: italic;
+}
+.matrix-axis__opt {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  background: #fff;
+  border: 1px solid var(--bdr, #e2e8f0);
+  border-radius: 3px;
+  font-size: 12px;
+  cursor: pointer;
+}
+.matrix-axis__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 4px 3px 8px;
+  background: #e0e7ff;
+  border: 1px solid #c7d2fe;
+  border-radius: 3px;
+  font-size: 12px;
+}
+.matrix-axis__chip--big {
+  padding: 4px 4px 4px 10px;
+  font-size: 13px;
+}
+.matrix-axis__chip-x {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: inherit;
+  width: 18px;
+  height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  font-size: 14px;
+}
+.matrix-axis__chip-x:hover {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+.matrix-axis__add {
+  display: flex;
+  gap: 6px;
+}
+
+/* Template list (inside template modal) */
+.matrix-template-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-height: 50vh;
+  overflow-y: auto;
+  border: 1px solid var(--bdr, #e2e8f0);
+  border-radius: 4px;
+}
+.matrix-template-list__row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  cursor: pointer;
+  border-bottom: 1px solid var(--bdr, #f1f5f9);
+}
+.matrix-template-list__row:last-child {
+  border-bottom: none;
+}
+.matrix-template-list__row:hover {
+  background: var(--s2, #f8fafc);
+}
+.matrix-template-list__row.is-selected {
+  background: #eff6ff;
+}
+.matrix-template-list__name {
+  flex: 1;
+  font-size: 12px;
+}
+.matrix-template-list__counts {
+  font-size: 10px;
+  color: var(--t3, #94a3b8);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Column hints — keeps layout stable across loads */
+.me-col-name  { min-width: 160px; }
+.me-col-bc    { min-width: 110px; }
+.me-col-money { min-width: 80px;  text-align: right; }
+.me-col-axis  { min-width: 72px;  }
+.me-col-num   { min-width: 60px;  text-align: right; }
+.me-col-id    { min-width: 120px; }
+.me-col-pct   { min-width: 70px;  text-align: right; }
+.me-col-x     { width: 28px; }

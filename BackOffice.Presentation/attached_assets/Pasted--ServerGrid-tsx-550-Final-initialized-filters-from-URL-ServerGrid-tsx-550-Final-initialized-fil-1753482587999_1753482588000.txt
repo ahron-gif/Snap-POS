@@ -1,0 +1,52 @@
+
+ServerGrid.tsx:550 Final initialized filters from URL: 
+{}
+ServerGrid.tsx:550 Final initialized filters from URL: 
+{}
+TabHeader.tsx:133 Closing tab: users-list Users
+useTabs.ts:34 removeTab called with tabId: users-list
+useTabs.ts:46 Removing tab: 
+{id: 'users-list', name: 'Users', path: '/users-list', closeable: true}
+ at index: 0
+useTabs.ts:49 Filtered tabs after removal: 
+[]
+useTabs.ts:53 Is removing active tab? true
+useTabs.ts:60 Removing active tab, need to navigate
+useTabs.ts:83 No other tabs open, routing to "/" - Last tab closed
+TabHeader.tsx:41 Open tabs: 
+[]
+useTabs.ts:28 Warning: Cannot update a component (`BrowserRouter`) while rendering a different component (`Unknown`). To locate the bad setState() call inside `Unknown`, follow the stack trace as described in https://reactjs.org/link/setstate-in-render
+    at https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/src/components/common/TabHeader.tsx:30:38
+    at div
+    at header
+    at AppHeader (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/src/layout/AppHeader.tsx:32:64)
+    at div
+    at div
+    at div
+    at LayoutContent (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/src/layout/AppLayout.tsx:25:51)
+    at SidebarProvider (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/src/context/SidebarContext.tsx:30:3)
+    at AppLayout
+    at ProtectedRoute (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/src/components/ProtectedRoute.tsx:20:27)
+    at RenderedRoute (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/node_modules/.vite/deps/react-router.js?v=9b83b3eb:5525:26)
+    at Routes (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/node_modules/.vite/deps/react-router.js?v=9b83b3eb:6258:3)
+    at Router (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/node_modules/.vite/deps/react-router.js?v=9b83b3eb:6201:13)
+    at BrowserRouter (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/node_modules/.vite/deps/react-router.js?v=9b83b3eb:9271:3)
+    at AppRoutes (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/src/App.tsx:52:31)
+    at TenantProvider (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/src/context/TenantContext.tsx:143:34)
+    at AuthProvider (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/src/context/AuthContext.tsx:32:32)
+    at Provider (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/node_modules/.vite/deps/react-redux.js?v=9b83b3eb:923:11)
+    at App
+    at _a (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/node_modules/.vite/deps/react-helmet-async.js?v=9b83b3eb:624:5)
+    at AppWrapper (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/src/components/common/PageMeta.tsx:38:30)
+    at ThemeProvider (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/src/context/ThemeContext.tsx:22:3)
+TabHeader.tsx:41 Open tabs: 
+[{…}]
+0
+: 
+{id: 'users-list', name: 'Users', path: '/users-list', closeable: true}
+length
+: 
+1
+[[Prototype]]
+: 
+Array(0)

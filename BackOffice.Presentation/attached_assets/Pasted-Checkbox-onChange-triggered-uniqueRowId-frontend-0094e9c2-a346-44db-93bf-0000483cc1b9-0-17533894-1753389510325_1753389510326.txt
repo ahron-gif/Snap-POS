@@ -1,0 +1,168 @@
+Checkbox onChange triggered: {uniqueRowId: 'frontend_0094e9c2-a346-44db-93bf-0000483cc1b9_0_1753389450766_vqb5b91yi', currentlySelected: false, checkboxChecked: true}
+ItemListPage.tsx:393 Row selection triggered for ID: frontend_0094e9c2-a346-44db-93bf-0000483cc1b9_0_1753389450766_vqb5b91yi
+ItemListPage.tsx:404 Selected row: frontend_0094e9c2-a346-44db-93bf-0000483cc1b9_0_1753389450766_vqb5b91yi New count: 3
+ItemListPage.tsx:407 Previous selected rows: (2) ['frontend_0094e9c2-a346-44db-93bf-0000483cc1b9_0_1753389434576_mczdtn330', 'frontend_0094e9c2-a346-44db-93bf-0000483cc1b9_0_1753389437313_oww9cff2q']
+ItemListPage.tsx:408 Updated selected rows: (3) ['frontend_0094e9c2-a346-44db-93bf-0000483cc1b9_0_1753389434576_mczdtn330', 'frontend_0094e9c2-a346-44db-93bf-0000483cc1b9_0_1753389437313_oww9cff2q', 'frontend_0094e9c2-a346-44db-93bf-0000483cc1b9_0_1753389450766_vqb5b91yi']
+ServerGrid.tsx:494 Final initialized filters from URL: {}
+ServerGrid.tsx:494 Final initialized filters from URL: {}
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_0094e9c2-a346-44db-93bf-0000483cc1b9_0_1753389461850_o60wydjge', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_0094e9c2-a346-44db-93bf-0000483cc1b9_1_1753389461850_zf3zihms9', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_0094e9c2-a346-44db-93bf-0000483cc1b9_2_1753389461850_mvm8p0xq7', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_0094e9c2-a346-44db-93bf-0000483cc1b9_3_1753389461850_hw26o6mad', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_0094e9c2-a346-44db-93bf-0000483cc1b9_4_1753389461850_io6z18kj4', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_0094e9c2-a346-44db-93bf-0000483cc1b9_5_1753389461850_zbdh05tjd', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_3cefe431-51d5-4d8c-971c-00012fb95eba_6_1753389461850_y93grezkn', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_3cefe431-51d5-4d8c-971c-00012fb95eba_7_1753389461850_s5jy3a6h4', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_3cefe431-51d5-4d8c-971c-00012fb95eba_8_1753389461850_1l261lz8e', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_3cefe431-51d5-4d8c-971c-00012fb95eba_9_1753389461850_eg0ltilbh', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_3cefe431-51d5-4d8c-971c-00012fb95eba_10_1753389461850_8nr4uaob4', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_3cefe431-51d5-4d8c-971c-00012fb95eba_11_1753389461850_pprzf5huq', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_500a9092-11ba-471d-85ab-000981bee22a_12_1753389461850_wcfss193f', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_500a9092-11ba-471d-85ab-000981bee22a_13_1753389461850_k08acrw6n', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_500a9092-11ba-471d-85ab-000981bee22a_14_1753389461850_um0izgooc', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_500a9092-11ba-471d-85ab-000981bee22a_15_1753389461850_1fjrf98xk', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_500a9092-11ba-471d-85ab-000981bee22a_16_1753389461850_up629hrqt', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_500a9092-11ba-471d-85ab-000981bee22a_17_1753389461850_arvhafigt', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_d94c83fb-59ba-4cca-8dbb-000c30266834_18_1753389461850_kguma4asm', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_d94c83fb-59ba-4cca-8dbb-000c30266834_19_1753389461850_9x60swv2r', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:158 Applied checked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_0094e9c2-a346-44db-93bf-0000483cc1b9_0_1753389461850_o60wydjge', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_0094e9c2-a346-44db-93bf-0000483cc1b9_1_1753389461850_zf3zihms9', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_0094e9c2-a346-44db-93bf-0000483cc1b9_2_1753389461850_mvm8p0xq7', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_0094e9c2-a346-44db-93bf-0000483cc1b9_3_1753389461850_hw26o6mad', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_0094e9c2-a346-44db-93bf-0000483cc1b9_4_1753389461850_io6z18kj4', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_0094e9c2-a346-44db-93bf-0000483cc1b9_5_1753389461850_zbdh05tjd', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_3cefe431-51d5-4d8c-971c-00012fb95eba_6_1753389461850_y93grezkn', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_3cefe431-51d5-4d8c-971c-00012fb95eba_7_1753389461850_s5jy3a6h4', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_3cefe431-51d5-4d8c-971c-00012fb95eba_8_1753389461850_1l261lz8e', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_3cefe431-51d5-4d8c-971c-00012fb95eba_9_1753389461850_eg0ltilbh', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_3cefe431-51d5-4d8c-971c-00012fb95eba_10_1753389461850_8nr4uaob4', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_3cefe431-51d5-4d8c-971c-00012fb95eba_11_1753389461850_pprzf5huq', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_500a9092-11ba-471d-85ab-000981bee22a_12_1753389461850_wcfss193f', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_500a9092-11ba-471d-85ab-000981bee22a_13_1753389461850_k08acrw6n', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_500a9092-11ba-471d-85ab-000981bee22a_14_1753389461850_um0izgooc', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_500a9092-11ba-471d-85ab-000981bee22a_15_1753389461850_1fjrf98xk', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_500a9092-11ba-471d-85ab-000981bee22a_16_1753389461850_up629hrqt', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_500a9092-11ba-471d-85ab-000981bee22a_17_1753389461850_arvhafigt', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_d94c83fb-59ba-4cca-8dbb-000c30266834_18_1753389461850_kguma4asm', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_d94c83fb-59ba-4cca-8dbb-000c30266834_19_1753389461850_9x60swv2r', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_0094e9c2-a346-44db-93bf-0000483cc1b9_0_1753389461850_o60wydjge', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_0094e9c2-a346-44db-93bf-0000483cc1b9_1_1753389461850_zf3zihms9', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_0094e9c2-a346-44db-93bf-0000483cc1b9_2_1753389461850_mvm8p0xq7', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_0094e9c2-a346-44db-93bf-0000483cc1b9_3_1753389461850_hw26o6mad', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_0094e9c2-a346-44db-93bf-0000483cc1b9_4_1753389461850_io6z18kj4', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_0094e9c2-a346-44db-93bf-0000483cc1b9_5_1753389461850_zbdh05tjd', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_3cefe431-51d5-4d8c-971c-00012fb95eba_6_1753389461850_y93grezkn', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_3cefe431-51d5-4d8c-971c-00012fb95eba_7_1753389461850_s5jy3a6h4', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_3cefe431-51d5-4d8c-971c-00012fb95eba_8_1753389461850_1l261lz8e', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_3cefe431-51d5-4d8c-971c-00012fb95eba_9_1753389461850_eg0ltilbh', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_3cefe431-51d5-4d8c-971c-00012fb95eba_10_1753389461850_8nr4uaob4', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_3cefe431-51d5-4d8c-971c-00012fb95eba_11_1753389461850_pprzf5huq', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_500a9092-11ba-471d-85ab-000981bee22a_12_1753389461850_wcfss193f', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_500a9092-11ba-471d-85ab-000981bee22a_13_1753389461850_k08acrw6n', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_500a9092-11ba-471d-85ab-000981bee22a_14_1753389461850_um0izgooc', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_500a9092-11ba-471d-85ab-000981bee22a_15_1753389461850_1fjrf98xk', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_500a9092-11ba-471d-85ab-000981bee22a_16_1753389461850_up629hrqt', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_500a9092-11ba-471d-85ab-000981bee22a_17_1753389461850_arvhafigt', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_d94c83fb-59ba-4cca-8dbb-000c30266834_18_1753389461850_kguma4asm', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_d94c83fb-59ba-4cca-8dbb-000c30266834_19_1753389461850_9x60swv2r', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_0094e9c2-a346-44db-93bf-0000483cc1b9_0_1753389461850_o60wydjge', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_0094e9c2-a346-44db-93bf-0000483cc1b9_1_1753389461850_zf3zihms9', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_0094e9c2-a346-44db-93bf-0000483cc1b9_2_1753389461850_mvm8p0xq7', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_0094e9c2-a346-44db-93bf-0000483cc1b9_3_1753389461850_hw26o6mad', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_0094e9c2-a346-44db-93bf-0000483cc1b9_4_1753389461850_io6z18kj4', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_0094e9c2-a346-44db-93bf-0000483cc1b9_5_1753389461850_zbdh05tjd', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_3cefe431-51d5-4d8c-971c-00012fb95eba_6_1753389461850_y93grezkn', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_3cefe431-51d5-4d8c-971c-00012fb95eba_7_1753389461850_s5jy3a6h4', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_3cefe431-51d5-4d8c-971c-00012fb95eba_8_1753389461850_1l261lz8e', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_3cefe431-51d5-4d8c-971c-00012fb95eba_9_1753389461850_eg0ltilbh', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_3cefe431-51d5-4d8c-971c-00012fb95eba_10_1753389461850_8nr4uaob4', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_3cefe431-51d5-4d8c-971c-00012fb95eba_11_1753389461850_pprzf5huq', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_500a9092-11ba-471d-85ab-000981bee22a_12_1753389461850_wcfss193f', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_500a9092-11ba-471d-85ab-000981bee22a_13_1753389461850_k08acrw6n', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_500a9092-11ba-471d-85ab-000981bee22a_14_1753389461850_um0izgooc', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_500a9092-11ba-471d-85ab-000981bee22a_15_1753389461850_1fjrf98xk', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_500a9092-11ba-471d-85ab-000981bee22a_16_1753389461850_up629hrqt', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_500a9092-11ba-471d-85ab-000981bee22a_17_1753389461850_arvhafigt', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_d94c83fb-59ba-4cca-8dbb-000c30266834_18_1753389461850_kguma4asm', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox
+GridBody.tsx:92 Syncing checkbox: {uniqueId: 'frontend_d94c83fb-59ba-4cca-8dbb-000c30266834_19_1753389461850_9x60swv2r', shouldBeChecked: false, currentChecked: false, selectedRowsSize: 3}
+GridBody.tsx:176 Applied unchecked styles to checkbox

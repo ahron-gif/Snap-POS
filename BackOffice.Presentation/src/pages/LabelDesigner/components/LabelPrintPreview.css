@@ -1,0 +1,185 @@
+/* Print Preview Overlay */
+.print-preview-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+.print-preview-container {
+  width: 90%;
+  max-width: 900px;
+  height: 90vh;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+}
+
+.print-preview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+.print-preview-header h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.print-preview-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.print-info {
+  font-size: 14px;
+  color: #666;
+  margin-right: 8px;
+}
+
+.print-preview-actions button {
+  padding: 8px 18px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.print-preview-actions .btn-primary {
+  background-color: #0066cc;
+  color: #fff;
+}
+
+.print-preview-actions .btn-primary:hover {
+  background-color: #0052a3;
+}
+
+.print-preview-actions .btn-secondary {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+.print-preview-actions .btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+.print-preview-scroll {
+  flex: 1;
+  overflow: auto;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #e0e0e0;
+}
+
+.print-page {
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  margin-bottom: 20px;
+}
+
+.print-page:last-child {
+  margin-bottom: 0;
+}
+
+.label-cell {
+  box-sizing: border-box;
+}
+
+.label-content {
+  box-sizing: border-box;
+}
+
+/* Print-specific styles */
+@media print {
+  .print-preview-overlay {
+    position: static;
+    background: none;
+  }
+
+  .print-preview-container {
+    width: 100%;
+    max-width: none;
+    height: auto;
+    background: none;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .print-preview-header,
+  .print-preview-actions {
+    display: none !important;
+  }
+
+  .print-preview-scroll {
+    padding: 0;
+    background: none;
+    overflow: visible;
+  }
+
+  .print-page {
+    margin: 0;
+    box-shadow: none;
+    page-break-after: always;
+  }
+
+  .print-page:last-child {
+    page-break-after: auto;
+  }
+
+  .label-cell {
+    border: none !important;
+  }
+}
+
+/* ─── Dark mode ─── */
+.dark .print-preview-overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.dark .print-preview-container {
+  background-color: #1f2937;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+}
+
+.dark .print-preview-header {
+  background-color: #111827;
+  border-bottom-color: #374151;
+}
+
+.dark .print-preview-header h3 {
+  color: #e5e7eb;
+}
+
+.dark .print-info {
+  color: #9ca3af;
+}
+
+.dark .print-preview-actions .btn-secondary {
+  background-color: #4b5563;
+}
+
+.dark .print-preview-actions .btn-secondary:hover {
+  background-color: #6b7280;
+}
+
+.dark .print-preview-scroll {
+  background-color: #111827;
+}

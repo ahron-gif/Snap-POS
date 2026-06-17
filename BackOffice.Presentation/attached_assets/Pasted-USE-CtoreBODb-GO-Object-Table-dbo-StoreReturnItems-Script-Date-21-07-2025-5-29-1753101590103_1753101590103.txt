@@ -1,0 +1,123 @@
+USE [CtoreBODb]
+GO
+/****** Object:  Table [dbo].[StoreReturnItems]    Script Date: 21/07/2025 5:29:25 pm ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[StoreReturnItems](
+	[ReturnItemID] [uniqueidentifier] NOT NULL,
+	[StoreID] [uniqueidentifier] NOT NULL,
+	[ReturnID] [uniqueidentifier] NOT NULL,
+	[ItemID] [uniqueidentifier] NOT NULL,
+	[Quantity] [int] NOT NULL,
+	[RefundAmount] [decimal](18, 2) NOT NULL,
+	[ReasonID] [uniqueidentifier] NOT NULL,
+	[SyncStatusID] [uniqueidentifier] NULL,
+ CONSTRAINT [PK_StoreReturnItems] PRIMARY KEY CLUSTERED 
+(
+	[ReturnItemID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[StoreReturns]    Script Date: 21/07/2025 5:29:25 pm ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[StoreReturns](
+	[ReturnID] [uniqueidentifier] NOT NULL,
+	[StoreID] [uniqueidentifier] NOT NULL,
+	[OriginalTransactionID] [uniqueidentifier] NOT NULL,
+	[ReturnedBy] [uniqueidentifier] NOT NULL,
+	[TotalRefundAmount] [decimal](18, 4) NOT NULL,
+	[Timestamp] [datetime2](7) NOT NULL,
+	[SyncStatusID] [uniqueidentifier] NULL,
+ CONSTRAINT [PK_StoreReturns] PRIMARY KEY CLUSTERED 
+(
+	[ReturnID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[StoreShifts]    Script Date: 21/07/2025 5:29:25 pm ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[StoreShifts](
+	[ShiftID] [uniqueidentifier] NOT NULL,
+	[StoreID] [uniqueidentifier] NOT NULL,
+	[UserID] [uniqueidentifier] NOT NULL,
+	[StartTime] [datetime2](7) NOT NULL,
+	[EndTime] [datetime2](7) NULL,
+	[StatusID] [uniqueidentifier] NOT NULL,
+	[InitialCash] [decimal](18, 2) NOT NULL,
+	[ClosingCash] [decimal](18, 2) NULL,
+ CONSTRAINT [PK_StoreShifts] PRIMARY KEY CLUSTERED 
+(
+	[ShiftID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[StoreTransactionItems]    Script Date: 21/07/2025 5:29:25 pm ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[StoreTransactionItems](
+	[TransactionItemID] [uniqueidentifier] NOT NULL,
+	[StoreID] [uniqueidentifier] NOT NULL,
+	[TransactionID] [uniqueidentifier] NOT NULL,
+	[ItemID] [uniqueidentifier] NOT NULL,
+	[Quantity] [int] NOT NULL,
+	[UnitPrice] [decimal](18, 2) NOT NULL,
+	[VoidFlag] [bit] NOT NULL,
+	[VoidReasonID] [uniqueidentifier] NULL,
+	[SyncStatusID] [uniqueidentifier] NULL,
+ CONSTRAINT [PK_StoreTransactionItems] PRIMARY KEY CLUSTERED 
+(
+	[TransactionItemID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[StoreTransactionPayments]    Script Date: 21/07/2025 5:29:25 pm ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[StoreTransactionPayments](
+	[PaymentID] [uniqueidentifier] NOT NULL,
+	[StoreID] [uniqueidentifier] NOT NULL,
+	[TransactionID] [uniqueidentifier] NOT NULL,
+	[PaymentMethodID] [uniqueidentifier] NOT NULL,
+	[Amount] [decimal](18, 4) NOT NULL,
+	[PaymentDetails] [nvarchar](max) NOT NULL,
+	[Timestamp] [datetime2](7) NOT NULL,
+	[SyncStatusID] [uniqueidentifier] NULL,
+ CONSTRAINT [PK_StoreTransactionPayments] PRIMARY KEY CLUSTERED 
+(
+	[PaymentID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[StoreTransactions]    Script Date: 21/07/2025 5:29:25 pm ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[StoreTransactions](
+	[TransactionID] [uniqueidentifier] NOT NULL,
+	[StoreID] [uniqueidentifier] NOT NULL,
+	[ShiftID] [uniqueidentifier] NOT NULL,
+	[CustomerID] [uniqueidentifier] NULL,
+	[TotalAmount] [decimal](18, 2) NOT NULL,
+	[TransactionTypeID] [uniqueidentifier] NOT NULL,
+	[PaymentStatus] [nvarchar](50) NOT NULL,
+	[CreatedDate] [datetime2](7) NOT NULL,
+	[SyncStatusID] [uniqueidentifier] NULL,
+ CONSTRAINT [PK_StoreTransactions] PRIMARY KEY CLUSTERED 
+(
+	[TransactionID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO

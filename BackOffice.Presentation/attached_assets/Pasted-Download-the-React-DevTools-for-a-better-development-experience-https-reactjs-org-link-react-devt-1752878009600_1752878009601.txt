@@ -1,0 +1,142 @@
+Download the React DevTools for a better development experience: https://reactjs.org/link/react-devtools
+UsersListPage.tsx:345 Uncaught TypeError: Cannot read properties of undefined (reading 'email')
+    at Object.cellRenderer (UsersListPage.tsx:345:38)
+    at renderCell (GridBody.tsx:122:29)
+    at GridBody.tsx:305:18
+    at Array.map (<anonymous>)
+    at GridBody.tsx:282:29
+    at Array.map (<anonymous>)
+    at GridBody (GridBody.tsx:213:13)
+    at renderWithHooks (chunk-TH7NCS4R.js?v=06adb52e:11596:26)
+    at mountIndeterminateComponent (chunk-TH7NCS4R.js?v=06adb52e:14974:21)
+    at beginWork (chunk-TH7NCS4R.js?v=06adb52e:15962:22)
+cellRenderer @ UsersListPage.tsx:345
+renderCell @ GridBody.tsx:122
+(anonymous) @ GridBody.tsx:305
+(anonymous) @ GridBody.tsx:282
+GridBody @ GridBody.tsx:213
+renderWithHooks @ chunk-TH7NCS4R.js?v=06adb52e:11596
+mountIndeterminateComponent @ chunk-TH7NCS4R.js?v=06adb52e:14974
+beginWork @ chunk-TH7NCS4R.js?v=06adb52e:15962
+callCallback2 @ chunk-TH7NCS4R.js?v=06adb52e:3680
+invokeGuardedCallbackDev @ chunk-TH7NCS4R.js?v=06adb52e:3705
+invokeGuardedCallback @ chunk-TH7NCS4R.js?v=06adb52e:3739
+beginWork$1 @ chunk-TH7NCS4R.js?v=06adb52e:19818
+performUnitOfWork @ chunk-TH7NCS4R.js?v=06adb52e:19251
+workLoopSync @ chunk-TH7NCS4R.js?v=06adb52e:19190
+renderRootSync @ chunk-TH7NCS4R.js?v=06adb52e:19169
+performConcurrentWorkOnRoot @ chunk-TH7NCS4R.js?v=06adb52e:18728
+workLoop @ chunk-TH7NCS4R.js?v=06adb52e:197
+flushWork @ chunk-TH7NCS4R.js?v=06adb52e:176
+performWorkUntilDeadline @ chunk-TH7NCS4R.js?v=06adb52e:384Understand this error
+UsersListPage.tsx:345 Uncaught TypeError: Cannot read properties of undefined (reading 'email')
+    at Object.cellRenderer (UsersListPage.tsx:345:38)
+    at renderCell (GridBody.tsx:122:29)
+    at GridBody.tsx:305:18
+    at Array.map (<anonymous>)
+    at GridBody.tsx:282:29
+    at Array.map (<anonymous>)
+    at GridBody (GridBody.tsx:213:13)
+    at renderWithHooks (chunk-TH7NCS4R.js?v=06adb52e:11596:26)
+    at mountIndeterminateComponent (chunk-TH7NCS4R.js?v=06adb52e:14974:21)
+    at beginWork (chunk-TH7NCS4R.js?v=06adb52e:15962:22)
+cellRenderer @ UsersListPage.tsx:345
+renderCell @ GridBody.tsx:122
+(anonymous) @ GridBody.tsx:305
+(anonymous) @ GridBody.tsx:282
+GridBody @ GridBody.tsx:213
+renderWithHooks @ chunk-TH7NCS4R.js?v=06adb52e:11596
+mountIndeterminateComponent @ chunk-TH7NCS4R.js?v=06adb52e:14974
+beginWork @ chunk-TH7NCS4R.js?v=06adb52e:15962
+callCallback2 @ chunk-TH7NCS4R.js?v=06adb52e:3680
+invokeGuardedCallbackDev @ chunk-TH7NCS4R.js?v=06adb52e:3705
+invokeGuardedCallback @ chunk-TH7NCS4R.js?v=06adb52e:3739
+beginWork$1 @ chunk-TH7NCS4R.js?v=06adb52e:19818
+performUnitOfWork @ chunk-TH7NCS4R.js?v=06adb52e:19251
+workLoopSync @ chunk-TH7NCS4R.js?v=06adb52e:19190
+renderRootSync @ chunk-TH7NCS4R.js?v=06adb52e:19169
+recoverFromConcurrentError @ chunk-TH7NCS4R.js?v=06adb52e:18786
+performConcurrentWorkOnRoot @ chunk-TH7NCS4R.js?v=06adb52e:18734
+workLoop @ chunk-TH7NCS4R.js?v=06adb52e:197
+flushWork @ chunk-TH7NCS4R.js?v=06adb52e:176
+performWorkUntilDeadline @ chunk-TH7NCS4R.js?v=06adb52e:384Understand this error
+chunk-TH7NCS4R.js?v=06adb52e:14080 The above error occurred in the <GridBody> component:
+
+    at GridBody (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/src/components/common/ServerGrid/components/GridBody.tsx:20:3)
+    at table
+    at div
+    at div
+    at Grid (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/src/components/common/ServerGrid/components/Grid.tsx:25:3)
+    at div
+    at div
+    at ServerGrid (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/src/components/common/ServerGrid/ServerGrid.tsx:273:3)
+    at div
+    at UsersListPage (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/src/pages/users/UsersListPage.tsx:481:45)
+    at RenderedRoute (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/node_modules/.vite/deps/react-router.js?v=06adb52e:5525:26)
+    at Outlet (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/node_modules/.vite/deps/react-router.js?v=06adb52e:6192:26)
+    at div
+    at div
+    at div
+    at div
+    at LayoutContent (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/src/layout/AppLayout.tsx:25:51)
+    at SidebarProvider (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/src/context/SidebarContext.tsx:30:3)
+    at AppLayout
+    at ProtectedRoute (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/src/components/ProtectedRoute.tsx:20:27)
+    at RenderedRoute (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/node_modules/.vite/deps/react-router.js?v=06adb52e:5525:26)
+    at Routes (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/node_modules/.vite/deps/react-router.js?v=06adb52e:6258:3)
+    at Router (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/node_modules/.vite/deps/react-router.js?v=06adb52e:6201:13)
+    at BrowserRouter (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/node_modules/.vite/deps/react-router.js?v=06adb52e:9271:3)
+    at AppRoutes (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/src/App.tsx:47:31)
+    at TenantProvider (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/src/context/TenantContext.tsx:143:34)
+    at AuthProvider (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/src/context/AuthContext.tsx:29:32)
+    at Provider (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/node_modules/.vite/deps/react-redux.js?v=06adb52e:923:11)
+    at App
+    at _a (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/node_modules/.vite/deps/react-helmet-async.js?v=06adb52e:624:5)
+    at AppWrapper (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/src/components/common/PageMeta.tsx:38:30)
+    at ThemeProvider (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/src/context/ThemeContext.tsx:22:3)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+logCapturedError @ chunk-TH7NCS4R.js?v=06adb52e:14080
+update.callback @ chunk-TH7NCS4R.js?v=06adb52e:14100
+callCallback @ chunk-TH7NCS4R.js?v=06adb52e:11296
+commitUpdateQueue @ chunk-TH7NCS4R.js?v=06adb52e:11313
+commitLayoutEffectOnFiber @ chunk-TH7NCS4R.js?v=06adb52e:17141
+commitLayoutMountEffects_complete @ chunk-TH7NCS4R.js?v=06adb52e:18030
+commitLayoutEffects_begin @ chunk-TH7NCS4R.js?v=06adb52e:18019
+commitLayoutEffects @ chunk-TH7NCS4R.js?v=06adb52e:17970
+commitRootImpl @ chunk-TH7NCS4R.js?v=06adb52e:19406
+commitRoot @ chunk-TH7NCS4R.js?v=06adb52e:19330
+finishConcurrentRender @ chunk-TH7NCS4R.js?v=06adb52e:18813
+performConcurrentWorkOnRoot @ chunk-TH7NCS4R.js?v=06adb52e:18768
+workLoop @ chunk-TH7NCS4R.js?v=06adb52e:197
+flushWork @ chunk-TH7NCS4R.js?v=06adb52e:176
+performWorkUntilDeadline @ chunk-TH7NCS4R.js?v=06adb52e:384Understand this error
+chunk-TH7NCS4R.js?v=06adb52e:19466 Uncaught TypeError: Cannot read properties of undefined (reading 'email')
+    at Object.cellRenderer (UsersListPage.tsx:345:38)
+    at renderCell (GridBody.tsx:122:29)
+    at GridBody.tsx:305:18
+    at Array.map (<anonymous>)
+    at GridBody.tsx:282:29
+    at Array.map (<anonymous>)
+    at GridBody (GridBody.tsx:213:13)
+    at renderWithHooks (chunk-TH7NCS4R.js?v=06adb52e:11596:26)
+    at mountIndeterminateComponent (chunk-TH7NCS4R.js?v=06adb52e:14974:21)
+    at beginWork (chunk-TH7NCS4R.js?v=06adb52e:15962:22)
+cellRenderer @ UsersListPage.tsx:345
+renderCell @ GridBody.tsx:122
+(anonymous) @ GridBody.tsx:305
+(anonymous) @ GridBody.tsx:282
+GridBody @ GridBody.tsx:213
+renderWithHooks @ chunk-TH7NCS4R.js?v=06adb52e:11596
+mountIndeterminateComponent @ chunk-TH7NCS4R.js?v=06adb52e:14974
+beginWork @ chunk-TH7NCS4R.js?v=06adb52e:15962
+beginWork$1 @ chunk-TH7NCS4R.js?v=06adb52e:19806
+performUnitOfWork @ chunk-TH7NCS4R.js?v=06adb52e:19251
+workLoopSync @ chunk-TH7NCS4R.js?v=06adb52e:19190
+renderRootSync @ chunk-TH7NCS4R.js?v=06adb52e:19169
+recoverFromConcurrentError @ chunk-TH7NCS4R.js?v=06adb52e:18786
+performConcurrentWorkOnRoot @ chunk-TH7NCS4R.js?v=06adb52e:18734
+workLoop @ chunk-TH7NCS4R.js?v=06adb52e:197
+flushWork @ chunk-TH7NCS4R.js?v=06adb52e:176
+performWorkUntilDeadline @ chunk-TH7NCS4R.js?v=06adb52e:384Understand this error

@@ -1,0 +1,145 @@
+grid-table-container {
+  overflow-x: auto;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.grid-drag-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  background: #f8f9fa;
+  border: 2px dashed #dee2e6;
+  border-radius: 6px;
+  margin-bottom: 1px;
+  color: #6c757d;
+  font-size: 14px;
+  min-height: 40px;
+  transition: all 0.2s ease;
+}
+
+.grid-drag-area:hover {
+  background: #e9ecef;
+  border-color: #007bff;
+  color: #007bff;
+}
+
+.grid-drag-area.drag-over {
+  background: #e3f2fd;
+  border-color: #007bff;
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
+  transform: scale(1.02);
+  border-style: solid;
+}
+
+.drag-area-groups {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.drag-area-group-tag {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  background: #007bff;
+  color: white;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.drag-area-group-remove {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 0;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+}
+
+.drag-area-group-remove:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.drag-area-clear-all {
+  padding: 4px 8px;
+  background: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  margin-left: 8px;
+  transition: background-color 0.15s ease;
+}
+
+.drag-area-clear-all:hover {
+  background: #5a6268;
+}
+
+.grid-container {
+  position: relative;
+}
+
+.grid-container::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0;
+  background: rgba(220, 53, 69, 0.1);
+  border: 3px dashed #dc3545;
+  transition: opacity 0.2s ease;
+}
+
+.grid-container.drag-outside::after {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Fix draggable columns */
+.grid-header-cell {
+  cursor: grab;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.grid-header-cell:hover {
+  background-color: #e9ecef;
+}
+
+.grid-header-cell:active {
+  cursor: grabbing;
+}
+
+.grid-header-cell.dragging {
+  opacity: 0.5;
+  transform: rotate(5deg);
+}
+
+.grid-header-cell.drag-over {
+  background-color: #e3f2fd;
+  border-left: 3px solid #007bff;
+}
+
+.grid-table {
+  width: max-content;
+  min-width: 100%;
+  border-collapse: collapse;
+  background: white;
+}

@@ -1,0 +1,106 @@
+Assistant suggestions
+interface ServerGridProps {
+  data?: any[]
+  columns: Column[]
+  loading?: boolean
+  error?: string | null
+  totalRecords?: number
+  onRowUpdate?: (updatedRow: any) => void
+  onRowDelete?: (row: any) => void
+  onRefresh?: () => void
+  pagination?: boolean
+  pageSize?: number
+  editable?: boolean
+  columnChooser?: boolean
+  title?: string
+  emptyMessage?: string
+  emptyIcon?: string
+  showStats?: boolean
+  actions?: React.ReactNode
+  // Action button configurations
+  showActions?: boolean
+  onView?: (row: any) => void
+  onEdit?: (row: any) => void
+  onDelete?: (row: any) => void
+  editableFields?: Array<{
+    key: string
+    label: string
+    type: string
+    colSpan?: number
+  }>
+  ViewComponent?: React.ComponentType<{ selectedRow: any; onBack: () => void }>
+  // Server-side data fetching props
+  apiUrl?: string
+  serverSide?: boolean
+  methodType?: "GET" | "POST"
+  getAuthHeaders?: () => { [key: string]: string }
+  defaultSortColumn?: string
+  containerWidth?: string
+  initialFilters?: any;
+  orFilters?: Array<{
+    col: string
+    type: string
+    value: string
+    operatorType: 'and' | 'or'
+  }>
+  showCheckboxes?: boolean
+  selectedRows?: Set<any>
+  onRowSelection?: (rowId: string) => void
+  setTotalRecords?: (totalRecords: number) => void
+  onSelectAll?: (selectAllFn?: any) => void
+  getRowId?: (row: any) => string
+interface ServerGridProps {
+  data?: any[]
+  columns: Column[]
+  loading?: boolean
+  error?: string | null
+  totalRecords?: number
+  onRowUpdate?: (updatedRow: any) => void
+  onRowDelete?: (row: any) => void
+  onRefresh?: () => void
+  pagination?: boolean
+  pageSize?: number
+  editable?: boolean
+  columnChooser?: boolean
+  title?: string
+  emptyMessage?: string
+  emptyIcon?: string
+  showStats?: boolean
+  actions?: React.ReactNode
+  // Action button configurations
+  showActions?: boolean
+  onView?: (row: any) => void
+  onEdit?: (row: any) => void
+  onDelete?: (row: any) => void
+  editableFields?: Array<{
+    key: string
+    label: string
+    type: string
+    colSpan?: number
+  }>
+  ViewComponent?: React.ComponentType<{ selectedRow: any; onBack: () => void }>
+  // Server-side data fetching props
+  apiUrl?: string
+  serverSide?: boolean
+  methodType?: "GET" | "POST"
+  getAuthHeaders?: () => { [key: string]: string }
+  defaultSortColumn?: string
+  containerWidth?: string
+  initialFilters?: any;
+  orFilters?: Array<{
+    col: string
+    type: string
+    value: string
+    operatorType: 'and' | 'or'
+  }>
+  showCheckboxes?: boolean
+  selectedRows?: Set<any>
+  onRowSelection?: (rowId: string) => void
+  setTotalRecords?: (totalRecords: number) => void
+  onSelectAll?: (selectAllFn?: any) => void
+  onSelectAllFromHeader?: (selectAllFn?: any) => void
+  getRowId?: (row: any) => string
+// Check the EnhancedGridProps interface definition
+// Add onSelectAllFromHeader property to EnhancedGridProps interface if it exists separately
+// Find where ServerGrid is being used with onSelectAllFromHeader prop
+// Remove onSelectAllFromHeader from the props being passed to ServerGrid component

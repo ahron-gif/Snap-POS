@@ -1,0 +1,164 @@
+src/components/common/ServerGrid/components/Grid.tsx:725:48 - error TS2345: Argument of type '(prevState: Column[]) => Column[]' is not assignable to parameter of type 'SetStateAction<{ visible: boolean; width: number; field: string; headerName: string; sortable?: boolean | undefined; filterable?: boolean | undefined; editable?: boolean | undefined; cellRenderer?: ((value: any) => ReactNode) | undefined; dataType?: "string" | ... 8 more ... | undefined; }[]>'.
+  Type '(prevState: Column[]) => Column[]' is not assignable to type '(prevState: { visible: boolean; width: number; field: string; headerName: string; sortable?: boolean | undefined; filterable?: boolean | undefined; editable?: boolean | undefined; cellRenderer?: ((value: any) => ReactNode) | undefined; dataType?: "string" | ... 8 more ... | undefined; }[]) => { ...; }[]'.
+    Type 'Column[]' is not assignable to type '{ visible: boolean; width: number; field: string; headerName: string; sortable?: boolean | undefined; filterable?: boolean | undefined; editable?: boolean | undefined; cellRenderer?: ((value: any) => ReactNode) | undefined; dataType?: "string" | ... 8 more ... | undefined; }[]'.
+      Type 'Column' is not assignable to type '{ visible: boolean; width: number; field: string; headerName: string; sortable?: boolean; filterable?: boolean; editable?: boolean; cellRenderer?: (value: any) => string | React.ReactNode; dataType?: "string" | "number" | "date" | "time" | "datetime" | "boolean" | "actions" | "email" | "url"; }'.
+        Types of property 'width' are incompatible.
+          Type 'number | undefined' is not assignable to type 'number'.
+            Type 'undefined' is not assignable to type 'number'.
+
+725               setColumns={(cols) => setColumns(typeof cols === 'function' ? cols : () => cols)}
+                                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/common/ServerGrid/components/GridHeader.tsx:82:10 - error TS6133: 'startX' is declared but its value is never read.
+
+82   const [startX, setStartX] = useState(0)
+            ~~~~~~
+
+src/components/common/ServerGrid/components/GridHeader.tsx:82:18 - error TS6133: 'setStartX' is declared but its value is never read.
+
+82   const [startX, setStartX] = useState(0)
+                    ~~~~~~~~~
+
+src/components/common/ServerGrid/components/GridHeader.tsx:83:10 - error TS6133: 'startWidth' is declared but its value is never read.
+
+83   const [startWidth, setStartWidth] = useState(0)
+            ~~~~~~~~~~
+
+src/components/common/ServerGrid/components/GridHeader.tsx:83:22 - error TS6133: 'setStartWidth' is declared but its value is never read.
+
+83   const [startWidth, setStartWidth] = useState(0)
+                        ~~~~~~~~~~~~~
+
+src/components/common/ServerGrid/components/GridHeader.tsx:139:9 - error TS6133: 'handleMouseMove' is declared but its value is never read.
+
+139   const handleMouseMove = (e: MouseEvent) => {
+            ~~~~~~~~~~~~~~~
+
+src/components/common/ServerGrid/components/GridHeader.tsx:147:9 - error TS6133: 'handleMouseUp' is declared but its value is never read.
+
+147   const handleMouseUp = () => {
+            ~~~~~~~~~~~~~
+
+src/components/common/ServerGrid/components/GridHeader.tsx:151:9 - error TS6133: 'handleResize' is declared but its value is never read.
+
+151   const handleResize = (e: React.MouseEvent) => {
+            ~~~~~~~~~~~~
+
+src/components/common/ServerGrid/components/GridHeader.tsx:259:3 - error TS6133: 'onColumnChooserOpen' is declared but its value is never read.
+
+259   onColumnChooserOpen,
+      ~~~~~~~~~~~~~~~~~~~
+
+src/components/common/ServerGrid/components/GridHeader.tsx:263:3 - error TS6133: 'showColumnChooser' is declared but its value is never read.
+
+263   showColumnChooser = false,
+      ~~~~~~~~~~~~~~~~~
+
+src/components/common/ServerGrid/components/GridHeader.tsx:287:10 - error TS6133: 'openFilterDropdown' is declared but its value is never read.
+
+287   const [openFilterDropdown, setOpenFilterDropdown] = useState<string | null>(null)
+             ~~~~~~~~~~~~~~~~~~
+
+src/components/common/ServerGrid/components/GridHeader.tsx:650:25 - error TS6133: 'e' is declared but its value is never read.
+
+650               onClick={(e) => {
+                            ~
+
+src/components/common/ServerGrid/components/GridPagination.tsx:20:3 - error TS6133: 'containerWidth' is declared but its value is never read.
+
+20   containerWidth,
+     ~~~~~~~~~~~~~~
+
+src/components/header/NotificationDropdown.tsx:102:7 - error TS2322: Type '{ children: Element[]; isOpen: true; onClose: () => void; className: string; style: { top: number; right: number; }; }' is not assignable to type 'IntrinsicAttributes & DropdownProps'.
+  Property 'style' does not exist on type 'IntrinsicAttributes & DropdownProps'.
+
+102       style={{
+          ~~~~~
+
+src/components/header/SwitchTenantModal.tsx:4:10 - error TS6133: 'useAppSelector' is declared but its value is never read.
+
+4 import { useAppSelector, useAppDispatch } from '../../hooks/useAppSelector'
+           ~~~~~~~~~~~~~~
+
+src/components/header/UserDropdown.tsx:4:10 - error TS6133: 'Link' is declared but its value is never read.
+
+4 import { Link, useNavigate } from "react-router"
+           ~~~~
+
+src/components/header/UserDropdown.tsx:117:7 - error TS6133: 'topPosition' is declared but its value is never read.
+
+117   let topPosition = 0
+          ~~~~~~~~~~~
+
+src/components/header/UserDropdown.tsx:118:7 - error TS6133: 'rightPosition' is declared but its value is never read.
+
+118   let rightPosition = 0
+          ~~~~~~~~~~~~~
+
+src/components/header/UserDropdown.tsx:135:7 - error TS2322: Type '{ children: Element[]; isOpen: true; onClose: () => void; className: string; style: { top: string; right: string; }; }' is not assignable to type 'IntrinsicAttributes & DropdownProps'.
+  Property 'style' does not exist on type 'IntrinsicAttributes & DropdownProps'.
+
+135       style={{
+          ~~~~~
+
+src/layout/AppHeader.tsx:5:1 - error TS6133: 'Header' is declared but its value is never read.
+
+5 import Header from "../components/header/Header"
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/layout/AppHeader.tsx:10:9 - error TS6133: 'user' is declared but its value is never read.
+
+10   const { user } = useAuth()
+           ~~~~~~~~
+
+src/layout/AppLayout.tsx:42:7 - error TS6133: 'LayoutContentCustomScroll' is declared but its value is never read.
+
+42 const LayoutContentCustomScroll: React.FC = () => {
+         ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/pages/Dashboard/Home.tsx:13:10 - error TS6133: 'selectedTab' is declared but its value is never read.
+
+13   const [selectedTab, setSelectedTab] = useState<"LineChart" | "BarChart">(
+            ~~~~~~~~~~~
+
+src/pages/Dashboard/Home.tsx:13:23 - error TS6133: 'setSelectedTab' is declared but its value is never read.
+
+13   const [selectedTab, setSelectedTab] = useState<"LineChart" | "BarChart">(
+                         ~~~~~~~~~~~~~~
+
+src/pages/Dashboard/Home.tsx:17:20 - error TS6133: 'user' is declared but its value is never read.
+
+17   const { isAdmin, user } = useAuth()
+                      ~~~~
+
+src/pages/Dashboard/Home.tsx:58:32 - error TS2322: Type '{ salesData: { month: string; sales: number; }[]; }' is not assignable to type 'IntrinsicAttributes'.
+  Property 'salesData' does not exist on type 'IntrinsicAttributes'.
+
+58             <MonthlySalesChart salesData={dashboardData.salesData} />
+                                  ~~~~~~~~~
+
+src/pages/Dashboard/Home.tsx:75:25 - error TS2322: Type '{ orders: { id: string; customer: string; amount: string; status: string; date: string; }[]; }' is not assignable to type 'IntrinsicAttributes'.
+  Property 'orders' does not exist on type 'IntrinsicAttributes'.
+
+75           <RecentOrders orders={dashboardData.recentOrders} />
+                           ~~~~~~
+
+src/pages/Items/ItemListPage.tsx:17:7 - error TS6133: 'SortUpIcon' is declared but its value is never read.
+
+17 const SortUpIcon = () => (
+         ~~~~~~~~~~
+
+src/pages/Items/ItemListPage.tsx:34:7 - error TS6133: 'SortDownIcon' is declared but its value is never read.
+
+34 const SortDownIcon = () => (
+         ~~~~~~~~~~~~
+
+src/pages/Items/ItemListPage.tsx:51:7 - error TS6133: 'FilterIcon' is declared but its value is never read.
+
+51 const FilterIcon = () => (
+         ~~~~~~~~~~
+
+src/pages/Items/ItemListPage.tsx:65:7 - error TS6133: 'VerticalEllipsisIcon' is declared but its value is never read.
+
+65 const VerticalEllipsisIcon = () => (
+         ~~~~~~~~~~~~~~~~~~~~

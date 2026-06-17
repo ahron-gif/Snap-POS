@@ -1,0 +1,175 @@
+/* Preview Panel Styles */
+.preview-panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: #fff;
+  border-left: 1px solid #e0e0e0;
+}
+
+.preview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  border-bottom: 1px solid #eee;
+  background-color: #fafafa;
+}
+
+.preview-header h4 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.preview-size {
+  font-size: 11px;
+  color: #666;
+  background-color: #e8e8e8;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+.preview-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #f5f5f5;
+  overflow: auto;
+}
+
+.preview-label-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preview-label {
+  position: relative;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+}
+
+.preview-element {
+  position: absolute;
+  box-sizing: border-box;
+}
+
+.preview-text {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.preview-barcode {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+}
+
+.preview-barcode svg {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.preview-rectangle {
+  box-sizing: border-box;
+}
+
+.preview-line {
+  /* Line is rendered as a thin rectangle */
+}
+
+.preview-footer {
+  padding: 10px 15px;
+  border-top: 1px solid #eee;
+  background-color: #fafafa;
+}
+
+.preview-data-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.data-label {
+  font-size: 10px;
+  color: #888;
+  text-transform: uppercase;
+}
+
+.data-value {
+  font-size: 11px;
+  color: #333;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.preview-hint {
+  font-size: 10px;
+  color: #999;
+  font-style: italic;
+}
+
+/* Responsive adjustments */
+@media (max-height: 700px) {
+  .preview-container {
+    padding: 10px;
+  }
+
+  .preview-header,
+  .preview-footer {
+    padding: 8px 12px;
+  }
+}
+
+/* ─── Dark mode ─── */
+.dark .preview-panel {
+  background-color: #1f2937;
+  border-left-color: #374151;
+}
+
+.dark .preview-header {
+  border-bottom-color: #374151;
+  background-color: #111827;
+}
+
+.dark .preview-header h4 {
+  color: #e5e7eb;
+}
+
+.dark .preview-size {
+  color: #9ca3af;
+  background-color: #374151;
+}
+
+.dark .preview-container {
+  background-color: #111827;
+}
+
+.dark .preview-footer {
+  border-top-color: #374151;
+  background-color: #111827;
+}
+
+.dark .data-label {
+  color: #6b7280;
+}
+
+.dark .data-value {
+  color: #e5e7eb;
+}
+
+.dark .preview-hint {
+  color: #6b7280;
+}

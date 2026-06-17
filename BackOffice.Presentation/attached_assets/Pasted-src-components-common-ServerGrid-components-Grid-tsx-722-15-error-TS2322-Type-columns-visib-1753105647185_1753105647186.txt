@@ -1,0 +1,86 @@
+src/components/common/ServerGrid/components/Grid.tsx:722:15 - error TS2322: Type '{ columns: { visible: boolean; width: number; field: string; headerName: string; sortable?: boolean | undefined; filterable?: boolean | undefined; editable?: boolean | undefined; cellRenderer?: ((value: any) => ReactNode) | undefined; dataType?: "string" | ... 8 more ... | undefined; }[]; ... 8 more ...; showColumnC...' is not assignable to type 'IntrinsicAttributes & GridHeaderProps'.
+  Property 'onColumnChooserOpen' does not exist on type 'IntrinsicAttributes & GridHeaderProps'.
+
+722               onColumnChooserOpen={() => setShowColumnChooser(true)}
+                  ~~~~~~~~~~~~~~~~~~~
+
+src/components/common/ServerGrid/components/Grid.tsx:725:48 - error TS2345: Argument of type 'Column[]' is not assignable to parameter of type 'SetStateAction<{ visible: boolean; width: number; field: string; headerName: string; sortable?: boolean | undefined; filterable?: boolean | undefined; editable?: boolean | undefined; cellRenderer?: ((value: any) => ReactNode) | undefined; dataType?: "string" | ... 8 more ... | undefined; }[]>'.
+  Type 'Column[]' is not assignable to type '{ visible: boolean; width: number; field: string; headerName: string; sortable?: boolean | undefined; filterable?: boolean | undefined; editable?: boolean | undefined; cellRenderer?: ((value: any) => ReactNode) | undefined; dataType?: "string" | ... 8 more ... | undefined; }[]'.
+    Type 'Column' is not assignable to type '{ visible: boolean; width: number; field: string; headerName: string; sortable?: boolean; filterable?: boolean; editable?: boolean; cellRenderer?: (value: any) => string | React.ReactNode; dataType?: "string" | "number" | "date" | "time" | "datetime" | "boolean" | "actions" | "email" | "url"; }'.
+      Types of property 'width' are incompatible.
+        Type 'number | undefined' is not assignable to type 'number'.
+          Type 'undefined' is not assignable to type 'number'.
+
+725               setColumns={(cols) => setColumns(typeof cols === 'function' ? cols(columns) : cols)}
+                                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/common/ServerGrid/components/GridHeader.tsx:74:3 - error TS6133: 'onColumnResize' is declared but its value is never read.
+
+74   onColumnResize,
+     ~~~~~~~~~~~~~~
+
+src/components/common/ServerGrid/components/GridHeader.tsx:78:10 - error TS6133: 'resizeStartX' is declared but its value is never read.
+
+78   const [resizeStartX, setResizeStartX] = useState(0)
+            ~~~~~~~~~~~~
+
+src/components/common/ServerGrid/components/GridHeader.tsx:78:24 - error TS6133: 'setResizeStartX' is declared but its value is never read.
+
+78   const [resizeStartX, setResizeStartX] = useState(0)
+                          ~~~~~~~~~~~~~~~
+
+src/components/common/ServerGrid/components/GridHeader.tsx:80:10 - error TS6133: 'originalWidth' is declared but its value is never read.
+
+80   const [originalWidth, setOriginalWidth] = useState(0)
+            ~~~~~~~~~~~~~
+
+src/components/common/ServerGrid/components/GridHeader.tsx:80:25 - error TS6133: 'setOriginalWidth' is declared but its value is never read.
+
+80   const [originalWidth, setOriginalWidth] = useState(0)
+                           ~~~~~~~~~~~~~~~~
+
+src/components/common/ServerGrid/components/GridHeader.tsx:141:9 - error TS6133: 'handleResize' is declared but its value is never read.
+
+141   const handleResize = (e: React.MouseEvent) => {
+            ~~~~~~~~~~~~
+
+src/components/common/ServerGrid/components/GridHeader.tsx:141:25 - error TS6133: 'e' is declared but its value is never read.
+
+141   const handleResize = (e: React.MouseEvent) => {
+                            ~
+
+src/components/common/ServerGrid/components/GridHeader.tsx:268:10 - error TS6133: 'openFilterDropdown' is declared but its value is never read.
+
+268   const [openFilterDropdown, setOpenFilterDropdown] = useState<string | null>(null)
+             ~~~~~~~~~~~~~~~~~~
+
+src/components/common/ServerGrid/components/GridHeader.tsx:631:25 - error TS6133: 'e' is declared but its value is never read.
+
+631               onClick={(e) => {
+                            ~
+
+src/components/header/NotificationDropdown.tsx:86:7 - error TS6133: 'topPosition' is declared but its value is never read.
+
+86   let topPosition = 0
+         ~~~~~~~~~~~
+
+src/components/header/NotificationDropdown.tsx:87:7 - error TS6133: 'rightPosition' is declared but its value is never read.
+
+87   let rightPosition = 0
+         ~~~~~~~~~~~~~
+
+src/pages/Dashboard/Home.tsx:2:1 - error TS6133: 'useState' is declared but its value is never read.
+
+2 import { useState } from "react"
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/pages/Dashboard/Home.tsx:55:32 - error TS2322: Type '{ salesData: { month: string; sales: number; }[]; }' is not assignable to type 'IntrinsicAttributes'.
+  Property 'salesData' does not exist on type 'IntrinsicAttributes'.
+
+55             <MonthlySalesChart salesData={dashboardData.salesData} />
+                                  ~~~~~~~~~
+
+src/pages/Dashboard/Home.tsx:72:25 - error TS2322: Type '{ orders: { id: string; customer: string; amount: string; status: string; date: string; }[]; }' is not assignable to type 'IntrinsicAttributes'.
+  Property 'orders' does not exist on type 'IntrinsicAttributes'.
+
+72           <RecentOrders orders={dashboardData.recentOrders} />

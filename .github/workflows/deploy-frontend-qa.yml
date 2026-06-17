@@ -1,0 +1,47 @@
+name: Deploy Frontend to Azure QA
+
+on:
+  push:
+    branches:
+      - QA
+    paths:
+      - 'BackOffice.Presentation/**'
+      - '.github/workflows/deploy-frontend-qa.yml'
+  workflow_dispatch:
+
+env:
+  NODE_VERSION: '20.x'
+  AZURE_WEBAPP_NAME: ${{ vars.AZURE_FRONTEND_APP_NAME }}
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: BackOffice.Presentation/package-lock.json
+
+      - name: Install dependencies
+        working-directory: BackOffice.Presentation
+        run: npm ci
+
+      - name: Build
+        working-directory: BackOffice.Presentation
+        env:
+          VITE_API_BASE_URL: ${{ vars.VITE_API_BASE_URL }}
+          VITE_GOOGLE_CLIENT_ID: ${{ vars.VITE_GOOGLE_CLIENT_ID }}
+        run: npm run build
+
+      - name: Deploy to Azure App Service
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: ${{ env.AZURE_WEBAPP_NAME }}
+          publish-profile: ${{ secrets.AZURE_FRONTEND_PUBLISH_PROFILE }}
+          package: BackOffice.Presentation/dist

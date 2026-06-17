@@ -1,0 +1,33 @@
+AppHeader.tsx:366 Uncaught ReferenceError: Link is not defined
+    at AppHeader (AppHeader.tsx:366:14)
+AppHeader.tsx:366 Uncaught ReferenceError: Link is not defined
+    at AppHeader (AppHeader.tsx:366:14)
+AppHeader.tsx:366 Uncaught ReferenceError: Link is not defined
+    at AppHeader (AppHeader.tsx:366:14)
+chunk-TH7NCS4R.js?v=9b83b3eb:14080 The above error occurred in the <AppHeader> component:
+
+    at AppHeader (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/src/layout/AppHeader.tsx:30:64)
+    at div
+    at div
+    at div
+    at LayoutContent (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/src/layout/AppLayout.tsx:25:51)
+    at SidebarProvider (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/src/context/SidebarContext.tsx:30:3)
+    at AppLayout
+    at ProtectedRoute (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/src/components/ProtectedRoute.tsx:20:27)
+    at RenderedRoute (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/node_modules/.vite/deps/react-router.js?v=9b83b3eb:5525:26)
+    at Routes (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/node_modules/.vite/deps/react-router.js?v=9b83b3eb:6258:3)
+    at Router (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/node_modules/.vite/deps/react-router.js?v=9b83b3eb:6201:13)
+    at BrowserRouter (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/node_modules/.vite/deps/react-router.js?v=9b83b3eb:9271:3)
+    at AppRoutes (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/src/App.tsx:52:31)
+    at TenantProvider (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/src/context/TenantContext.tsx:143:34)
+    at AuthProvider (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/src/context/AuthContext.tsx:32:32)
+    at Provider (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/node_modules/.vite/deps/react-redux.js?v=9b83b3eb:923:11)
+    at App
+    at _a (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/node_modules/.vite/deps/react-helmet-async.js?v=9b83b3eb:624:5)
+    at AppWrapper (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/src/components/common/PageMeta.tsx:38:30)
+    at ThemeProvider (https://197b6bf9-3323-47b0-a14b-beada97d4a17-00-7fxs32axui38.sisko.replit.dev/src/context/ThemeContext.tsx:22:3)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+chunk-TH7NCS4R.js?v=9b83b3eb:19466 Uncaught ReferenceError: Link is not defined
+    at AppHeader (AppHeader.tsx:366:14)

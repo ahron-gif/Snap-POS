@@ -1,0 +1,263 @@
+/* Print Labels Dialog Styles */
+.print-dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9000;
+}
+
+.print-dialog {
+  width: 90%;
+  max-width: 480px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.print-dialog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.print-dialog-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #666;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.close-btn:hover {
+  color: #333;
+}
+
+.print-dialog-content {
+  padding: 20px;
+}
+
+.print-error {
+  padding: 10px 14px;
+  margin-bottom: 16px;
+  background-color: #fff3f3;
+  border: 1px solid #ffcdd2;
+  border-radius: 4px;
+  color: #c62828;
+  font-size: 13px;
+}
+
+.print-form-row {
+  margin-bottom: 16px;
+}
+
+.print-form-row label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #555;
+}
+
+.print-form-row select,
+.print-form-row input[type="number"] {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #333;
+}
+
+.print-form-row select:focus,
+.print-form-row input:focus {
+  outline: none;
+  border-color: #0066cc;
+  box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.1);
+}
+
+.print-form-row .hint {
+  display: block;
+  margin-top: 4px;
+  font-size: 11px;
+  color: #888;
+}
+
+.print-summary {
+  padding: 14px;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  margin-top: 8px;
+}
+
+.print-summary p {
+  margin: 0;
+  font-size: 13px;
+  color: #555;
+}
+
+.print-summary p + p {
+  margin-top: 6px;
+}
+
+.print-summary strong {
+  color: #0066cc;
+}
+
+.template-info {
+  font-size: 12px !important;
+  color: #888 !important;
+}
+
+.print-dialog-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 16px 20px;
+  background-color: #f8f9fa;
+  border-top: 1px solid #e9ecef;
+}
+
+.print-dialog-footer button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.print-dialog-footer .btn-secondary {
+  background-color: #e9ecef;
+  color: #495057;
+}
+
+.print-dialog-footer .btn-secondary:hover {
+  background-color: #dee2e6;
+}
+
+.print-dialog-footer .btn-primary {
+  background-color: #0066cc;
+  color: #fff;
+}
+
+.print-dialog-footer .btn-primary:hover:not(:disabled) {
+  background-color: #0052a3;
+}
+
+.print-dialog-footer .btn-primary:disabled {
+  background-color: #99c2e8;
+  cursor: not-allowed;
+}
+
+/* ─── Dark mode ─── */
+.dark .print-dialog-overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.dark .print-dialog {
+  background-color: #1f2937;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+}
+
+.dark .print-dialog-header {
+  background-color: #111827;
+  border-bottom-color: #374151;
+}
+
+.dark .print-dialog-header h3 {
+  color: #e5e7eb;
+}
+
+.dark .close-btn {
+  color: #9ca3af;
+}
+
+.dark .close-btn:hover {
+  color: #e5e7eb;
+}
+
+.dark .print-dialog-content {
+  background-color: #1f2937;
+}
+
+.dark .print-error {
+  background-color: #451a1a;
+  border-color: #7f1d1d;
+  color: #fca5a5;
+}
+
+.dark .print-form-row label {
+  color: #d1d5db;
+}
+
+.dark .print-form-row select,
+.dark .print-form-row input[type="number"] {
+  background-color: #111827;
+  border-color: #374151;
+  color: #e5e7eb;
+}
+
+.dark .print-form-row select:focus,
+.dark .print-form-row input:focus {
+  border-color: #1e40af;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.dark .print-form-row .hint {
+  color: #6b7280;
+}
+
+.dark .print-summary {
+  background-color: #111827;
+}
+
+.dark .print-summary p {
+  color: #d1d5db;
+}
+
+.dark .print-summary strong {
+  color: #60a5fa;
+}
+
+.dark .template-info {
+  color: #6b7280 !important;
+}
+
+.dark .print-dialog-footer {
+  background-color: #111827;
+  border-top-color: #374151;
+}
+
+.dark .print-dialog-footer .btn-secondary {
+  background-color: #374151;
+  color: #d1d5db;
+}
+
+.dark .print-dialog-footer .btn-secondary:hover {
+  background-color: #4b5563;
+}
+
+.dark .print-dialog-footer .btn-primary:disabled {
+  background-color: #1e3a5f;
+  color: #6b7280;
+}

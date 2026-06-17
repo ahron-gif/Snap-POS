@@ -1,0 +1,3 @@
+namespace BackOffice.Application.Test
+{
+}

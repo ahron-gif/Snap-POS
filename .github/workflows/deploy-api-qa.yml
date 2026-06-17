@@ -1,0 +1,59 @@
+name: Deploy API to Azure QA
+
+on:
+  push:
+    branches:
+      - QA
+    paths:
+      - 'BackOffice.Api/**'
+      - 'BackOffice.Application/**'
+      - 'BackOffice.Domain/**'
+      - 'BackOffice.Infrastructure/**'
+      - 'BackOffice.Infrastructure.Migrations/**'
+      - 'BackOffice.Persistence/**'
+      - 'BackOffice.Common/**'
+      - 'SmartKartReg.Infrastructure/**'
+      - 'RDT.BackOffice.sln'
+      - '.github/workflows/deploy-api-qa.yml'
+  workflow_dispatch:
+
+env:
+  DOTNET_VERSION: '8.0.x'
+  AZURE_WEBAPP_NAME: ${{ vars.AZURE_API_APP_NAME }}
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Restore dependencies
+        run: dotnet restore BackOffice.Api/BackOffice.Api.csproj
+
+      - name: Build
+        run: dotnet build BackOffice.Api/BackOffice.Api.csproj --configuration Release --no-restore
+
+      - name: Run tests
+        run: |
+          dotnet test BackOffice.Application.Test/BackOffice.Application.Test.csproj --configuration Release --verbosity normal
+          dotnet test BackOffice.Domain.Test/BackOffice.Domain.Test.csproj --configuration Release --verbosity normal
+          dotnet test BackOffice.Infrastructure.Test/BackOffice.Infrastructure.Test.csproj --configuration Release --verbosity normal
+          dotnet test BackOffice.Persistence.Test/BackOffice.Persistence.Test.csproj --configuration Release --verbosity normal
+          dotnet test BackOffice.Common.Test/BackOffice.Common.Test.csproj --configuration Release --verbosity normal
+
+      - name: Publish API
+        run: dotnet publish BackOffice.Api/BackOffice.Api.csproj --configuration Release --output ./publish
+
+      - name: Deploy to Azure App Service
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: ${{ env.AZURE_WEBAPP_NAME }}
+          publish-profile: ${{ secrets.AZURE_API_PUBLISH_PROFILE }}
+          package: ./publish

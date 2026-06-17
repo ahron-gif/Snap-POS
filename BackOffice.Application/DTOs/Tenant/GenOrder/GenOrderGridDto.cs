@@ -1,0 +1,56 @@
+namespace BackOffice.Application.DTOs.Tenant.GenOrder
+{
+    public class GenOrderGridDto
+    {
+        public Guid? GenPurchaseOrderID { get; set; }
+        public bool? ToOrder { get; set; }
+        public double? Reorder { get; set; }
+        public int UOMType { get; set; }
+        public short Status { get; set; }
+        public int? SortOrder { get; set; }
+        public Guid ItemID { get; set; }
+        public Guid ItemStoreID { get; set; }
+        public Guid StoreID { get; set; }
+        public string? ItemName { get; set; }
+        public string? ModalNumber { get; set; }
+        public string? BarcodeNumber { get; set; }
+        public string? StyleNo { get; set; }
+        public string? VenderCode { get; set; }
+        public string? Size { get; set; }
+        public string? Department { get; set; }
+        public string? StoreName { get; set; }
+        public string? SupplierName { get; set; }
+        public string? SupplierItemCode { get; set; }
+        public string? CustomerCode { get; set; }
+        public string? Groups { get; set; }
+        public Guid? SupplierNo { get; set; }
+        public Guid? MainSupplierID { get; set; }
+        public Guid? ManufacturerID { get; set; }
+        public Guid? DepartmentID { get; set; }
+        public Guid? UserModified { get; set; }
+        public int? CaseQty { get; set; }
+        public int? ItemType { get; set; }
+        public decimal? CsCost { get; set; }
+        public decimal? PcCost { get; set; }
+        public decimal? OnHand { get; set; }
+        public decimal? OnOrder { get; set; }
+        public decimal? ReorderPoint { get; set; }
+        public decimal? RestockLevel { get; set; }
+        public decimal Qty3 { get; set; }
+        public decimal Qty7 { get; set; }
+        public decimal Qty14 { get; set; }
+        public decimal Qty30 { get; set; }
+        public decimal Qty60 { get; set; }
+        public decimal Qty90 { get; set; }
+        public decimal Qty180 { get; set; }
+        public decimal Qty420 { get; set; }
+        public decimal Qty540 { get; set; }
+        public decimal OnSaleOrder { get; set; }
+        public decimal TransferQty { get; set; }
+        public decimal MTD { get; set; }
+        public decimal YTD { get; set; }
+        public decimal PTD { get; set; }
+        public DateTime? LastReceived { get; set; }
+        public DateTime? DateModified { get; set; }
+    }
+}

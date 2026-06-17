@@ -1,0 +1,369 @@
+src/components/common/ServerDataGrid.tsx:5:3 - error TS6133: 'GridToolbar' is declared but its value is never read.
+
+5   GridToolbar,
+    ~~~~~~~~~~~
+
+src/components/common/ServerDataGrid.tsx:6:3 - error TS6133: 'GridPaginationModel' is declared but its value is never read.
+
+6   GridPaginationModel,
+    ~~~~~~~~~~~~~~~~~~~
+
+src/components/common/ServerDataGrid.tsx:7:3 - error TS6133: 'GridSortModel' is declared but its value is never read.
+
+7   GridSortModel,
+    ~~~~~~~~~~~~~
+
+src/components/common/ServerDataGrid.tsx:8:3 - error TS6133: 'GridFilterModel' is declared but its value is never read.
+
+8   GridFilterModel,
+    ~~~~~~~~~~~~~~~
+
+src/components/common/ServerDataGrid.tsx:49:3 - error TS6133: 'initialPageSize' is declared but its value is never read.
+
+49   initialPageSize = 20,
+     ~~~~~~~~~~~~~~~
+
+src/components/common/ServerDataGrid.tsx:97:22 - error TS6133: 'prev' is declared but its value is never read.
+
+97     setEditFormData((prev: any) => ({ ...row }))
+                        ~~~~
+
+src/components/common/ServerDataGrid.tsx:146:42 - error TS2339: Property 'field' does not exist on type 'never'.
+
+146       filterModel.items?.filter((f) => f.field && f.value !== "") || []
+                                             ~~~~~
+
+src/components/common/ServerDataGrid.tsx:146:53 - error TS2339: Property 'value' does not exist on type 'never'.
+
+146       filterModel.items?.filter((f) => f.field && f.value !== "") || []
+                                                        ~~~~~
+
+src/components/common/ServerDataGrid.tsx:158:16 - error TS2339: Property 'field' does not exist on type 'never'.
+
+158         col: f.field,
+                   ~~~~~
+
+src/components/common/ServerDataGrid.tsx:159:17 - error TS2339: Property 'operator' does not exist on type 'never'.
+
+159         type: f.operator,
+                    ~~~~~~~~
+
+src/components/common/ServerDataGrid.tsx:160:16 - error TS2339: Property 'value' does not exist on type 'never'.
+
+160         val: f.value,
+                   ~~~~~
+
+src/components/common/ServerDataGrid.tsx:165:38 - error TS2339: Property 'field' does not exist on type 'never'.
+
+165     const sortColumn = sortModel[0]?.field || "name"
+                                         ~~~~~
+
+src/components/common/ServerDataGrid.tsx:166:41 - error TS2339: Property 'sort' does not exist on type 'never'.
+
+166     const sortDirection = sortModel[0]?.sort || "asc"
+                                            ~~~~
+
+src/components/common/ServerDataGrid.tsx:492:11 - error TS2322: Type 'Dispatch<SetStateAction<never[]>>' is not assignable to type '(model: GridSortModel, details: GridCallbackDetails<any>) => void'.
+  Types of parameters 'value' and 'model' are incompatible.
+    Type 'GridSortModel' is not assignable to type 'SetStateAction<never[]>'.
+      The type 'readonly GridSortItem[]' is 'readonly' and cannot be assigned to the mutable type 'never[]'.
+
+492           onSortModelChange={setSortModel}
+              ~~~~~~~~~~~~~~~~~
+
+  node_modules/@mui/x-data-grid/models/props/DataGridProps.d.ts:731:5
+    731     onSortModelChange?: (model: GridSortModel, details: GridCallbackDetails) => void;
+            ~~~~~~~~~~~~~~~~~
+    The expected type comes from property 'onSortModelChange' which is declared here on type 'IntrinsicAttributes & Omit<Partial<DataGridPropsWithDefaultValues<any>> & DataGridPropsWithComplexDefaultValueBeforeProcessing & DataGridPropsWithoutDefaultValue<...>, DataGridForcedPropsKey> & { ...; } & RefAttributes<...>'
+
+src/components/common/ServerDataGrid.tsx:494:11 - error TS2322: Type 'Dispatch<SetStateAction<{ items: never[]; }>>' is not assignable to type '(model: GridFilterModel, details: GridCallbackDetails<"filter">) => void'.
+  Types of parameters 'value' and 'model' are incompatible.
+    Type 'GridFilterModel' is not assignable to type 'SetStateAction<{ items: never[]; }>'.
+      Type 'GridFilterModel' is not assignable to type '{ items: never[]; }'.
+        Types of property 'items' are incompatible.
+          Type 'GridFilterItem[]' is not assignable to type 'never[]'.
+            Type 'GridFilterItem' is not assignable to type 'never'.
+
+494           onFilterModelChange={setFilterModel}
+              ~~~~~~~~~~~~~~~~~~~
+
+  node_modules/@mui/x-data-grid/models/props/DataGridProps.d.ts:700:5
+    700     onFilterModelChange?: (model: GridFilterModel, details: GridCallbackDetails<'filter'>) => void;
+            ~~~~~~~~~~~~~~~~~~~
+    The expected type comes from property 'onFilterModelChange' which is declared here on type 'IntrinsicAttributes & Omit<Partial<DataGridPropsWithDefaultValues<any>> & DataGridPropsWithComplexDefaultValueBeforeProcessing & DataGridPropsWithoutDefaultValue<...>, DataGridForcedPropsKey> & { ...; } & RefAttributes<...>'
+
+src/components/common/ServerGrid/ServerGrid.tsx:361:3 - error TS6133: 'emptyMessage' is declared but its value is never read.
+
+361   emptyMessage = "No data available",
+      ~~~~~~~~~~~~
+
+src/components/common/ServerGrid/ServerGrid.tsx:362:3 - error TS6133: 'emptyIcon' is declared but its value is never read.
+
+362   emptyIcon = "📋",
+      ~~~~~~~~~
+
+src/components/common/ServerGrid/ServerGrid.tsx:363:3 - error TS6133: 'showStats' is declared but its value is never read.
+
+363   showStats = true,
+      ~~~~~~~~~
+
+src/components/common/ServerGrid/ServerGrid.tsx:364:3 - error TS6133: 'actions' is declared but its value is never read.
+
+364   actions,
+      ~~~~~~~
+
+src/components/common/ServerGrid/ServerGrid.tsx:370:3 - error TS6133: 'ViewComponent' is declared but its value is never read.
+
+370   ViewComponent,
+      ~~~~~~~~~~~~~
+
+src/components/common/ServerGrid/ServerGrid.tsx:378:3 - error TS6133: 'orFilters' is declared but its value is never read.
+
+378   orFilters = [],
+      ~~~~~~~~~
+
+src/components/common/ServerGrid/components/Grid.tsx:725:15 - error TS2322: Type 'Dispatch<SetStateAction<{ visible: boolean; width: number; field: string; headerName: string; sortable?: boolean | undefined; filterable?: boolean | undefined; editable?: boolean | undefined; cellRenderer?: ((value: any) => ReactNode) | undefined; dataType?: "string" | ... 8 more ... | undefined; }[]>>' is not assignable to type '(columns: Column[] | ((prev: Column[]) => Column[])) => void'.
+  Types of parameters 'value' and 'columns' are incompatible.
+    Type 'Column[] | ((prev: Column[]) => Column[])' is not assignable to type 'SetStateAction<{ visible: boolean; width: number; field: string; headerName: string; sortable?: boolean | undefined; filterable?: boolean | undefined; editable?: boolean | undefined; cellRenderer?: ((value: any) => ReactNode) | undefined; dataType?: "string" | ... 8 more ... | undefined; }[]>'.
+      Type 'Column[]' is not assignable to type 'SetStateAction<{ visible: boolean; width: number; field: string; headerName: string; sortable?: boolean | undefined; filterable?: boolean | undefined; editable?: boolean | undefined; cellRenderer?: ((value: any) => ReactNode) | undefined; dataType?: "string" | ... 8 more ... | undefined; }[]>'.
+        Type 'Column[]' is not assignable to type '{ visible: boolean; width: number; field: string; headerName: string; sortable?: boolean | undefined; filterable?: boolean | undefined; editable?: boolean | undefined; cellRenderer?: ((value: any) => ReactNode) | undefined; dataType?: "string" | ... 8 more ... | undefined; }[]'.
+          Type 'Column' is not assignable to type '{ visible: boolean; width: number; field: string; headerName: string; sortable?: boolean; filterable?: boolean; editable?: boolean; cellRenderer?: (value: any) => string | React.ReactNode; dataType?: "string" | "number" | "date" | "time" | "datetime" | "boolean" | "actions" | "email" | "url"; }'.
+            Types of property 'width' are incompatible.
+              Type 'number | undefined' is not assignable to type 'number'.
+                Type 'undefined' is not assignable to type 'number'.
+
+725               setColumns={setColumns}
+                  ~~~~~~~~~~
+
+  src/components/common/ServerGrid/components/GridHeader.tsx:44:3
+    44   setColumns?: (columns: Column[] | ((prev: Column[]) => Column[])) => void
+         ~~~~~~~~~~
+    The expected type comes from property 'setColumns' which is declared here on type 'IntrinsicAttributes & GridHeaderProps'
+
+src/components/common/ServerGrid/components/Grid.tsx:749:15 - error TS2322: Type '{ currentPage: number; totalPages: number; onPageChange: (page: number) => void; totalItems: number; pageSize: number; onPageSizeChange: (newPageSize: number) => void; containerWidth: string; }' is not assignable to type 'IntrinsicAttributes & GridPaginationProps'.
+  Property 'containerWidth' does not exist on type 'IntrinsicAttributes & GridPaginationProps'.
+
+749               containerWidth={containerWidth}
+                  ~~~~~~~~~~~~~~
+
+src/components/common/ServerGrid/components/GridHeader.tsx:79:10 - error TS6133: 'isResizing' is declared but its value is never read.
+
+79   const [isResizing, setIsResizing] = useState(false)
+            ~~~~~~~~~~
+
+src/components/common/ServerGrid/components/GridHeader.tsx:262:3 - error TS6133: 'onColumnChooserOpen' is declared but its value is never read.
+
+262   onColumnChooserOpen,
+      ~~~~~~~~~~~~~~~~~~~
+
+src/components/common/ServerGrid/components/GridHeader.tsx:266:3 - error TS6133: 'showColumnChooser' is declared but its value is never read.
+
+266   showColumnChooser = false,
+      ~~~~~~~~~~~~~~~~~
+
+src/components/common/ServerGrid/components/GridHeader.tsx:290:10 - error TS6133: 'openFilterDropdown' is declared but its value is never read.
+
+290   const [openFilterDropdown, setOpenFilterDropdown] = useState<string | null>(null)
+             ~~~~~~~~~~~~~~~~~~
+
+src/components/common/ServerGrid/components/GridHeader.tsx:653:25 - error TS6133: 'e' is declared but its value is never read.
+
+653               onClick={(e) => {
+                            ~
+
+src/components/ecommerce/EcommerceMetrics.tsx:1:1 - error TS6133: 'useState' is declared but its value is never read.
+
+1 import { useState } from "react"
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/ecommerce/EcommerceMetrics.tsx:2:1 - error TS6133: 'Dropdown' is declared but its value is never read.
+
+2 import { Dropdown } from "../ui/dropdown/Dropdown"
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/ecommerce/EcommerceMetrics.tsx:3:1 - error TS6133: 'DropdownItem' is declared but its value is never read.
+
+3 import { DropdownItem } from "../ui/dropdown/DropdownItem"
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/ecommerce/EcommerceMetrics.tsx:4:1 - error TS6133: 'MoreDotIcon' is declared but its value is never read.
+
+4 import { MoreDotIcon } from "../../icons"
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/header/NotificationDropdown.tsx:98:7 - error TS2322: Type '{ children: Element[]; ref: RefObject<HTMLDivElement | null>; isOpen: true; onClose: () => void; className: string; style: { top: number; right: number; }; }' is not assignable to type 'IntrinsicAttributes & DropdownProps'.
+  Property 'ref' does not exist on type 'IntrinsicAttributes & DropdownProps'.
+
+98       ref={dropdownRef} // Attach ref to the Dropdown component
+         ~~~
+
+src/components/header/SwitchTenantModal.tsx:27:9 - error TS6198: All destructured elements are unused.
+
+27   const { customers, currentCustomer } = useAppSelector(state => state.customer)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/components/header/UserDropdown.tsx:4:10 - error TS6133: 'Link' is declared but its value is never read.
+
+4 import { Link, useNavigate } from "react-router"
+           ~~~~
+
+src/components/header/UserDropdown.tsx:117:7 - error TS6133: 'topPosition' is declared but its value is never read.
+
+117   let topPosition = 0
+          ~~~~~~~~~~~
+
+src/components/header/UserDropdown.tsx:118:7 - error TS6133: 'rightPosition' is declared but its value is never read.
+
+118   let rightPosition = 0
+          ~~~~~~~~~~~~~
+
+src/components/header/UserDropdown.tsx:130:7 - error TS2322: Type '{ children: Element[]; ref: RefObject<HTMLDivElement | null>; isOpen: true; onClose: () => void; className: string; style: { top: string; right: string; }; }' is not assignable to type 'IntrinsicAttributes & DropdownProps'.
+  Property 'ref' does not exist on type 'IntrinsicAttributes & DropdownProps'.
+
+130       ref={dropdownRef}
+          ~~~
+
+src/context/AuthContext.tsx:2:44 - error TS6133: 'useState' is declared but its value is never read.
+
+2 import React, { createContext, useContext, useState, useEffect } from 'react';
+                                             ~~~~~~~~
+
+src/context/TenantContext.tsx:1:8 - error TS6133: 'React' is declared but its value is never read.
+
+1 import React, { createContext, useContext, useState, ReactNode, useEffect } from 'react'
+         ~~~~~
+
+src/layout/AppHeader.tsx:1:29 - error TS6133: 'useState' is declared but its value is never read.
+
+1 import { useEffect, useRef, useState } from "react"
+                              ~~~~~~~~
+
+src/layout/AppHeader.tsx:5:1 - error TS6133: 'ThemeToggleButton' is declared but its value is never read.
+
+5 import { ThemeToggleButton } from "../components/common/ThemeToggleButton"
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/layout/AppHeader.tsx:6:1 - error TS6133: 'NotificationDropdown' is declared but its value is never read.
+
+6 import NotificationDropdown from "../components/header/NotificationDropdown"
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/layout/AppHeader.tsx:11:9 - error TS6133: 'user' is declared but its value is never read.
+
+11   const { user } = useAuth()
+           ~~~~~~~~
+
+src/layout/AppLayout.tsx:42:7 - error TS6133: 'LayoutContentFullScroll' is declared but its value is never read.
+
+42 const LayoutContentFullScroll: React.FC = () => {
+         ~~~~~~~~~~~~~~~~~~~~~~~
+
+src/layout/AppLayout.tsx:68:7 - error TS6133: 'LayoutContentCustomScroll' is declared but its value is never read.
+
+68 const LayoutContentCustomScroll: React.FC = () => {
+         ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/layout/AppSidebar.tsx:187:37 - error TS6133: 'isHovered' is declared but its value is never read.
+
+187   const { isExpanded, isMobileOpen, isHovered, setIsHovered, toggleSidebar } = useSidebar();
+                                        ~~~~~~~~~
+
+src/layout/AppSidebar.tsx:187:48 - error TS6133: 'setIsHovered' is declared but its value is never read.
+
+187   const { isExpanded, isMobileOpen, isHovered, setIsHovered, toggleSidebar } = useSidebar();
+                                                   ~~~~~~~~~~~~
+
+src/pages/AuthPages/AuthPageLayout.tsx:4:1 - error TS6133: 'ThemeTogglerTwo' is declared but its value is never read.
+
+4 import ThemeTogglerTwo from "../../components/common/ThemeTogglerTwo";
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/pages/Dashboard/Home.tsx:2:1 - error TS6133: 'ChartTab' is declared but its value is never read.
+
+2 import ChartTab from "../../components/common/ChartTab"
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/pages/Dashboard/Home.tsx:3:1 - error TS6133: 'LineChartOne' is declared but its value is never read.
+
+3 import { LineChartOne } from "../../components/charts/line/LineChartOne"
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/pages/Dashboard/Home.tsx:3:10 - error TS2614: Module '"../../components/charts/line/LineChartOne"' has no exported member 'LineChartOne'. Did you mean to use 'import LineChartOne from "../../components/charts/line/LineChartOne"' instead?
+
+3 import { LineChartOne } from "../../components/charts/line/LineChartOne"
+           ~~~~~~~~~~~~
+
+src/pages/Dashboard/Home.tsx:4:1 - error TS6133: 'BarChartOne' is declared but its value is never read.
+
+4 import { BarChartOne } from "../../components/charts/bar/BarChartOne"
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/pages/Dashboard/Home.tsx:4:10 - error TS2614: Module '"../../components/charts/bar/BarChartOne"' has no exported member 'BarChartOne'. Did you mean to use 'import BarChartOne from "../../components/charts/bar/BarChartOne"' instead?
+
+4 import { BarChartOne } from "../../components/charts/bar/BarChartOne"
+           ~~~~~~~~~~~
+
+src/pages/Dashboard/Home.tsx:16:10 - error TS6133: 'selectedTab' is declared but its value is never read.
+
+16   const [selectedTab, setSelectedTab] = useState<"LineChart" | "BarChart">(
+            ~~~~~~~~~~~
+
+src/pages/Dashboard/Home.tsx:16:23 - error TS6133: 'setSelectedTab' is declared but its value is never read.
+
+16   const [selectedTab, setSelectedTab] = useState<"LineChart" | "BarChart">(
+                         ~~~~~~~~~~~~~~
+
+src/pages/Dashboard/Home.tsx:20:20 - error TS6133: 'user' is declared but its value is never read.
+
+20   const { isAdmin, user } = useAuth()
+                      ~~~~
+
+src/pages/Dashboard/Home.tsx:61:32 - error TS2322: Type '{ salesData: { month: string; sales: number; }[]; }' is not assignable to type 'IntrinsicAttributes'.
+  Property 'salesData' does not exist on type 'IntrinsicAttributes'.
+
+61             <MonthlySalesChart salesData={dashboardData.salesData} />
+                                  ~~~~~~~~~
+
+src/pages/Dashboard/Home.tsx:78:25 - error TS2322: Type '{ orders: { id: string; customer: string; amount: string; status: string; date: string; }[]; }' is not assignable to type 'IntrinsicAttributes'.
+  Property 'orders' does not exist on type 'IntrinsicAttributes'.
+
+78           <RecentOrders orders={dashboardData.recentOrders} />
+                           ~~~~~~
+
+src/pages/Items/ItemListPage.tsx:14:1 - error TS6133: 'API_ENDPOINTS' is declared but its value is never read.
+
+14 import { API_ENDPOINTS } from "../../constants/api";
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/pages/Items/ItemListPage.tsx:81:7 - error TS6133: 'renderHeaderWithIcons' is declared but its value is never read.
+
+81 const renderHeaderWithIcons = (headerName: string) => (
+         ~~~~~~~~~~~~~~~~~~~~~
+
+src/pages/users/UsersListPage.tsx:1:27 - error TS6133: 'useCallback' is declared but its value is never read.
+
+1 import React, { useState, useCallback, useEffect } from "react"
+                            ~~~~~~~~~~~
+
+src/pages/users/UsersListPage.tsx:1:40 - error TS6133: 'useEffect' is declared but its value is never read.
+
+1 import React, { useState, useCallback, useEffect } from "react"
+                                         ~~~~~~~~~
+
+src/pages/users/UsersListPage.tsx:72:7 - error TS6133: 'renderHeaderWithIcons' is declared but its value is never read.
+
+72 const renderHeaderWithIcons = (headerName: string) => (
+         ~~~~~~~~~~~~~~~~~~~~~
+
+src/pages/users/UsersListPage.tsx:642:9 - error TS2322: Type '() => HeadersInit' is not assignable to type '() => { [key: string]: string; }'.
+  Type 'HeadersInit' is not assignable to type '{ [key: string]: string; }'.
+    Type '[string, string][]' is not assignable to type '{ [key: string]: string; }'.
+      Index signature for type 'string' is missing in type '[string, string][]'.
+
+642         getAuthHeaders={getAuthHeaders}
+            ~~~~~~~~~~~~~~
+
+  src/components/common/ServerGrid/ServerGrid.tsx:333:3
+    333   getAuthHeaders?: () => { [key: string]: string }
+          ~~~~~~~~~~~~~~
+    The expected type comes from property 'getAuthHeaders' which is declared here on type 'IntrinsicAttributes & ServerGridProps'

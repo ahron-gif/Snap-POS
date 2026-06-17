@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copy of Cloud_BackOffice/Dlls/DataBase/DBSetUp/EncDataDS.xsd.
+
+  This schema defines the XML shape the legacy desktop BackOffice's
+  EncDataDS dataset produces via DataSet.WriteXml(). The web app loads this
+  schema into a runtime DataSet so it can read/write the encrypted EncData
+  blob in EXACTLY the same XML layout — preserving namespace
+  (http://tempuri.org/EncDataDS.xsd), element order, type promotion (xs:int,
+  xs:boolean lowercase true/false, xs:dateTime, xs:base64Binary, etc.).
+
+  DO NOT EDIT to add/remove columns without updating the desktop XSD in
+  lock-step, or the two apps will produce divergent blobs.
+-->
+<xs:schema id="EncDataDS" targetNamespace="http://tempuri.org/EncDataDS.xsd" xmlns:mstns="http://tempuri.org/EncDataDS.xsd" xmlns="http://tempuri.org/EncDataDS.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:element name="EncDataDS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="EncData">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CompanyName" type="xs:string" minOccurs="0" />
+              <xs:element name="AppType" type="xs:short" minOccurs="0" />
+              <xs:element name="AccountPayable" type="xs:boolean" minOccurs="0" />
+              <xs:element name="DataSoftUser" type="xs:string" minOccurs="0" />
+              <xs:element name="DataSoftPassword" type="xs:string" minOccurs="0" />
+              <xs:element name="ComputersNo" type="xs:int" minOccurs="0" />
+              <xs:element name="BOCompNo" type="xs:int" minOccurs="0" />
+              <xs:element name="StoresNo" type="xs:int" minOccurs="0" />
+              <xs:element name="Multiplelocation" type="xs:boolean" minOccurs="0" />
+              <xs:element name="ExpDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="BeginDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Days" type="xs:int" minOccurs="0" />
+              <xs:element name="Expired" type="xs:boolean" minOccurs="0" />
+              <xs:element name="NewCompanyName" type="xs:string" minOccurs="0" />
+              <xs:element name="ApproveCost" type="xs:boolean" minOccurs="0" />
+              <xs:element name="RestockingWizard" type="xs:boolean" minOccurs="0" />
+              <xs:element name="ReorderWizard" type="xs:boolean" minOccurs="0" />
+              <xs:element name="PurchaseOrder" type="xs:boolean" minOccurs="0" />
+              <xs:element name="SaleOrder" type="xs:boolean" minOccurs="0" />
+              <xs:element name="Resellers" type="xs:string" minOccurs="0" />
+              <xs:element name="Web" type="xs:boolean" minOccurs="0" />
+              <xs:element name="PhoneOrder" type="xs:boolean" minOccurs="0" />
+              <xs:element name="Email" type="xs:boolean" minOccurs="0" />
+              <xs:element name="PocketPC" type="xs:boolean" minOccurs="0" />
+              <xs:element name="PocketPCsNo" type="xs:int" minOccurs="0" />
+              <xs:element name="DailyProfitReport" type="xs:string" minOccurs="0" />
+              <xs:element name="StoreType" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="Loyalty" type="xs:boolean" minOccurs="0" />
+              <xs:element name="ScanReceiveOrder" type="xs:string" minOccurs="0" />
+              <xs:element name="VersionType" type="xs:int" minOccurs="0" />
+              <xs:element name="ApplicationName" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="StoreData">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="StoreID" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" type="xs:string" minOccurs="0" />
+              <xs:element name="Address" type="xs:string" minOccurs="0" />
+              <xs:element name="City_x002C_State_x002C_Zip" type="xs:string" minOccurs="0" />
+              <xs:element name="Country" type="xs:string" minOccurs="0" />
+              <xs:element name="Phone1" type="xs:string" minOccurs="0" />
+              <xs:element name="Phone2" type="xs:string" minOccurs="0" />
+              <xs:element name="Fax" type="xs:string" minOccurs="0" />
+              <xs:element name="Logo" type="xs:base64Binary" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="StoreDataKey1">
+      <xs:selector xpath=".//mstns:StoreData" />
+      <xs:field xpath="mstns:StoreID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
