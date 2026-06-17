@@ -286,7 +286,7 @@ const VendorFormPage: React.FC<VendorFormPageProps> = ({ id, mode = "view", __ta
   const [history] = useState<VendorHistory>(initialHistory);
   const [notes, setNotes] = useState<VendorNote[]>([]);
   const [items, setItems] = useState<VendorItem[]>([]);
-  const [transactions] = useState<VendorTransaction[]>([]);
+  const [transactions, setTransactions] = useState<VendorTransaction[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
   const [showInactiveItems, setShowInactiveItems] = useState(false);
@@ -440,12 +440,53 @@ const VendorFormPage: React.FC<VendorFormPageProps> = ({ id, mode = "view", __ta
     }
   }, [isNewMode, hasCachedState]);
 
+  // Fetch notes from API
+  const fetchVendorNotes = useCallback(async () => {
+    if (!id) return;
+    try {
+      const headers = getAuthHeaders();
+      const response = await axios.get(API_ENDPOINTS.SUPPLIERS.GET_NOTES(id), { headers });
+      if (response.data?.isSuccess && response.data.response) {
+        setNotes(response.data.response);
+      }
+    } catch (error) {
+      console.error("Error fetching vendor notes:", error);
+    }
+  }, [id, getAuthHeaders]);
+
+  // Fetch transactions from API
+  const fetchVendorTransactions = useCallback(async () => {
+    if (!id) return;
+    try {
+      const headers = getAuthHeaders();
+      const response = await axios.get(API_ENDPOINTS.SUPPLIERS.GET_TRANSACTIONS(id), {
+        headers,
+        params: {
+          scope: transactionScope !== "all" ? transactionScope : undefined,
+          fromDate: transactionFromDate || undefined,
+          toDate: transactionToDate || undefined,
+        },
+      });
+      if (response.data?.isSuccess && response.data.response) {
+        setTransactions(response.data.response);
+      }
+    } catch (error) {
+      console.error("Error fetching vendor transactions:", error);
+    }
+  }, [id, getAuthHeaders, transactionScope, transactionFromDate, transactionToDate]);
+
   // Fetch items when switching to Items List tab
   useEffect(() => {
     if (activeTab === "itemsList") {
       fetchVendorItems();
     }
-  }, [activeTab, fetchVendorItems]);
+    if (activeTab === "notes" && id) {
+      fetchVendorNotes();
+    }
+    if (activeTab === "transactions" && id) {
+      fetchVendorTransactions();
+    }
+  }, [activeTab, fetchVendorItems, fetchVendorNotes, fetchVendorTransactions, id]);
 
   // Handle keyboard shortcuts for tab switching
   useEffect(() => {
@@ -550,29 +591,54 @@ const VendorFormPage: React.FC<VendorFormPageProps> = ({ id, mode = "view", __ta
   }, [showToast]);
 
   // Handle add note
-  const handleAddNote = useCallback(() => {
-    if (!newNoteText.trim()) return;
-
-    const newNote: VendorNote = {
-      noteID: `temp-${Date.now()}`,
-      supplierID: id || "",
-      typeOfNote: 1,
-      noteValue: newNoteText,
-      status: 0,
-      dateCreated: new Date().toISOString(),
-      userCreated: "",
-    };
-
-    setNotes((prev) => [...prev, newNote]);
-    setNewNoteText("");
-    showToast("Note added", "success");
-  }, [newNoteText, id, showToast]);
+  const handleAddNote = useCallback(async () => {
+    if (!newNoteText.trim() || !id) return;
+    try {
+      const headers = getAuthHeaders();
+      const response = await axios.post(API_ENDPOINTS.SUPPLIERS.ADD_NOTE(id), {
+        noteValue: newNoteText,
+        typeOfNote: 1,
+      }, { headers });
+      if (response.data?.isSuccess) {
+        setNewNoteText("");
+        showToast("Note added", "success");
+        fetchVendorNotes();
+      } else {
+        showToast("Failed to add note", "error");
+      }
+    } catch (error) {
+      console.error("Error adding note:", error);
+      // Fallback: add locally
+      const newNote: VendorNote = {
+        noteID: `temp-${Date.now()}`,
+        supplierID: id || "",
+        typeOfNote: 1,
+        noteValue: newNoteText,
+        status: 0,
+        dateCreated: new Date().toISOString(),
+        userCreated: "",
+      };
+      setNotes((prev) => [...prev, newNote]);
+      setNewNoteText("");
+      showToast("Note added locally", "info");
+    }
+  }, [newNoteText, id, showToast, getAuthHeaders, fetchVendorNotes]);
 
   // Handle delete note
-  const handleDeleteNote = useCallback((noteID: string) => {
-    setNotes((prev) => prev.filter((n) => n.noteID !== noteID));
-    showToast("Note deleted", "info");
-  }, [showToast]);
+  const handleDeleteNote = useCallback(async (noteID: string) => {
+    if (!id) return;
+    try {
+      const headers = getAuthHeaders();
+      await axios.delete(API_ENDPOINTS.SUPPLIERS.DELETE_NOTE(id, noteID), { headers });
+      showToast("Note deleted", "success");
+      fetchVendorNotes();
+    } catch (error) {
+      console.error("Error deleting note:", error);
+      // Fallback: remove locally
+      setNotes((prev) => prev.filter((n) => n.noteID !== noteID));
+      showToast("Note removed locally", "info");
+    }
+  }, [id, showToast, getAuthHeaders, fetchVendorNotes]);
 
   // Filter items by inactive status
   const filteredItems = useMemo(() => {

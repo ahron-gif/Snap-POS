@@ -140,7 +140,7 @@ const Tooltip: React.FC<{ text: string; visible: boolean; itemCount?: number }> 
 };
 
 // Modules that are not yet completed — greyed out with "Coming Soon"
-const disabledModuleNames = new Set(['Vendors', 'Customers', 'Registers', 'Stores']);
+const disabledModuleNames = new Set(['Stores']);
 
 // Modules that navigate directly to a page (no submenu expansion)
 const directNavModuleNames = new Set(['Reports']);

@@ -368,3 +368,4 @@ FodyWeavers.xsd
 /BackOffice.Presentation/.env
 /BackOffice.Presentation/.env.development
 /BackOffice.Presentation/.env.production
+BackOffice.Presentation/dist.zip

@@ -1,5 +1,5 @@
 
-import React, { useState, memo, useCallback, useRef } from "react";
+import React, { useState, memo, useCallback, useRef, useMemo } from "react";
 import ServerGrid from "../../components/common/ServerGrid/ServerGrid";
 import { useAuthHeaders } from "../../hooks/useAuthHeaders";
 import { useGridSettings } from "../../hooks/useGridSettings";
@@ -20,6 +20,7 @@ import { useExportModal } from "../../hooks/useExportModal"
 import ExportModal from "../../components/common/ExportModal"
 import axios from "axios";
 import { useConfirm } from '../../components/ui/ConfirmModal';
+import { useDashboardTabs } from '../../context/DashboardTabContext';
 
 // Customer record interface (matches CustomerViewDto from backend)
 interface CustomerRecord {
@@ -273,6 +274,7 @@ const CUSTOMERS_GRID_ID = "customers-list-grid";
 
 const CustomerListPage = memo(function CustomerListPage() {
   const { getAuthHeaders } = useAuthHeaders();
+  const { openTab } = useDashboardTabs();
   const { isOpen, openModal, closeModal } = useModal();
   const { confirm, ConfirmDialog } = useConfirm();
 
@@ -429,12 +431,13 @@ const CustomerListPage = memo(function CustomerListPage() {
 
   // Handle row updates (memoized)
   const handleRowUpdate = useCallback(async (updatedRow: CustomerRecord) => {
-    try {
-      console.log("Updating customer:", updatedRow);
-    } catch (err) {
-      console.error("Error updating customer:", err);
-    }
-  }, []);
+    openTab({
+      component: "CustomerFormPage",
+      title: `Customer: ${updatedRow.name || updatedRow.firstName + ' ' + updatedRow.lastName || "Details"}`,
+      closable: true,
+      props: { id: updatedRow.customerID, customerData: updatedRow },
+    });
+  }, [openTab]);
 
   // Handle checkbox selection using customerID as the primary identifier
   const handleRowSelection = useCallback((customerID: string) => {

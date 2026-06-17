@@ -196,9 +196,14 @@ const RegisterListPage = memo(function RegisterListPage() {
   // Handle row updates (double-click to view)
   const handleRowUpdate = useCallback(
     async (updatedRow: RegisterRecord) => {
-      console.log("View register:", updatedRow.registerID)
+      openTab({
+        component: "RegisterFormPage",
+        title: `Register: ${updatedRow.registerNo || "Details"}`,
+        closable: true,
+        props: { id: updatedRow.registerID, registerData: updatedRow },
+      });
     },
-    []
+    [openTab]
   )
 
   // Toast notification function (memoized)
@@ -270,9 +275,14 @@ const RegisterListPage = memo(function RegisterListPage() {
   // Handle View Details from context menu
   const handleViewRegister = useCallback(
     (row: RegisterRecord) => {
-      console.log("View register:", row.registerID)
+      openTab({
+        component: "RegisterFormPage",
+        title: `Register: ${row.registerNo || "Details"}`,
+        closable: true,
+        props: { id: row.registerID, registerData: row },
+      });
     },
-    []
+    [openTab]
   )
 
   // Create custom context menu items: Show
