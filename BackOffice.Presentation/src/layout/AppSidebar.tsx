@@ -638,16 +638,19 @@ const AppSidebar: React.FC = () => {
           !isExpanded ? "lg:justify-center" : "justify-between"
         }`}
       >
-        <button onClick={() => toggleSidebar()} className="flex items-end gap-3 cursor-pointer">
-          <img
-            src="./images/logo/auth-logo.png"
-            alt="RDT Logo"
-            className="h-8 w-auto"
-          />
-          {(isExpanded || isMobileOpen) && (
-            <p className="text-xs text-sidebar-text-muted leading-tight">
-              inSight + inStinct + inCrease
-            </p>
+        <button onClick={() => toggleSidebar()} className="flex items-center cursor-pointer">
+          {isExpanded || isMobileOpen ? (
+            <img
+              src="./images/logo/snap-logo.png"
+              alt="Snap POS"
+              className="h-10 w-auto object-contain"
+            />
+          ) : (
+            <img
+              src="./favicon.png"
+              alt="Snap POS"
+              className="h-8 w-8 object-contain"
+            />
           )}
         </button>
         {/* Close button for mobile sidebar */}
@@ -669,7 +672,7 @@ const AppSidebar: React.FC = () => {
             <button
               type="button"
               onClick={handleToggleHelpHints}
-              className="w-full flex items-center justify-between text-xs px-2 py-1.5 rounded-md border border-sidebar-border text-sidebar-text-muted hover:text-sidebar-text hover:bg-white/5 transition-colors"
+              className="w-full flex items-center justify-between text-xs px-2 py-1.5 rounded-md border border-sidebar-border text-sidebar-text-muted hover:text-sidebar-text hover:bg-gray-100 transition-colors"
             >
               <span>Show Info</span>
               <span className={`inline-flex h-4 w-8 items-center rounded-full transition-colors ${showHelpHints ? "bg-brand-500" : "bg-gray-600"}`}>
@@ -737,7 +740,7 @@ const AppSidebar: React.FC = () => {
         )}
       </div>
       {/* User Info - Sticky Bottom */}
-      <div className="sticky bottom-0 border-t border-white/10 bg-sidebar-bg py-3">
+      <div className="sticky bottom-0 border-t border-sidebar-border bg-sidebar-bg py-3">
         <UserDropdown sidebarMode={true} isExpanded={isExpanded || isMobileOpen} />
       </div>
     </aside>

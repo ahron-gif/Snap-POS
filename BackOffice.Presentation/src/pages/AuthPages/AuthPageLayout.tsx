@@ -14,35 +14,29 @@ export default function AuthLayout({
         <div className="flex flex-col items-center justify-center p-4 lg:hidden">
           <Link to="/" className="flex flex-col items-center justify-center mb-4">
             <img
-              width={140}
+              width={180}
               height="auto"
-              src="/images/logo/auth-logo.png"
-              alt="RDT Logo"
+              src="/images/logo/snap-logo.png"
+              alt="Snap POS Logo"
               className="mb-2"
             />
-            <p className="text-center text-gray-700 dark:text-gray-300 text-base sm:text-lg">
-              inSight + inStinct + inCrease
-            </p>
           </Link>
         </div>
         {children}
-        <div className="items-center hidden w-full h-full lg:w-1/2 bg-brand-950 dark:bg-white/5 lg:grid">
+        <div className="items-center hidden w-full h-full lg:w-1/2 bg-gray-50 dark:bg-white/5 lg:grid">
           <div className="relative flex items-center justify-center z-1">
             <GridShape />
             <div className="flex flex-col items-center max-w-sm">
-              <Link to="/" className="block mb-4 flex items-end justify-center">
+              <Link to="/" className="block mb-6 flex items-center justify-center">
                 <img
-                  width={140}
+                  width={220}
                   height="auto"
-                  src="/images/logo/auth-logo.png"
-                  alt="Logo"
+                  src="/images/logo/snap-logo.png"
+                  alt="Snap POS Logo"
                 />
-                <p className="text-end text-white ml-0">
-                  inSight + inStinct + inCrease
-                </p>
               </Link>
-              <p className="text-center text-gray-400 dark:text-white/60">
-               Empowering businesses with seamless, efficient, and scalable ERP solutions
+              <p className="text-center text-gray-600 dark:text-white/60 text-lg">
+               Empowering businesses with seamless, efficient, and scalable POS solutions
               </p>
             </div>
           </div>

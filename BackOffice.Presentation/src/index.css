@@ -41,18 +41,18 @@ layer(base);
   --color-white: #ffffff;
   --color-black: #101828;
 
-  --color-brand-25: #f0f4ff;
-  --color-brand-50: #e0e8ff;
-  --color-brand-100: #c7d2fe;
-  --color-brand-200: #a5b4fc;
-  --color-brand-300: #818cf8;
-  --color-brand-400: #2d5dd2;
-  --color-brand-500: #1e40af;
-  --color-brand-600: #1a3799;
-  --color-brand-700: #162d80;
-  --color-brand-800: #132468;
-  --color-brand-900: #111d52;
-  --color-brand-950: #0c1338;
+  --color-brand-25: #f0fdf4;
+  --color-brand-50: #dcfce7;
+  --color-brand-100: #bbf7d0;
+  --color-brand-200: #86efac;
+  --color-brand-300: #4ade80;
+  --color-brand-400: #22c55e;
+  --color-brand-500: #16a34a;
+  --color-brand-600: #15803d;
+  --color-brand-700: #166534;
+  --color-brand-800: #14532d;
+  --color-brand-900: #052e16;
+  --color-brand-950: #1a1a2e;
 
   --color-blue-light-25: #f5fbff;
   --color-blue-light-50: #f0f9ff;
@@ -81,15 +81,15 @@ layer(base);
   --color-gray-950: #0c111d;
   --color-gray-dark: #1a2231;
 
-  /* ─── Sidebar Dark Theme Colors ─── */
-  --color-sidebar-bg: #0f172a;
-  --color-sidebar-bg-hover: #1e293b;
-  --color-sidebar-bg-active: #1e293b;
-  --color-sidebar-text: #cbd5e1;
-  --color-sidebar-text-muted: #64748b;
-  --color-sidebar-text-active: #ffffff;
-  --color-sidebar-border: #1e293b;
-  --color-sidebar-accent: #1e40af;
+  /* ─── Sidebar Modern White Theme Colors ─── */
+  --color-sidebar-bg: #ffffff;
+  --color-sidebar-bg-hover: #f1f5f9;
+  --color-sidebar-bg-active: #ecfdf5;
+  --color-sidebar-text: #475569;
+  --color-sidebar-text-muted: #94a3b8;
+  --color-sidebar-text-active: #166534;
+  --color-sidebar-border: #e2e8f0;
+  --color-sidebar-accent: #16a34a;
 
   /* ─── Content Area Background ─── */
   --color-content-bg: #f8fafc;
@@ -214,13 +214,13 @@ layer(base);
 }
 
 @utility menu-item-active {
-  @apply bg-white/10 text-white shadow-sm;
+  @apply bg-brand-50 text-brand-700 shadow-sm;
 }
 
 @utility menu-item-inactive {
   @apply text-sidebar-text
-         hover:bg-white/[0.06] hover:text-white
-         active:bg-white/10 active:scale-[0.98];
+         hover:bg-gray-100 hover:text-gray-900
+         active:bg-gray-100 active:scale-[0.98];
 }
 
 @utility menu-item-icon {
@@ -262,12 +262,12 @@ layer(base);
 }
 
 @utility menu-dropdown-item-active {
-  @apply text-white pl-5;
+  @apply text-brand-700 pl-5;
 }
 
 @utility menu-dropdown-item-inactive {
   @apply text-sidebar-text
-         hover:text-white hover:pl-5
+         hover:text-brand-700 hover:pl-5
          active:bg-white/5 active:scale-[0.98];
 }
 
