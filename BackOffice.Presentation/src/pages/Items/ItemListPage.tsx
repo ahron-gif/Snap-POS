@@ -2207,7 +2207,7 @@ const ItemListPage = memo(function ItemListPage() {
             serverGridSelectAllRef.current = selectAllFn
           }}
           headerSearch={true}
-          infiniteScroll={true}
+          infiniteScroll={false}
           onRowClick={handleGridRowClick}
           onRowDoubleClick={handleRowDoubleClickWrapper}
           onView={handleViewItem}

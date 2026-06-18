@@ -511,7 +511,7 @@ const RegisterListPage = memo(function RegisterListPage() {
           onRowUpdate={handleRowUpdate}
           onRefresh={() => {}}
           pagination={true}
-          pageSize={20}
+          pageSize={50}
           editable={false}
           columnChooser={true}
           title="Registers List"
@@ -539,7 +539,7 @@ const RegisterListPage = memo(function RegisterListPage() {
             serverGridSelectAllRef.current = selectAllFn
           }}
           headerSearch={true}
-          infiniteScroll={true}
+          infiniteScroll={false}
           onView={handleViewRegister}
           gridId={REGISTERS_GRID_ID}
           onColumnVisibilityChange={updateColumnVisibility}

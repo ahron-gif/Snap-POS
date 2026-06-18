@@ -631,7 +631,7 @@ const ComputerListPage = memo(function ComputerListPage() {
           onRowUpdate={handleRowUpdate}
           onRefresh={() => {}}
           pagination={true}
-          pageSize={20}
+          pageSize={50}
           editable={false}
           columnChooser={true}
           title="Computer List"
@@ -659,7 +659,7 @@ const ComputerListPage = memo(function ComputerListPage() {
             serverGridSelectAllRef.current = selectAllFn
           }}
           headerSearch={true}
-          infiniteScroll={true}
+          infiniteScroll={false}
           onView={handleViewComputer}
           gridId={COMPUTERS_GRID_ID}
           onColumnVisibilityChange={updateColumnVisibility}

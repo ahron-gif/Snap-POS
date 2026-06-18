@@ -769,7 +769,7 @@ const UsersListPage = memo(function UsersListPage() {
             onRowUpdate={handleRowUpdate}
             onRefresh={() => {}}
             pagination={true}
-            pageSize={20}
+            pageSize={50}
             editable={true}
             columnChooser={true}
             title="Users List"
@@ -802,7 +802,7 @@ const UsersListPage = memo(function UsersListPage() {
               serverGridSelectAllRef.current = selectAllFn
             }}
             headerSearch={true}
-            infiniteScroll={true}
+            infiniteScroll={false}
             onDataChange={handleGridDataChange}
             cardRenderer={renderUserCard}
             displayMode={displayMode}

@@ -1123,7 +1123,7 @@ const PurchaseOrderListPage = memo(function PurchaseOrderListPage() {
           onRowUpdate={handleRowUpdate}
           onRefresh={() => {}}
           pagination={true}
-          pageSize={20}
+          pageSize={50}
           editable={true}
           columnChooser={true}
           title="Purchase Orders List"
@@ -1151,7 +1151,7 @@ const PurchaseOrderListPage = memo(function PurchaseOrderListPage() {
             serverGridSelectAllRef.current = selectAllFn
           }}
           headerSearch={true}
-          infiniteScroll={true}
+          infiniteScroll={false}
           onView={handleViewPurchaseOrder}
           onEdit={handleEditPurchaseOrder}
           gridId={PURCHASE_ORDERS_GRID_ID}

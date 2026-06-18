@@ -1068,7 +1068,7 @@ const TransactionListPage = memo(function TransactionListPage() {
           onRowUpdate={handleRowUpdate}
           onRefresh={() => {}}
           pagination={true}
-          pageSize={20}
+          pageSize={50}
           editable={false}
           columnChooser={true}
           title="Transactions List"
@@ -1096,7 +1096,7 @@ const TransactionListPage = memo(function TransactionListPage() {
             serverGridSelectAllRef.current = selectAllFn
           }}
           headerSearch={true}
-          infiniteScroll={true}
+          infiniteScroll={false}
           onView={handleViewTransaction}
           gridId={TRANSACTIONS_GRID_ID}
           onColumnVisibilityChange={updateColumnVisibility}

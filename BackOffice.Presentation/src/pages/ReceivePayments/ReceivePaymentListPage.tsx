@@ -849,7 +849,7 @@ const ReceivePaymentListPage = memo(function ReceivePaymentListPage() {
           onRowUpdate={handleRowUpdate}
           onRefresh={() => {}}
           pagination={true}
-          pageSize={20}
+          pageSize={50}
           editable={false}
           columnChooser={true}
           title="Receive Payments List"
@@ -877,7 +877,7 @@ const ReceivePaymentListPage = memo(function ReceivePaymentListPage() {
             serverGridSelectAllRef.current = selectAllFn
           }}
           headerSearch={true}
-          infiniteScroll={true}
+          infiniteScroll={false}
           onView={handleViewPayment}
           gridId={RECEIVE_PAYMENTS_GRID_ID}
           onColumnVisibilityChange={updateColumnVisibility}

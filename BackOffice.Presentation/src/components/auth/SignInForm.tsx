@@ -1,10 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router";
-import { EyeCloseIcon, EyeIcon } from "../../icons";
-import Label from "../form/Label";
-import Input from "../form/input/InputField";
-import Checkbox from "../form/input/Checkbox";
-import Button from "../ui/button/Button";
 import { useAuth } from "../../context/AuthContext";
 import { useAppDispatch } from "../../hooks/useAppSelector";
 import { setCurrentCustomer } from "../../store/slices/customerSlice";
@@ -52,38 +47,21 @@ export default function SignInForm() {
   // Toast notification function
   const showToast = (message: string, type: "success" | "error" | "info" = "success") => {
     setToast({ show: true, message, type });
-    // Auto hide after 3 seconds
     setTimeout(() => {
       setToast({ show: false, message: "", type: "success" });
     }, 3000);
   };
 
-  // Close toast manually
   const closeToast = () => {
     setToast({ show: false, message: "", type: "success" });
   };
 
-  /**
-   * Post-login redirect for users with a tenant (non-super-admin). Decides
-   * between three paths based on how many stores the user has access to:
-   *   - 0 stores: navigate anyway (the dashboard may still render header-only)
-   *   - 1 store, or N stores with a matching lastSession: auto-select + navigate
-   *   - N stores with no matching lastSession: show the store-picker modal
-   *
-   * Auto-selecting the only store (or the previously-used one) avoids an
-   * unnecessary modal for the 99% case. The modal only appears when there
-   * is a real choice to make.
-   */
   const redirectAfterCustomerLogin = async () => {
     const finishNavigate = () => {
       showToast("Login successful! Welcome back.", "success");
       setTimeout(() => navigate('/'), 500);
     };
 
-    // handleLoginSuccess in AuthContext writes userData (with localUserId) to
-    // localStorage before resolving the login promise, so it is reliably
-    // present here. We avoid threading it through LoginResult to keep the
-    // change surface small.
     let localUserId: string | null = null;
     try {
       const stored = localStorage.getItem('userData');
@@ -106,14 +84,13 @@ export default function SignInForm() {
         return;
       }
 
-      // Prefer the user's previously-selected store if it still exists.
       let chosen: { storeID: string; storeName: string } | null = null;
       try {
         const prefResult = await userPreferenceService.getPreference('lastSession');
         if (prefResult.isSuccess && prefResult.response?.preferenceValue) {
           const lastSession = JSON.parse(prefResult.response.preferenceValue);
           if (lastSession?.storeId) {
-            chosen = stores.find(s => s.storeID === lastSession.storeId) ?? null;
+            chosen = stores.find((s: any) => s.storeID === lastSession.storeId) ?? null;
           }
         }
       } catch {
@@ -134,24 +111,19 @@ export default function SignInForm() {
             parsed.storeName = chosen.storeName;
             localStorage.setItem('userData', JSON.stringify(parsed));
           } catch {
-            // Non-fatal — userData stays as-is.
+            // Non-fatal
           }
         }
         finishNavigate();
         return;
       }
 
-      // Multiple stores, no auto-selection possible → let the user pick.
       setShowStoreModal(true);
     } catch {
-      // Network error — proceed; StoreContext will retry on dashboard mount.
       finishNavigate();
     }
   };
 
-  // Store-modal handlers. Selection commits via switchStore (inside the modal)
-  // and the parent then navigates; cancel matches the customer-modal contract:
-  // clear tokens and stay on the sign-in page.
   const handleStoreSelectedAtLogin = () => {
     showToast("Login successful! Welcome back.", "success");
     setTimeout(() => navigate('/'), 300);
@@ -164,6 +136,9 @@ export default function SignInForm() {
     localStorage.removeItem('currentStore');
     setShowStoreModal(false);
   };
+
+  const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
 
   const validateFields = () => {
     let valid = true;
@@ -196,26 +171,21 @@ export default function SignInForm() {
     try {
       const result = await login(email, password);
 
-      // If MFA is required — show the MFA verification form
       if (result.mfaRequired && result.mfaToken && result.preferredMethod) {
         setMfaState({ mfaToken: result.mfaToken, preferredMethod: result.preferredMethod, force30DayReauth: result.force30DayReauth ?? true, isTotpSetup: result.isTotpSetup ?? false });
         return;
       }
 
-      // If login returned a session conflict, the modal will show automatically
       if (result.conflict) {
         return;
       }
 
       if (result.success) {
-        // Check if customerId is null/undefined/0 - SuperAdmin needs to select customer
         const needsCustomerSelection = !result.customerId ||
                                        result.customerId === null ||
                                        result.customerId === undefined ||
                                        result.customerId === 0;
         if (needsCustomerSelection) {
-          // Show modal - user is NOT authenticated yet (loginSuccess not dispatched)
-          // This prevents auto-redirect to dashboard
           setShowCustomerModal(true);
         } else {
           await redirectAfterCustomerLogin();
@@ -230,7 +200,6 @@ export default function SignInForm() {
     }
   };
 
-  // Handle Google login success
   const handleGoogleSuccess = async (credentialResponse: CredentialResponse) => {
     if (!credentialResponse.credential) {
       showToast("Google login failed. No credential received.", "error");
@@ -256,23 +225,19 @@ export default function SignInForm() {
     }
   };
 
-  // Handle customer selection from modal
   const handleCustomerSelect = (
     customer: { customerId: number; customerName: string },
     user?: { userId: number; userName: string; localUserId: string },
     store?: { storeID: string; storeName: string }
   ) => {
-    // Update customerId in auth state
     updateCustomerId(customer.customerId);
 
-    // Update customer slice for TenantContext
     dispatch(setCurrentCustomer({
       customerId: customer.customerId,
       customerName: customer.customerName,
       email: ''
     }));
 
-    // Update localUserId and storeId in localStorage
     const storedUser = localStorage.getItem('userData');
     if (storedUser) {
       try {
@@ -290,7 +255,6 @@ export default function SignInForm() {
       }
     }
 
-    // Update store context
     if (store) {
       switchStore({
         storeId: store.storeID,
@@ -298,10 +262,8 @@ export default function SignInForm() {
       });
     }
 
-    // Mark selection as done to prevent UserDropdown from reopening
     localStorage.setItem('superAdminSelectionDone', 'true');
 
-    // Save last session preference to backend for auto-restore on next login
     const lastSession = {
       customerId: customer.customerId,
       customerName: customer.customerName,
@@ -319,24 +281,17 @@ export default function SignInForm() {
     }, 500);
   };
 
-  // Handle cancel on modal - clear tokens and stay on signin page
   const handleCustomerCancel = () => {
-    // Clear any stored tokens since user cancelled
     localStorage.removeItem('accessToken');
     localStorage.removeItem('refreshToken');
     localStorage.removeItem('userData');
     setShowCustomerModal(false);
   };
 
-  const [emailError, setEmailError] = useState("");
-  const [passwordError, setPasswordError] = useState("");
-
-  // Handle session conflict confirmation
   const handleSessionConfirm = async (sessionIdToRevoke?: string) => {
     try {
       const result = await confirmLogin(sessionIdToRevoke);
 
-      // After revoking the conflicting session, the API may still require MFA
       if (result.mfaRequired && result.mfaToken && result.preferredMethod) {
         setMfaState({ mfaToken: result.mfaToken, preferredMethod: result.preferredMethod, force30DayReauth: result.force30DayReauth ?? true, isTotpSetup: result.isTotpSetup ?? false });
         return;
@@ -366,7 +321,6 @@ export default function SignInForm() {
     clearSessionConflict();
   };
 
-  // Handle successful MFA verification (same post-login flow as regular login)
   const handleMfaSuccess = (customerId: number | null) => {
     setMfaState(null);
     const needsCustomerSelection = !customerId || customerId === null || customerId === undefined || customerId === 0;
@@ -378,7 +332,6 @@ export default function SignInForm() {
     }
   };
 
-  // Show toast if redirected here after session expiry
   useEffect(() => {
     const expired = sessionStorage.getItem('sessionExpired');
     if (expired === 'true') {
@@ -408,23 +361,22 @@ export default function SignInForm() {
   }
 
   return (
-    <div className="flex flex-col flex-1">
+    <>
       {/* Toast Notification */}
       {toast.show && (
-        <div className="fixed top-4 right-4 z-50 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 min-w-[350px] max-w-[400px] transition-all duration-300 animate-slide-in">
+        <div className="fixed top-4 right-4 z-50 bg-white rounded-lg shadow-lg border border-gray-200 min-w-[350px] max-w-[400px] transition-all duration-300">
           <div className="p-4">
             <div className="flex items-start gap-3">
-              {/* Icon based on toast type */}
               <div className="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center">
                 {toast.type === "success" ? (
-                  <div className="w-10 h-10 bg-green-100 dark:bg-green-500/10 rounded-lg flex items-center justify-center">
-                    <svg className="w-6 h-6 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                    <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                     </svg>
                   </div>
                 ) : toast.type === "info" ? (
-                  <div className="w-10 h-10 bg-brand-50 rounded-lg flex items-center justify-center">
-                    <svg className="w-6 h-6 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                    <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                     </svg>
                   </div>
@@ -436,33 +388,25 @@ export default function SignInForm() {
                   </div>
                 )}
               </div>
-
-              {/* Content */}
               <div className="flex-1 min-w-0">
-                <h4 className="text-sm font-semibold text-gray-900 dark:text-white mb-1">
+                <h4 className="text-sm font-semibold text-gray-900 mb-1">
                   {toast.type === "success" ? "Login Successful" : toast.type === "info" ? "Session Expired" : "Login Failed"}
                 </h4>
-                <p className="text-sm text-gray-500">
-                  {toast.message}
-                </p>
+                <p className="text-sm text-gray-500">{toast.message}</p>
               </div>
-
-              {/* Close Button */}
               <button
                 onClick={closeToast}
-                className="flex-shrink-0 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
+                className="flex-shrink-0 text-gray-400 hover:text-gray-600 transition-colors"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
               </button>
             </div>
-
-            {/* Animated Progress Bar */}
-            <div className="mt-3 w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1 overflow-hidden">
+            <div className="mt-3 w-full bg-gray-200 rounded-full h-1 overflow-hidden">
               <div
-                className={`h-1 rounded-full animate-progress-bar ${
-                  toast.type === "success" ? "bg-green-500" : toast.type === "info" ? "bg-brand-500" : "bg-red-500"
+                className={`h-1 rounded-full ${
+                  toast.type === "success" ? "bg-green-500" : toast.type === "info" ? "bg-blue-500" : "bg-red-500"
                 }`}
                 style={{
                   width: '100%',
@@ -474,123 +418,155 @@ export default function SignInForm() {
         </div>
       )}
 
-      <div className="flex flex-col lg:justify-center flex-1 w-full max-w-md mx-auto">
-        <div>
-          <div className="mb-5 sm:mb-8">
-            <h1 className="mb-2 font-semibold text-gray-800 text-title-sm dark:text-white/90 sm:text-title-md">
-              Sign In
-            </h1>
-            <p className="text-sm text-gray-500 dark:text-gray-400">
-              Enter your email and password to sign in
-            </p>
-          </div>
-          <form onSubmit={handleSignIn}>
-            <div className="space-y-6">
-              {error && (
-                <div className="text-red-600 text-sm bg-red-50 dark:bg-red-900/10 border border-red-200 dark:border-red-800 rounded-lg p-3">
-                  <div className="flex items-center gap-2">
-                    <svg className="w-4 h-4 text-red-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
-                    </svg>
-                    {error}
-                  </div>
-                </div>
-              )}
-              <div>
-                <Label>
-                  Email <span className="text-error-500">*</span>
-                </Label>
-                <Input
-                  type="email"
-                  placeholder="Enter your email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className={emailError || (error && error.includes('credentials')) ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : ''}
-                />
-                {emailError && (
-                  <p className="text-red-500 text-sm mt-2">{emailError}</p>
-                )}
-              </div>
-              <div>
-                <Label>
-                  Password <span className="text-error-500">*</span>
-                </Label>
-                <div className="relative">
-                  <Input
-                    type={showPassword ? "text" : "password"}
-                    placeholder="Enter your password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    className={passwordError || (error && error.includes('credentials')) ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : ''}
-                  />
-                  <span
-                    onClick={() => setShowPassword(!showPassword)}
-                    className="absolute z-30 -translate-y-1/2 cursor-pointer right-4 top-1/2"
-                  >
-                    {showPassword ? (
-                      <EyeIcon className="fill-gray-500 dark:fill-gray-400 size-5" />
-                    ) : (
-                      <EyeCloseIcon className="fill-gray-500 dark:fill-gray-400 size-5" />
-                    )}
-                  </span>
-                </div>
-                {passwordError && (
-                  <p className="text-red-500 text-sm mt-2">{passwordError}</p>
-                )}
-              </div>
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <Checkbox checked={isChecked} onChange={setIsChecked} />
-                  <span className="block font-normal text-gray-700 text-theme-sm dark:text-gray-400">
-                    Keep me logged in
-                  </span>
-                </div>
-                <Link
-                  to="/forgot-password"
-                  className="text-sm text-brand-500 hover:text-brand-600 dark:text-brand-400"
-                >
-                  Forgot password?
-                </Link>
-              </div>
-              <div>
-                <Button
-                  className="w-full"
-                  size="sm"
-                  disabled={loading}
-                >
-                  {loading ? 'Signing in...' : 'Sign in'}
-                </Button>
-              </div>
-            </div>
-          </form>
+      {/* Form Header */}
+      <h1
+        className="text-[22px] font-bold text-[#1A1A2E] mb-1.5"
+        style={{ fontFamily: "'Poppins', sans-serif" }}
+      >
+        Sign In
+      </h1>
+      <p className="text-sm text-[#7F8C8D] mb-7">
+        Enter your email and password to sign in
+      </p>
 
-          {/* Divider */}
-          <div className="relative my-6">
-            <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t border-gray-200 dark:border-gray-700"></div>
-            </div>
-            <div className="relative flex justify-center text-sm">
-              <span className="px-4 bg-white text-gray-500 dark:bg-gray-900 dark:text-gray-400">
-                Or sign in with
-              </span>
-            </div>
-          </div>
-
-          {/* Google Login Button */}
-          <div className="flex justify-center">
-            <GoogleLogin
-              onSuccess={handleGoogleSuccess}
-              onError={() => {
-                showToast("Google login failed. Please try again.", "error");
-              }}
-              size="large"
-              width="100%"
-              text="signin_with"
-              shape="rectangular"
-              theme="outline"
-            />
+      {/* Error Message */}
+      {error && (
+        <div className="mb-4 text-red-600 text-sm bg-red-50 border border-red-200 rounded-lg p-3">
+          <div className="flex items-center gap-2">
+            <svg className="w-4 h-4 text-red-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
+            </svg>
+            {error}
           </div>
         </div>
+      )}
+
+      {/* Sign In Form */}
+      <form onSubmit={handleSignIn}>
+        {/* Email Field */}
+        <div className="mb-5">
+          <label className="block text-[13px] font-medium text-[#1A1A2E] mb-1.5">
+            Email <span className="text-red-500 ml-0.5">*</span>
+          </label>
+          <input
+            type="email"
+            placeholder="you@company.com"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className={`w-full px-4 py-3 text-sm border-[1.5px] rounded-[10px] bg-[#FAFBFC] text-[#1A1A2E] outline-none transition-all duration-200 placeholder:text-[#BDC3C7] ${
+              emailError ? 'border-red-300 focus:border-red-500 focus:ring-red-100' : 'border-[#E8ECF0] focus:border-[#2ECC71] focus:bg-white focus:shadow-[0_0_0_3px_rgba(46,204,113,0.1)]'
+            }`}
+            style={{ fontFamily: "'Inter', sans-serif" }}
+          />
+          {emailError && (
+            <p className="text-red-500 text-xs mt-1.5">{emailError}</p>
+          )}
+        </div>
+
+        {/* Password Field */}
+        <div className="mb-5">
+          <label className="block text-[13px] font-medium text-[#1A1A2E] mb-1.5">
+            Password <span className="text-red-500 ml-0.5">*</span>
+          </label>
+          <div className="relative">
+            <input
+              type={showPassword ? "text" : "password"}
+              placeholder="Enter your password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className={`w-full px-4 py-3 pr-11 text-sm border-[1.5px] rounded-[10px] bg-[#FAFBFC] text-[#1A1A2E] outline-none transition-all duration-200 placeholder:text-[#BDC3C7] ${
+                passwordError ? 'border-red-300 focus:border-red-500 focus:ring-red-100' : 'border-[#E8ECF0] focus:border-[#2ECC71] focus:bg-white focus:shadow-[0_0_0_3px_rgba(46,204,113,0.1)]'
+              }`}
+              style={{ fontFamily: "'Inter', sans-serif" }}
+            />
+            <button
+              type="button"
+              onClick={() => setShowPassword(!showPassword)}
+              className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#95A5A6] hover:text-[#2ECC71] transition-colors p-1"
+              aria-label="Toggle password visibility"
+            >
+              {showPassword ? (
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+                  <line x1="1" y1="1" x2="23" y2="23"></line>
+                </svg>
+              ) : (
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+              )}
+            </button>
+          </div>
+          {passwordError && (
+            <p className="text-red-500 text-xs mt-1.5">{passwordError}</p>
+          )}
+        </div>
+
+        {/* Options Row */}
+        <div className="flex items-center justify-between mb-6">
+          <label className="flex items-center gap-2 cursor-pointer">
+            <input
+              type="checkbox"
+              checked={isChecked}
+              onChange={(e) => setIsChecked(e.target.checked)}
+              className="w-4 h-4 rounded border-gray-300 accent-[#2ECC71] cursor-pointer"
+            />
+            <span className="text-[13px] text-[#4A4A5A]">Keep me logged in</span>
+          </label>
+          <Link
+            to="/forgot-password"
+            className="text-[13px] font-medium text-[#2ECC71] hover:text-[#27AE60] hover:underline transition-colors"
+          >
+            Forgot password?
+          </Link>
+        </div>
+
+        {/* Sign In Button */}
+        <button
+          type="submit"
+          disabled={loading}
+          className="w-full py-3.5 text-[15px] font-semibold text-white rounded-[10px] transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed"
+          style={{
+            background: 'linear-gradient(135deg, #2ECC71 0%, #27AE60 100%)',
+            boxShadow: '0 4px 12px rgba(46, 204, 113, 0.3)',
+            fontFamily: "'Inter', sans-serif",
+          }}
+          onMouseEnter={(e) => {
+            if (!loading) {
+              e.currentTarget.style.transform = 'translateY(-1px)';
+              e.currentTarget.style.boxShadow = '0 6px 20px rgba(46, 204, 113, 0.4)';
+            }
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = 'translateY(0)';
+            e.currentTarget.style.boxShadow = '0 4px 12px rgba(46, 204, 113, 0.3)';
+          }}
+        >
+          {loading ? 'Signing in...' : 'Sign In'}
+        </button>
+      </form>
+
+      {/* Divider */}
+      <div className="flex items-center my-6 gap-3">
+        <div className="flex-1 h-px bg-[#E8ECF0]"></div>
+        <span className="text-xs font-medium text-[#95A5A6] whitespace-nowrap">Or sign in with</span>
+        <div className="flex-1 h-px bg-[#E8ECF0]"></div>
+      </div>
+
+      {/* Google Sign In */}
+      <div className="flex justify-center">
+        <GoogleLogin
+          onSuccess={handleGoogleSuccess}
+          onError={() => {
+            showToast("Google login failed. Please try again.", "error");
+          }}
+          size="large"
+          width="100%"
+          text="signin_with"
+          shape="rectangular"
+          theme="outline"
+        />
       </div>
 
       {/* Session Conflict Modal */}
@@ -610,8 +586,7 @@ export default function SignInForm() {
         loginMode
       />
 
-      {/* Store Selection Modal — shown post-login when the user has a single
-          tenant but multiple stores and no matching last-session store. */}
+      {/* Store Selection Modal */}
       <SwitchStoreModal
         isOpen={showStoreModal}
         onClose={() => setShowStoreModal(false)}
@@ -619,6 +594,6 @@ export default function SignInForm() {
         onStoreSelected={handleStoreSelectedAtLogin}
         onCancel={handleStoreCancelAtLogin}
       />
-    </div>
+    </>
   );
 }

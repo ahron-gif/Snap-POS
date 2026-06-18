@@ -1407,7 +1407,7 @@ const PhoneOrderListPage = memo(function PhoneOrderListPage() {
           onRowDoubleClick={handleRowDoubleClick}
           onRefresh={() => {}}
           pagination={true}
-          pageSize={20}
+          pageSize={50}
           editable={false}
           columnChooser={true}
           title="Phone Orders List"
@@ -1435,7 +1435,7 @@ const PhoneOrderListPage = memo(function PhoneOrderListPage() {
             serverGridSelectAllRef.current = selectAllFn
           }}
           headerSearch={true}
-          infiniteScroll={true}
+          infiniteScroll={false}
           onView={handleViewPhoneOrder}
           onEdit={handleEditPhoneOrder}
           gridId={PHONE_ORDERS_GRID_ID}

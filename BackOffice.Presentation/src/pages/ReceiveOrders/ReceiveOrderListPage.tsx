@@ -1176,7 +1176,7 @@ const ReceiveOrderListPage = memo(function ReceiveOrderListPage() {
           onRowUpdate={handleRowUpdate}
           onRefresh={() => {}}
           pagination={true}
-          pageSize={20}
+          pageSize={50}
           editable={true}
           columnChooser={true}
           title="Receive Orders List"
@@ -1204,7 +1204,7 @@ const ReceiveOrderListPage = memo(function ReceiveOrderListPage() {
             serverGridSelectAllRef.current = selectAllFn
           }}
           headerSearch={true}
-          infiniteScroll={true}
+          infiniteScroll={false}
           onView={handleViewReceiveOrder}
           onEdit={handleEditReceiveOrder}
           gridId={RECEIVE_ORDERS_GRID_ID}

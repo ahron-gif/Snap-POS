@@ -6,8 +6,8 @@ export default function SignIn() {
   return (
     <>
       <PageMeta
-        title="RDT BackOffice - Sign In"
-        description="This is RDT BackOffice Dashboard page for managing and empowering business with seamless, efficient, and secure operations."
+        title="Snap POS - Sign In"
+        description="Sign in to Snap Point of Sale Back Office to manage your business operations."
       />
       <AuthLayout>
         <SignInForm />

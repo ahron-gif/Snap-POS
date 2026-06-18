@@ -791,7 +791,7 @@ const RequestTransferListPage = memo(function RequestTransferListPage() {
           onRowUpdate={handleRowUpdate}
           onRefresh={() => {}}
           pagination={true}
-          pageSize={20}
+          pageSize={50}
           editable={false}
           columnChooser={true}
           title="Request Transfers List"
@@ -819,7 +819,7 @@ const RequestTransferListPage = memo(function RequestTransferListPage() {
             serverGridSelectAllRef.current = selectAllFn
           }}
           headerSearch={true}
-          infiniteScroll={true}
+          infiniteScroll={false}
           onView={handleViewRequestTransfer}
           gridId={REQUEST_TRANSFERS_GRID_ID}
           onColumnVisibilityChange={updateColumnVisibility}

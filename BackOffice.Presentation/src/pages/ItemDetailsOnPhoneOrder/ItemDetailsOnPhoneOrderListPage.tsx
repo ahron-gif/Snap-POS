@@ -908,7 +908,7 @@ const ItemDetailsOnPhoneOrderListPage = memo(function ItemDetailsOnPhoneOrderLis
           onRowUpdate={handleRowUpdate}
           onRefresh={() => {}}
           pagination={true}
-          pageSize={20}
+          pageSize={50}
           editable={false}
           columnChooser={true}
           title="Items Details on Phone Order"
@@ -936,7 +936,7 @@ const ItemDetailsOnPhoneOrderListPage = memo(function ItemDetailsOnPhoneOrderLis
             serverGridSelectAllRef.current = selectAllFn
           }}
           headerSearch={true}
-          infiniteScroll={true}
+          infiniteScroll={false}
           onView={handleViewItem}
           gridId={ITEM_DETAILS_ON_PHONE_ORDER_GRID_ID}
           onColumnVisibilityChange={updateColumnVisibility}

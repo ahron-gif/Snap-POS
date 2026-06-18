@@ -1070,7 +1070,7 @@ const DepartmentListPage = memo(function DepartmentListPage() {
           // WEB-187: single left-click opens the edit form, matching Item List behavior.
           onRowClick={(row) => handleEditAction(row as DepartmentRecord)}
           onRefresh={loadAll}
-          pagination={false}
+          pagination={true}
           editable={false}
           columnChooser={true}
           title="Departments List"

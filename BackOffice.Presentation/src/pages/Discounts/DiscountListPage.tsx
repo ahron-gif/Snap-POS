@@ -794,7 +794,7 @@ const DiscountListPage = memo(function DiscountListPage({ _refreshKey }: Discoun
           onRowUpdate={handleRowUpdate}
           onRefresh={() => {}}
           pagination={true}
-          pageSize={20}
+          pageSize={50}
           editable={false}
           columnChooser={true}
           title="Discounts List"
@@ -822,7 +822,7 @@ const DiscountListPage = memo(function DiscountListPage({ _refreshKey }: Discoun
             serverGridSelectAllRef.current = selectAllFn
           }}
           headerSearch={true}
-          infiniteScroll={true}
+          infiniteScroll={false}
           onView={handleViewDiscount}
           onEdit={handleEditDiscount}
           onRowDoubleClick={handleEditDiscount}

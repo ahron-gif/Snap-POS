@@ -739,7 +739,7 @@ const RequestResponseLogPage = memo(function RequestResponseLogPage() {
           onRowUpdate={handleRowUpdate}
           onRefresh={() => {}}
           pagination={true}
-          pageSize={20}
+          pageSize={50}
           editable={false}
           columnChooser={true}
           title="Request/Response Logs"
@@ -767,7 +767,7 @@ const RequestResponseLogPage = memo(function RequestResponseLogPage() {
             serverGridSelectAllRef.current = selectAllFn
           }}
           headerSearch={true}
-          infiniteScroll={true}
+          infiniteScroll={false}
           onDataChange={handleGridDataChange}
           customContextMenuItems={customContextMenuItems}
           hideDefaultContextMenuItems={true}

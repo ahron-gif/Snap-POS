@@ -941,7 +941,7 @@ const ItemQuickListPage: React.FC = memo(() => {
           onRowUpdate={handleRowUpdate}
           onRefresh={() => {}}
           pagination={true}
-          pageSize={20}
+          pageSize={50}
           editable={true}
           columnChooser={true}
           title="Items Quick List"
@@ -969,7 +969,7 @@ const ItemQuickListPage: React.FC = memo(() => {
             serverGridSelectAllRef.current = selectAllFn
           }}
           headerSearch={true}
-          infiniteScroll={true}
+          infiniteScroll={false}
           onView={handleViewItem}
           onEdit={handleEditItem}
           gridId={ITEMS_QUICK_LIST_GRID_ID}

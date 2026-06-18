@@ -984,7 +984,7 @@ const ReturnToVendorListPage = memo(function ReturnToVendorListPage() {
           onRowUpdate={handleRowUpdate}
           onRefresh={() => {}}
           pagination={true}
-          pageSize={20}
+          pageSize={50}
           editable={true}
           columnChooser={true}
           title="Return To Vendor List"
@@ -1012,7 +1012,7 @@ const ReturnToVendorListPage = memo(function ReturnToVendorListPage() {
             serverGridSelectAllRef.current = selectAllFn
           }}
           headerSearch={true}
-          infiniteScroll={true}
+          infiniteScroll={false}
           onView={handleViewReturnToVendor}
           onEdit={handleEditReturnToVendor}
           gridId={RETURN_TO_VENDOR_GRID_ID}

@@ -1037,7 +1037,7 @@ const PaymentListPage = memo(function PaymentListPage() {
           onRowUpdate={handleRowUpdate}
           onRefresh={() => {}}
           pagination={true}
-          pageSize={20}
+          pageSize={50}
           editable={true}
           columnChooser={true}
           title="Payments List"
@@ -1065,7 +1065,7 @@ const PaymentListPage = memo(function PaymentListPage() {
             serverGridSelectAllRef.current = selectAllFn
           }}
           headerSearch={true}
-          infiniteScroll={true}
+          infiniteScroll={false}
           onView={handleViewPayment}
           onEdit={handleEditPayment}
           gridId={PAYMENTS_GRID_ID}

@@ -1795,7 +1795,7 @@ const PhoneOrderFormPage: React.FC<PhoneOrderFormPageProps> = ({ id, isNew, read
                 error={null}
                 totalRecords={0}
                 onRefresh={() => {}}
-                pagination={false}
+                pagination={true}
                 pageSize={50}
                 editable={false}
                 columnChooser={true}
@@ -1813,7 +1813,7 @@ const PhoneOrderFormPage: React.FC<PhoneOrderFormPageProps> = ({ id, isNew, read
                 onRowSelection={handleCustomerRowSelection}
                 getRowId={(row) => row.customerID || row.customerNo}
                 headerSearch={true}
-                infiniteScroll={true}
+                infiniteScroll={false}
                 onDataChange={handleCustomerGridDataChange}
               />
             </div>
@@ -1906,7 +1906,7 @@ const PhoneOrderFormPage: React.FC<PhoneOrderFormPageProps> = ({ id, isNew, read
                 error={null}
                 totalRecords={0}
                 onRefresh={() => {}}
-                pagination={false}
+                pagination={true}
                 pageSize={50}
                 editable={false}
                 columnChooser={false}
@@ -1924,7 +1924,7 @@ const PhoneOrderFormPage: React.FC<PhoneOrderFormPageProps> = ({ id, isNew, read
                 onRowSelection={handleShippingAddressRowSelection}
                 getRowId={(row) => row.customerID || row.customerNo}
                 headerSearch={true}
-                infiniteScroll={true}
+                infiniteScroll={false}
                 onDataChange={handleShippingAddressGridDataChange}
               />
             </div>

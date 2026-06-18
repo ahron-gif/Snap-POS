@@ -797,7 +797,7 @@ const CustomerListPage = memo(function CustomerListPage() {
             onRowUpdate={handleRowUpdate}
             onRefresh={() => {}}
             pagination={true}
-            pageSize={20}
+            pageSize={50}
             editable={true}
             columnChooser={true}
             title="Customers List"
@@ -825,7 +825,7 @@ const CustomerListPage = memo(function CustomerListPage() {
               serverGridSelectAllRef.current = selectAllFn
             }}
             headerSearch={true}
-            infiniteScroll={true}
+            infiniteScroll={false}
             onDataChange={handleGridDataChange}
             gridId={CUSTOMERS_GRID_ID}
             onColumnVisibilityChange={updateColumnVisibility}

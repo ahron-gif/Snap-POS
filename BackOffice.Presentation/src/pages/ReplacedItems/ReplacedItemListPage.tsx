@@ -747,7 +747,7 @@ const ReplacedItemListPage = memo(function ReplacedItemListPage() {
           onRowUpdate={handleRowUpdate}
           onRefresh={() => {}}
           pagination={true}
-          pageSize={20}
+          pageSize={50}
           editable={false}
           columnChooser={true}
           title="Replaced Items"
@@ -771,7 +771,7 @@ const ReplacedItemListPage = memo(function ReplacedItemListPage() {
           getRowId={(row) => `${row.phoneOrderNo}-${row.removedUPC}-${row.addedUPC}-${row.customerNo}`}
           onSelectAll={(selectAllFn) => { serverGridSelectAllRef.current = selectAllFn }}
           headerSearch={true}
-          infiniteScroll={true}
+          infiniteScroll={false}
           onView={handleViewPhoneOrder}
           gridId={REPLACED_ITEMS_GRID_ID}
           onColumnVisibilityChange={updateColumnVisibility}

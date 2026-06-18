@@ -853,7 +853,7 @@ const SupplierListPage = memo(function SupplierListPage() {
           onRowUpdate={handleRowUpdate}
           onRefresh={() => {}}
           pagination={true}
-          pageSize={20}
+          pageSize={50}
           editable={true}
           columnChooser={true}
           title="Suppliers List"
@@ -881,7 +881,7 @@ const SupplierListPage = memo(function SupplierListPage() {
             serverGridSelectAllRef.current = selectAllFn
           }}
           headerSearch={true}
-          infiniteScroll={true}
+          infiniteScroll={false}
           onView={handleOpenSupplier}
           onEdit={handleEditSupplier}
           gridId={SUPPLIERS_GRID_ID}

@@ -1051,7 +1051,7 @@ const GeneralOrderListPage = memo(function GeneralOrderListPage() {
           onRowUpdate={handleRowUpdate}
           onRefresh={() => {}}
           pagination={true}
-          pageSize={20}
+          pageSize={50}
           editable={true}
           columnChooser={true}
           title="General Order List"
@@ -1079,7 +1079,7 @@ const GeneralOrderListPage = memo(function GeneralOrderListPage() {
             serverGridSelectAllRef.current = selectAllFn
           }}
           headerSearch={true}
-          infiniteScroll={true}
+          infiniteScroll={false}
           onView={handleViewItem}
           gridId={GEN_ORDER_GRID_ID}
           onColumnVisibilityChange={updateColumnVisibility}

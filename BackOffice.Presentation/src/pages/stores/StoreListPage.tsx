@@ -757,7 +757,7 @@ const StoreListPage = memo(function StoreListPage() {
           onRowUpdate={handleRowUpdate}
           onRefresh={() => {}}
           pagination={true}
-          pageSize={20}
+          pageSize={50}
           editable={false}
           columnChooser={true}
           title="Store List"
@@ -785,7 +785,7 @@ const StoreListPage = memo(function StoreListPage() {
             serverGridSelectAllRef.current = selectAllFn
           }}
           headerSearch={true}
-          infiniteScroll={true}
+          infiniteScroll={false}
           onView={handleViewStore}
           gridId={STORES_GRID_ID}
           onColumnVisibilityChange={updateColumnVisibility}

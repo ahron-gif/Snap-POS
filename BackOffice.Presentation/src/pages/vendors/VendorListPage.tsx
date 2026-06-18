@@ -976,7 +976,7 @@ const VendorListPage = memo(function VendorListPage() {
             onRowUpdate={handleRowUpdate}
             onRefresh={() => {}}
             pagination={true}
-            pageSize={20}
+            pageSize={50}
             editable={true}
             columnChooser={true}
             title="Vendors List"
@@ -1004,7 +1004,7 @@ const VendorListPage = memo(function VendorListPage() {
               serverGridSelectAllRef.current = selectAllFn
             }}
             headerSearch={true}
-            infiniteScroll={true}
+            infiniteScroll={false}
             onView={handleOpenVendor}
             onEdit={handleEditVendor}
             gridId={VENDORS_GRID_ID}

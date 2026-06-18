@@ -576,7 +576,7 @@ const CustomDateScopeListPage: React.FC = () => {
           onRowUpdate={handleRowUpdate}
           onRefresh={() => {}}
           pagination={true}
-          pageSize={20}
+          pageSize={50}
           editable={false}
           columnChooser={true}
           title="Custom Date Scope"
@@ -606,7 +606,7 @@ const CustomDateScopeListPage: React.FC = () => {
             serverGridSelectAllRef.current = fn;
           }}
           headerSearch={true}
-          infiniteScroll={true}
+          infiniteScroll={false}
           onEdit={handleEdit}
           onDelete={handleDelete}
           customContextMenuItems={customContextMenuItems}

@@ -807,7 +807,7 @@ const ReceiveTransferListPage = memo(function ReceiveTransferListPage() {
           onRowUpdate={handleRowUpdate}
           onRefresh={() => {}}
           pagination={true}
-          pageSize={20}
+          pageSize={50}
           editable={false}
           columnChooser={true}
           title="Transfers Received List"
@@ -835,7 +835,7 @@ const ReceiveTransferListPage = memo(function ReceiveTransferListPage() {
             serverGridSelectAllRef.current = selectAllFn
           }}
           headerSearch={true}
-          infiniteScroll={true}
+          infiniteScroll={false}
           onView={handleViewReceiveTransfer}
           gridId={RECEIVE_TRANSFERS_GRID_ID}
           onColumnVisibilityChange={updateColumnVisibility}

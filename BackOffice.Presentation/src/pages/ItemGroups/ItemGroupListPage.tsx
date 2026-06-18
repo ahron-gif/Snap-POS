@@ -710,7 +710,7 @@ const ItemGroupListPage = memo(function ItemGroupListPage() {
           onRowClick={(row) => handleEditAction(row as ItemGroupRecord)}
           onRefresh={() => {}}
           pagination={true}
-          pageSize={20}
+          pageSize={50}
           editable={false}
           columnChooser={true}
           title="Item Groups List"
@@ -738,7 +738,7 @@ const ItemGroupListPage = memo(function ItemGroupListPage() {
             serverGridSelectAllRef.current = selectAllFn
           }}
           headerSearch={true}
-          infiniteScroll={true}
+          infiniteScroll={false}
           onDataChange={handleGridDataChange}
           hideDefaultContextMenuItems={true}
           customContextMenuItems={[viewEditContextMenuItem, deleteContextMenuItem, auditHistoryContextMenuItem]}

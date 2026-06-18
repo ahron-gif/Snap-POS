@@ -687,7 +687,7 @@ const ManufacturerListPage = memo(function ManufacturerListPage() {
           onRowClick={(row) => handleEditAction(row as ManufacturerRecord)}
           onRefresh={() => {}}
           pagination={true}
-          pageSize={20}
+          pageSize={50}
           editable={false}
           columnChooser={true}
           title="Manufacturers List"
@@ -715,7 +715,7 @@ const ManufacturerListPage = memo(function ManufacturerListPage() {
             serverGridSelectAllRef.current = selectAllFn
           }}
           headerSearch={true}
-          infiniteScroll={true}
+          infiniteScroll={false}
           onDataChange={handleGridDataChange}
           onView={handleViewAction}
           onEdit={handleEditAction}

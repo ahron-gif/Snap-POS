@@ -554,7 +554,7 @@ const TenantUserRolePage: React.FC = () => {
               totalRecords={totalRecords}
               setTotalRecords={setTotalRecords}
               pagination={true}
-              pageSize={20}
+              pageSize={50}
               editable={false}
               columnChooser={true}
               title="User Roles"
