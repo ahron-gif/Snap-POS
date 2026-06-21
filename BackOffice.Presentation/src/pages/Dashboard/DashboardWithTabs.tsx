@@ -19,7 +19,9 @@ const DepartmentFormPage = lazy(() => import('../Departments/DepartmentFormPage'
 const ManufacturerListPage = lazy(() => import('../Manufacturers/ManufacturerListPage'));
 const ManufacturerFormPage = lazy(() => import('../Manufacturers/ManufacturerFormPage'));
 const VendorListPage = lazy(() => import('../vendors/VendorListPage'));
+const VendorFormPage = lazy(() => import('../vendors/VendorFormPage'));
 const CustomerListPage = lazy(() => import('../customers/CustomerListPage'));
+const CustomerFormPage = lazy(() => import('../customers/CustomerFormPage'));
 const StoreListPage = lazy(() => import('../stores/StoreListPage'));
 const UsersListPage = lazy(() => import('../users/UsersListPage'));
 const UserFormPage = lazy(() => import('../users/UserFormPage'));
@@ -85,6 +87,7 @@ const ReplacedItemListPage = lazy(() => import('../ReplacedItems/ReplacedItemLis
 const ReceivePaymentListPage = lazy(() => import('../ReceivePayments/ReceivePaymentListPage'));
 const TransactionListPage = lazy(() => import('../Transactions/TransactionListPage'));
 const RegisterListPage = lazy(() => import('../Registers/RegisterListPage'));
+const RegisterFormPage = lazy(() => import('../Registers/RegisterFormPage'));
 const DiscountListPage = lazy(() => import('../Discounts/DiscountListPage'));
 const DiscountFormPage = lazy(() => import('../Discounts/DiscountFormPage'));
 const DiscountDetailPage = lazy(() => import('../Discounts/DiscountDetailPage'));
@@ -132,7 +135,9 @@ const componentRegistry: Record<string, React.LazyExoticComponent<React.FC<any>>
   'ManufacturerListPage': ManufacturerListPage,
   'ManufacturerFormPage': ManufacturerFormPage,
   'VendorListPage': VendorListPage,
+  'VendorFormPage': VendorFormPage,
   'CustomerListPage': CustomerListPage,
+  'CustomerFormPage': CustomerFormPage,
   'StoreListPage': StoreListPage,
   'UsersListPage': UsersListPage,
   'UserFormPage': UserFormPage,
@@ -198,6 +203,7 @@ const componentRegistry: Record<string, React.LazyExoticComponent<React.FC<any>>
   'ReceivePaymentListPage': ReceivePaymentListPage,
   'TransactionListPage': TransactionListPage,
   'RegisterListPage': RegisterListPage,
+  'RegisterFormPage': RegisterFormPage,
   'DiscountListPage': DiscountListPage,
   'DiscountFormPage': DiscountFormPage,
   'DiscountDetailPage': DiscountDetailPage,
