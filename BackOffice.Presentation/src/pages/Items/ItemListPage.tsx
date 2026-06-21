@@ -109,6 +109,7 @@ const itemsColumnDefs: GridColDef[] = [
     type: "string",
     sortable: true,
     filterable: true,
+    visible: false,
   },
   {
     field: "itemNo",
@@ -117,6 +118,7 @@ const itemsColumnDefs: GridColDef[] = [
     type: "string",
     sortable: true,
     filterable: true,
+    visible: false,
   },
   {
     field: "name",
