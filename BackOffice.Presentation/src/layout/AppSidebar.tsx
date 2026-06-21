@@ -719,8 +719,8 @@ const AppSidebar: React.FC = () => {
             </div>
           </nav>
         )}
-        {/* Super Admin section always visible regardless of dynamic/static menu mode */}
-        {isSuperAdmin() && (
+        {/* Super Admin section only shown when dynamic menu is NOT active (dynamic menu already includes Super Admin from API) */}
+        {isSuperAdmin() && !useDynamicMenu && (
           <nav className="mb-6">
             <div className="">
               <h2
