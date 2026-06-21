@@ -2,6 +2,7 @@
 import { defineConfig, loadEnv } from "vite"
 import react from "@vitejs/plugin-react"
 import svgr from "vite-plugin-svgr"
+import compression from "vite-plugin-compression"
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd())
@@ -19,6 +20,18 @@ export default defineConfig(({ mode }) => {
           namedExport: "ReactComponent",
         },
       }),
+      // Gzip compression for production assets
+      compression({
+        algorithm: "gzip",
+        ext: ".gz",
+        threshold: 1024,
+      }),
+      // Brotli compression for production assets
+      compression({
+        algorithm: "brotliCompress",
+        ext: ".br",
+        threshold: 1024,
+      }),
     ],
     optimizeDeps: {
       include: [
@@ -27,6 +40,41 @@ export default defineConfig(({ mode }) => {
         "@emotion/react",
         "@emotion/styled",
       ],
+    },
+    build: {
+      sourcemap: false,
+      chunkSizeWarningLimit: 600,
+      minify: "terser",
+      terserOptions: {
+        compress: {
+          drop_console: true,
+          drop_debugger: true,
+          pure_funcs: ["console.log", "console.info", "console.debug"],
+        },
+      },
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            "vendor-react": ["react", "react-dom", "react-router-dom"],
+            "vendor-redux": ["@reduxjs/toolkit", "react-redux"],
+            "vendor-mui": ["@mui/material", "@mui/system", "@emotion/react", "@emotion/styled"],
+            "vendor-mui-grid": ["@mui/x-data-grid"],
+            "vendor-mui-date": ["@mui/x-date-pickers"],
+            "vendor-charts": ["apexcharts", "react-apexcharts"],
+            "vendor-ag-grid": ["ag-grid-community", "ag-grid-react"],
+            "vendor-pdf": ["jspdf", "jspdf-autotable"],
+            "vendor-calendar": [
+              "@fullcalendar/core",
+              "@fullcalendar/daygrid",
+              "@fullcalendar/interaction",
+              "@fullcalendar/list",
+              "@fullcalendar/react",
+              "@fullcalendar/timegrid",
+            ],
+            "vendor-utils": ["axios", "dayjs", "lodash.debounce", "classnames", "clsx"],
+          },
+        },
+      },
     },
     server: {
       host: "0.0.0.0",
