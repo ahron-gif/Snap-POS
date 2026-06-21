@@ -4,51 +4,75 @@ const fs = require("fs");
 
 const app = express();
 const PORT = process.env.PORT || 8080;
-const DIST_DIR = path.join(__dirname, ".");
+const DIST_DIR = __dirname;
 
-// Serve pre-compressed files (brotli > gzip > raw)
-function serveCompressed(req, res, next) {
-  const filePath = path.join(DIST_DIR, req.path);
+// Middleware to serve pre-compressed files
+app.get("*.js", (req, res, next) => {
   const acceptEncoding = req.headers["accept-encoding"] || "";
-
-  // Try brotli first
-  if (acceptEncoding.includes("br") && fs.existsSync(filePath + ".br")) {
-    req.url = req.url + ".br";
-    res.set("Content-Encoding", "br");
-    res.set("Vary", "Accept-Encoding");
-    // Set correct content type based on original file
-    if (req.path.endsWith(".js")) res.set("Content-Type", "application/javascript");
-    else if (req.path.endsWith(".css")) res.set("Content-Type", "text/css");
-    else if (req.path.endsWith(".html")) res.set("Content-Type", "text/html");
-    else if (req.path.endsWith(".json")) res.set("Content-Type", "application/json");
-    else if (req.path.endsWith(".svg")) res.set("Content-Type", "image/svg+xml");
+  const filePath = path.join(DIST_DIR, req.path);
+  
+  if (acceptEncoding.includes("br")) {
+    const brPath = filePath + ".br";
+    if (fs.existsSync(brPath)) {
+      res.set("Content-Type", "application/javascript");
+      res.set("Content-Encoding", "br");
+      res.set("Vary", "Accept-Encoding");
+      res.set("Cache-Control", "public, max-age=31536000, immutable");
+      return res.sendFile(brPath);
+    }
   }
-  // Try gzip
-  else if (acceptEncoding.includes("gzip") && fs.existsSync(filePath + ".gz")) {
-    req.url = req.url + ".gz";
-    res.set("Content-Encoding", "gzip");
-    res.set("Vary", "Accept-Encoding");
-    if (req.path.endsWith(".js")) res.set("Content-Type", "application/javascript");
-    else if (req.path.endsWith(".css")) res.set("Content-Type", "text/css");
-    else if (req.path.endsWith(".html")) res.set("Content-Type", "text/html");
-    else if (req.path.endsWith(".json")) res.set("Content-Type", "application/json");
-    else if (req.path.endsWith(".svg")) res.set("Content-Type", "image/svg+xml");
+  if (acceptEncoding.includes("gzip")) {
+    const gzPath = filePath + ".gz";
+    if (fs.existsSync(gzPath)) {
+      res.set("Content-Type", "application/javascript");
+      res.set("Content-Encoding", "gzip");
+      res.set("Vary", "Accept-Encoding");
+      res.set("Cache-Control", "public, max-age=31536000, immutable");
+      return res.sendFile(gzPath);
+    }
   }
   next();
-}
+});
 
-// Cache-Control: hashed assets get 1 year, HTML gets no-cache
-app.use("/assets", serveCompressed, express.static(path.join(DIST_DIR, "assets"), {
-  maxAge: "1y",
+app.get("*.css", (req, res, next) => {
+  const acceptEncoding = req.headers["accept-encoding"] || "";
+  const filePath = path.join(DIST_DIR, req.path);
+  
+  if (acceptEncoding.includes("br")) {
+    const brPath = filePath + ".br";
+    if (fs.existsSync(brPath)) {
+      res.set("Content-Type", "text/css");
+      res.set("Content-Encoding", "br");
+      res.set("Vary", "Accept-Encoding");
+      res.set("Cache-Control", "public, max-age=31536000, immutable");
+      return res.sendFile(brPath);
+    }
+  }
+  if (acceptEncoding.includes("gzip")) {
+    const gzPath = filePath + ".gz";
+    if (fs.existsSync(gzPath)) {
+      res.set("Content-Type", "text/css");
+      res.set("Content-Encoding", "gzip");
+      res.set("Vary", "Accept-Encoding");
+      res.set("Cache-Control", "public, max-age=31536000, immutable");
+      return res.sendFile(gzPath);
+    }
+  }
+  next();
+});
+
+// Cache-Control: hashed assets get 1 year
+app.use("/assets", express.static(path.join(DIST_DIR, "assets"), {
+  maxAge: "365d",
   immutable: true,
   etag: true,
 }));
 
 // Other static files (images, fonts, etc.) - 1 week cache
-app.use(serveCompressed, express.static(DIST_DIR, {
+app.use(express.static(DIST_DIR, {
   maxAge: "7d",
   etag: true,
-  index: false, // Don't auto-serve index.html for directories
+  index: false,
 }));
 
 // SPA fallback - serve index.html for all non-file routes
