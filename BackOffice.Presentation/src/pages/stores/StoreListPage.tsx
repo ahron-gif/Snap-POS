@@ -502,16 +502,26 @@ const StoreListPage = memo(function StoreListPage() {
   // Handle View / Edit Details from context menu
   const handleViewStore = useCallback(
     (row: StoreRecord) => {
-      console.log("View store:", row.storeID)
+      openTab({
+        component: 'StoreFormPage',
+        title: `View: ${row.storeName || 'Store'}`,
+        closable: true,
+        props: { id: row.storeID, mode: 'view' },
+      });
     },
-    []
+    [openTab]
   )
 
   const handleEditStore = useCallback(
     (row: StoreRecord) => {
-      console.log("Edit store:", row.storeID)
+      openTab({
+        component: 'StoreFormPage',
+        title: `Edit: ${row.storeName || 'Store'}`,
+        closable: true,
+        props: { id: row.storeID, mode: 'edit' },
+      });
     },
-    []
+    [openTab]
   )
 
   // Create custom context menu items: Show, Edit (matching old app's New/Edit)

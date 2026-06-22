@@ -122,6 +122,12 @@ const pathToComponentMap: Record<string, { component: string; title: string; pro
   '/super-admin/licenses-billing': { component: 'SuperAdminBillingPage', title: 'Licenses & Billing' },
   '/smartkart-registration': { component: 'SmartKartRegistrationPage', title: 'OpenAPI' },
   '/settings/printer-settings': { component: 'PrinterSettingsPage', title: 'Printer Settings' },
+  '/bogo-discount': { component: 'BOGODiscountListPage', title: 'BOGO Discounts' },
+  '/loyalty-management': { component: 'LoyaltyListPage', title: 'Loyalty Programs' },
+  '/bonus-points': { component: 'BonusPointsListPage', title: 'Bonus Points' },
+  '/task-list': { component: 'TaskListPage', title: 'Tasks' },
+  '/layaway-list': { component: 'LayawayListPage', title: 'Layaways' },
+  '/time-attendance': { component: 'TimeAttendanceListPage', title: 'Time & Attendance' },
 };
 
 // ─── Tooltip (same as AppSidebar) ───
@@ -140,7 +146,7 @@ const Tooltip: React.FC<{ text: string; visible: boolean; itemCount?: number }> 
 };
 
 // Modules that are not yet completed — greyed out with "Coming Soon"
-const disabledModuleNames = new Set(['Stores']);
+const disabledModuleNames = new Set<string>([]);
 
 // Modules that navigate directly to a page (no submenu expansion)
 const directNavModuleNames = new Set(['Reports']);
@@ -305,7 +311,7 @@ const DynamicSidebar: React.FC<DynamicSidebarProps> = ({ showHelpHints = true })
   // ─── Frontend overrides for dynamic menu ───
   // Hide screens that are not yet implemented or temporarily disabled.
   // Rename modules where the backend label differs from the desired UI label.
-  const hiddenRoutePrefixes = ['/bogo-discount', '/loyalty-management', '/bonus-points', '/coupon-code', '/computers-list'];
+  const hiddenRoutePrefixes = ['/coupon-code'];
   const isRouteHidden = (route: string) =>
     hiddenRoutePrefixes.some((prefix) => route.startsWith(prefix)) ||
     !pathToComponentMap[route]; // Hide screens that have no implemented page
