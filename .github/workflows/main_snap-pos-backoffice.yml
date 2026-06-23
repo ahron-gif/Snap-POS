@@ -33,7 +33,9 @@ jobs:
         working-directory: BackOffice.Presentation
         run: |
           cp server.js dist/
-          cd dist && npm init -y && npm install express --production
+          cd dist && npm install express --production
+          echo '{"name":"snap-pos-backoffice","version":"1.0.0","scripts":{"start":"node server.js"},"dependencies":{}}' > dist/package.json
+          cd dist && npm install express --production
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
