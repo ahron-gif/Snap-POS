@@ -80,6 +80,11 @@ const PurchaseOrderListPage = lazy(() => import('../PurchaseOrder/PurchaseOrderL
 const ReceiveOrderListPage = lazy(() => import('../ReceiveOrders/ReceiveOrderListPage'));
 const PaymentListPage = lazy(() => import('../Payments/PaymentListPage'));
 const ReturnToVendorListPage = lazy(() => import('../ReturnToVendor/ReturnToVendorListPage'));
+const PurchaseOrderFormPage = lazy(() => import('../PurchaseOrder/PurchaseOrderFormPage'));
+const SupplierFormPage = lazy(() => import('../suppliers/SupplierFormPage'));
+const ReceiveOrderFormPage = lazy(() => import('../ReceiveOrders/ReceiveOrderFormPage'));
+const ReturnToVendorFormPage = lazy(() => import('../ReturnToVendor/ReturnToVendorFormPage'));
+const PaymentFormPage = lazy(() => import('../Payments/PaymentFormPage'));
 const GeneralOrderListPage = lazy(() => import('../GeneralOrder/GeneralOrderListPage'));
 const ItemOnPhoneOrderListPage = lazy(() => import('../ItemOnPhoneOrder/ItemOnPhoneOrderListPage'));
 const ItemDetailsOnPhoneOrderListPage = lazy(() => import('../ItemDetailsOnPhoneOrder/ItemDetailsOnPhoneOrderListPage'));
@@ -119,6 +124,18 @@ const SmtpSettingsPage = lazy(() => import('../SuperAdmin/SmtpSettingsPage'));
 const CustomDateScopeListPage = lazy(() => import('../Reports/Setup/CustomDateScopeListPage'));
 const LicensesAndBillingPage = lazy(() => import('../LicensesAndBillingPage'));
 const PrinterSettingsPage = lazy(() => import('../Settings/PrinterSettings/PrinterSettingsPage'));
+const BOGODiscountListPage = lazy(() => import('../BOGODiscount/BOGODiscountListPage'));
+const BOGODiscountFormPage = lazy(() => import('../BOGODiscount/BOGODiscountFormPage'));
+const LoyaltyListPage = lazy(() => import('../Loyalty/LoyaltyListPage'));
+const LoyaltyFormPage = lazy(() => import('../Loyalty/LoyaltyFormPage'));
+const BonusPointsListPage = lazy(() => import('../BonusPoints/BonusPointsListPage'));
+const BonusPointsFormPage = lazy(() => import('../BonusPoints/BonusPointsFormPage'));
+const StoreFormPage = lazy(() => import('../stores/StoreFormPage'));
+const TaskListPage = lazy(() => import('../CRM/TaskListPage'));
+const TaskFormPage = lazy(() => import('../CRM/TaskFormPage'));
+const LayawayListPage = lazy(() => import('../Layaway/LayawayListPage'));
+const LayawayFormPage = lazy(() => import('../Layaway/LayawayFormPage'));
+const TimeAttendanceListPage = lazy(() => import('../TimeAttendance/TimeAttendanceListPage'));
 
 // Component registry - maps component names to actual components
 const componentRegistry: Record<string, React.LazyExoticComponent<React.FC<any>>> = {
@@ -196,6 +213,11 @@ const componentRegistry: Record<string, React.LazyExoticComponent<React.FC<any>>
   'ReceiveOrderListPage': ReceiveOrderListPage,
   'PaymentListPage': PaymentListPage,
   'ReturnToVendorListPage': ReturnToVendorListPage,
+  'SupplierFormPage': SupplierFormPage,
+  'PurchaseOrderFormPage': PurchaseOrderFormPage,
+  'ReceiveOrderFormPage': ReceiveOrderFormPage,
+  'ReturnToVendorFormPage': ReturnToVendorFormPage,
+  'PaymentFormPage': PaymentFormPage,
   'GeneralOrderListPage': GeneralOrderListPage,
   'ItemOnPhoneOrderListPage': ItemOnPhoneOrderListPage,
   'ItemDetailsOnPhoneOrderListPage': ItemDetailsOnPhoneOrderListPage,
@@ -232,6 +254,18 @@ const componentRegistry: Record<string, React.LazyExoticComponent<React.FC<any>>
   'SmtpSettingsPage': SmtpSettingsPage,
   'CustomDateScopeListPage': CustomDateScopeListPage,
   'PrinterSettingsPage': PrinterSettingsPage,
+  'BOGODiscountListPage': BOGODiscountListPage,
+  'BOGODiscountFormPage': BOGODiscountFormPage,
+  'LoyaltyListPage': LoyaltyListPage,
+  'LoyaltyFormPage': LoyaltyFormPage,
+  'BonusPointsListPage': BonusPointsListPage,
+  'BonusPointsFormPage': BonusPointsFormPage,
+  'StoreFormPage': StoreFormPage,
+  'TaskListPage': TaskListPage,
+  'TaskFormPage': TaskFormPage,
+  'LayawayListPage': LayawayListPage,
+  'LayawayFormPage': LayawayFormPage,
+  'TimeAttendanceListPage': TimeAttendanceListPage,
 };
 
 // Loading component

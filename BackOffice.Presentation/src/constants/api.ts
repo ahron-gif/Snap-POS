@@ -378,15 +378,33 @@ export const API_ENDPOINTS = {
   },
   PURCHASE_ORDERS: {
     GET_ALL: `${BASE_API_URL}/api/PurchaseOrder/GetAllPurchaseOrders`,
+    GET_BY_ID: (id: string) => `${BASE_API_URL}/api/PurchaseOrder/${id}`,
+    CREATE: `${BASE_API_URL}/api/PurchaseOrder`,
+    UPDATE: (id: string) => `${BASE_API_URL}/api/PurchaseOrder/${id}`,
+    DELETE: (id: string) => `${BASE_API_URL}/api/PurchaseOrder/${id}`,
+    APPROVE: (id: string) => `${BASE_API_URL}/api/PurchaseOrder/${id}/approve`,
+    SEND: (id: string) => `${BASE_API_URL}/api/PurchaseOrder/${id}/send`,
   },
   RECEIVE_ORDERS: {
     GET_ALL: `${BASE_API_URL}/api/ReceiveOrder/GetAllReceiveOrders`,
+    GET_BY_ID: (id: string) => `${BASE_API_URL}/api/ReceiveOrder/${id}`,
+    CREATE: `${BASE_API_URL}/api/ReceiveOrder`,
+    UPDATE: (id: string) => `${BASE_API_URL}/api/ReceiveOrder/${id}`,
+    DELETE: (id: string) => `${BASE_API_URL}/api/ReceiveOrder/${id}`,
   },
   PAYMENTS: {
     GET_ALL: `${BASE_API_URL}/api/Payment/GetAllPayments`,
+    GET_BY_ID: (id: string) => `${BASE_API_URL}/api/Payment/${id}`,
+    CREATE: `${BASE_API_URL}/api/Payment`,
+    UPDATE: (id: string) => `${BASE_API_URL}/api/Payment/${id}`,
+    DELETE: (id: string) => `${BASE_API_URL}/api/Payment/${id}`,
   },
   RETURN_TO_VENDOR: {
     GET_ALL: `${BASE_API_URL}/api/ReturnToVendor/GetAllReturnToVendors`,
+    GET_BY_ID: (id: string) => `${BASE_API_URL}/api/ReturnToVendor/${id}`,
+    CREATE: `${BASE_API_URL}/api/ReturnToVendor`,
+    UPDATE: (id: string) => `${BASE_API_URL}/api/ReturnToVendor/${id}`,
+    DELETE: (id: string) => `${BASE_API_URL}/api/ReturnToVendor/${id}`,
   },
   GEN_ORDER: {
     GET_ALL: `${BASE_API_URL}/api/GenOrder/GetAllGenOrders`,
