@@ -29,12 +29,11 @@ jobs:
         working-directory: BackOffice.Presentation
         run: npm run build
 
-      - name: Prepare deployment package
-        working-directory: BackOffice.Presentation/dist
+      - name: Bundle server with esbuild
+        working-directory: BackOffice.Presentation
         run: |
-          cp ../server.js .
-          echo '{"name":"snap-pos-backoffice","version":"1.0.0","scripts":{"start":"node server.js"},"dependencies":{}}' > package.json
-          npm install express --production
+          npm install express esbuild --no-save
+          npx esbuild server.js --bundle --platform=node --format=cjs --outfile=dist/server.bundle.cjs
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
@@ -69,3 +68,4 @@ jobs:
           app-name: 'snap-pos-backoffice'
           slot-name: 'Production'
           package: .
+          startup-command: 'node server.bundle.cjs'

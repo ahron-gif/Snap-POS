@@ -6,15 +6,23 @@ const app = express();
 const PORT = process.env.PORT || 8080;
 const DIST_DIR = __dirname;
 
-// Middleware to serve pre-compressed files
-app.get("*.js", (req, res, next) => {
+// Middleware to serve pre-compressed files (works with Express 4 and 5)
+app.use((req, res, next) => {
   const acceptEncoding = req.headers["accept-encoding"] || "";
+  const ext = path.extname(req.path);
+  
+  // Only handle .js and .css files for pre-compression
+  if (ext !== ".js" && ext !== ".css") {
+    return next();
+  }
+  
+  const contentType = ext === ".js" ? "application/javascript" : "text/css";
   const filePath = path.join(DIST_DIR, req.path);
   
   if (acceptEncoding.includes("br")) {
     const brPath = filePath + ".br";
     if (fs.existsSync(brPath)) {
-      res.set("Content-Type", "application/javascript");
+      res.set("Content-Type", contentType);
       res.set("Content-Encoding", "br");
       res.set("Vary", "Accept-Encoding");
       res.set("Cache-Control", "public, max-age=31536000, immutable");
@@ -24,34 +32,7 @@ app.get("*.js", (req, res, next) => {
   if (acceptEncoding.includes("gzip")) {
     const gzPath = filePath + ".gz";
     if (fs.existsSync(gzPath)) {
-      res.set("Content-Type", "application/javascript");
-      res.set("Content-Encoding", "gzip");
-      res.set("Vary", "Accept-Encoding");
-      res.set("Cache-Control", "public, max-age=31536000, immutable");
-      return res.sendFile(gzPath);
-    }
-  }
-  next();
-});
-
-app.get("*.css", (req, res, next) => {
-  const acceptEncoding = req.headers["accept-encoding"] || "";
-  const filePath = path.join(DIST_DIR, req.path);
-  
-  if (acceptEncoding.includes("br")) {
-    const brPath = filePath + ".br";
-    if (fs.existsSync(brPath)) {
-      res.set("Content-Type", "text/css");
-      res.set("Content-Encoding", "br");
-      res.set("Vary", "Accept-Encoding");
-      res.set("Cache-Control", "public, max-age=31536000, immutable");
-      return res.sendFile(brPath);
-    }
-  }
-  if (acceptEncoding.includes("gzip")) {
-    const gzPath = filePath + ".gz";
-    if (fs.existsSync(gzPath)) {
-      res.set("Content-Type", "text/css");
+      res.set("Content-Type", contentType);
       res.set("Content-Encoding", "gzip");
       res.set("Vary", "Accept-Encoding");
       res.set("Cache-Control", "public, max-age=31536000, immutable");
@@ -76,7 +57,7 @@ app.use(express.static(DIST_DIR, {
 }));
 
 // SPA fallback - serve index.html for all non-file routes
-app.get("*", (req, res) => {
+app.use((req, res) => {
   res.set("Cache-Control", "no-cache, no-store, must-revalidate");
   res.set("Pragma", "no-cache");
   res.set("Expires", "0");
